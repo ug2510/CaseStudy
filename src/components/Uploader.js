@@ -4,17 +4,18 @@ import { Box, Typography, Button, Stack, Paper, IconButton } from "@mui/material
 import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";  // Add axios for making HTTP requests
 
 function Uploader() {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [fileUploaded, setFileUploaded] = useState(false);
+  const [fileUploaded, setFileUploaded] = useState(null);  // Store the actual file
   const [uploadedFileName, setUploadedFileName] = useState("");
   const navigate = useNavigate();
 
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const file = acceptedFiles[0];
-      setFileUploaded(true);
+      setFileUploaded(file);  // Store the file object
       setUploadedFileName(file.name); 
     }
   }, []);
@@ -22,17 +23,34 @@ function Uploader() {
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   const bondTemplateUrl = `https://docs.google.com/spreadsheets/d/1uMJKA785PMS9xxweRCcIeT0JGyKX5vRSjuYAeNWj8mM/edit?usp=sharing`;
-  //const equityTemplateUrl = equityurl;
   const equityTemplateUrl = `https://docs.google.com/spreadsheets/d/1oW33tb2GK1G9tZgmNNsb_skNp93ZCe9DAyw2Wc4MLQQ/edit?usp=sharing`;
 
   const handleCancelUpload = () => {
-    setFileUploaded(false);
+    setFileUploaded(null);
     setUploadedFileName("");
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (fileUploaded) {
-      navigate("/", { state: { successMessage: "CSV uploaded successfully! Check details by hitting on Master View." } });
+      const formData = new FormData();
+      formData.append("file", fileUploaded);
+
+      try {
+        const response = await axios.post("https://192.168.112.150:7109/api/EquityCsv/upload", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+
+        if (response.status === 200) {
+          navigate("/", {
+            state: { successMessage: "CSV uploaded successfully! Check details by hitting on Master View." },
+          });
+        }
+      } catch (error) {
+        console.error("File upload error:", error);
+        alert("Failed to upload file.");
+      }
     }
   };
 
