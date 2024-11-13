@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, InputBase, Box } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Typography, InputBase, Box, Button, Divider } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
@@ -67,6 +67,10 @@ function Navbar() {
     }
   };
 
+  const handleNavigateToPlaceholder = () => {
+    navigate('/placeholder'); // Replace '/placeholder' with the actual path later
+  };
+
   return (
     <AppBar position="fixed">
       <Toolbar>
@@ -82,6 +86,13 @@ function Navbar() {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Security Master App
         </Typography>
+
+        <Button color="inherit" onClick={handleNavigateToPlaceholder}>
+          Placeholder
+        </Button>
+
+        {/* Vertical Divider */}
+        <Divider orientation="vertical" flexItem sx={{ mx: 2, bgcolor: 'white' }} />
 
         <Box component="form" onSubmit={handleSearchSubmit} sx={{ display: 'flex' }}>
           <IconButton color="inherit" onClick={handleSearchIconClick}>
