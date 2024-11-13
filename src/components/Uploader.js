@@ -11,26 +11,44 @@ import {
 import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import axios from "axios"; // Add axios for making HTTP requests
 
 function Uploader() {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
   const [fileUploaded, setFileUploaded] = useState(null); // Store the actual file
+=======
+import axios from "axios";
+import bondTemplateUrl from '../assets/Data_Security_for_Bonds.csv'
+import equityTemplateUrl from '../assets/Data_Security_for_Equity.csv'
+
+function Uploader() {
+  const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [fileUploaded, setFileUploaded] = useState(null);  // Store the actual file
+>>>>>>> 27b2357cd6f365150c08df2cac8dfcf5781c948d
   const [uploadedFileName, setUploadedFileName] = useState("");
   const navigate = useNavigate();
 
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const file = acceptedFiles[0];
+<<<<<<< HEAD
       setFileUploaded(file); // Store the file object
       setUploadedFileName(file.name);
+=======
+      setFileUploaded(file);  // Store the file object
+      setUploadedFileName(file.name); 
+>>>>>>> 27b2357cd6f365150c08df2cac8dfcf5781c948d
     }
   }, []);
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
+<<<<<<< HEAD
   const bondTemplateUrl = `https://docs.google.com/spreadsheets/d/1uMJKA785PMS9xxweRCcIeT0JGyKX5vRSjuYAeNWj8mM/edit?usp=sharing`;
   const equityTemplateUrl = `https://docs.google.com/spreadsheets/d/1oW33tb2GK1G9tZgmNNsb_skNp93ZCe9DAyw2Wc4MLQQ/edit?usp=sharing`;
+=======
+>>>>>>> 27b2357cd6f365150c08df2cac8dfcf5781c948d
 
   const handleCancelUpload = () => {
     setFileUploaded(null);
@@ -43,8 +61,14 @@ function Uploader() {
       formData.append("file", fileUploaded);
       const apiEndpoint =
         selectedTemplate === "equity"
+<<<<<<< HEAD
           ? "https://localhost:7109/api/EquityCsv/uploadEquity"
           : "https://localhost:7109/api/BondCsv/uploadBonds";
+=======
+          ? "https://192.168.112.150:7109/api/EquityCsv/upload"
+          : "https://192.168.112.150:7109/api/BondCsv/upload"; 
+
+>>>>>>> 27b2357cd6f365150c08df2cac8dfcf5781c948d
       try {
         const response = await axios.post(apiEndpoint, formData, {
           headers: {
@@ -54,10 +78,14 @@ function Uploader() {
 
         if (response.status === 200) {
           navigate("/", {
+<<<<<<< HEAD
             state: {
               successMessage:
                 "CSV uploaded successfully! Check details by hitting on Master View.",
             },
+=======
+            state: { successMessage: "CSV uploaded successfully! Check details by hitting on Master View." },
+>>>>>>> 27b2357cd6f365150c08df2cac8dfcf5781c948d
           });
         }
       } catch (error) {
