@@ -3,11 +3,15 @@ import { Typography } from '@mui/material';
 import Tile from './Tile';
 import SecurityTable from './SecurityTable';
 import SecurityMasterService from '../services/SecurityMasterService';
+import EquityEdit from './EquityEdit'
+import BondEdit from './BondEdit'
 
 function MasterView() {
   const [securities, setSecurities] = useState([]);
   const [activeCount, setActiveCount] = useState(0);
   const [inactiveCount, setInactiveCount] = useState(0);
+  const currencies = ['USD', 'EUR', 'JPY']; 
+  const pfCreditRatings = ['AAA', 'AA', 'A', 'BBB']; 
 
   useEffect(() => {
     SecurityMasterService.getSecurities()
@@ -23,7 +27,12 @@ function MasterView() {
     <div style={{ padding: '20px', marginTop: '-200px' }}>
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
       <br />
+      
       <SecurityTable securities={securities} />
+
+      {/* <BondEdit /> */}
+      {/* <EquityEdit pfCreditRatings={pfCreditRatings} currencies={currencies} />; */}
+      {/* <EquityEdit /> */}
     </div>
   );
 }

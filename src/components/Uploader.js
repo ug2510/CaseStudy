@@ -4,7 +4,9 @@ import { Box, Typography, Button, Stack, Paper, IconButton } from "@mui/material
 import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";  // Add axios for making HTTP requests
+import axios from "axios";
+import bondTemplateUrl from '../assets/Data_Security_for_Bonds.csv'
+import equityTemplateUrl from '../assets/Data_Security_for_Equity.csv'
 
 function Uploader() {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -22,8 +24,6 @@ function Uploader() {
 
   const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
-  const bondTemplateUrl = `https://docs.google.com/spreadsheets/d/1uMJKA785PMS9xxweRCcIeT0JGyKX5vRSjuYAeNWj8mM/edit?usp=sharing`;
-  const equityTemplateUrl = `https://docs.google.com/spreadsheets/d/1oW33tb2GK1G9tZgmNNsb_skNp93ZCe9DAyw2Wc4MLQQ/edit?usp=sharing`;
 
   const handleCancelUpload = () => {
     setFileUploaded(null);
@@ -34,9 +34,13 @@ function Uploader() {
     if (fileUploaded) {
       const formData = new FormData();
       formData.append("file", fileUploaded);
+      const apiEndpoint =
+        selectedTemplate === "equity"
+          ? "https://192.168.112.150:7109/api/EquityCsv/upload"
+          : "https://192.168.112.150:7109/api/BondCsv/upload"; 
 
       try {
-        const response = await axios.post("https://192.168.112.150:7109/api/EquityCsv/upload", formData, {
+        const response = await axios.post(apiEndpoint, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
