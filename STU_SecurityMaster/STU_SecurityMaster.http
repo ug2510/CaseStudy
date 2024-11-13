@@ -1,0 +1,6 @@
+@STU_SecurityMaster_HostAddress = http://localhost:5190
+
+GET {{STU_SecurityMaster_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
