@@ -3,6 +3,7 @@ using CsvHelper;
 using System.Globalization;
 using ChoETL;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace STU_SecurityMaster.Equ_csv
 {
@@ -120,6 +121,39 @@ namespace STU_SecurityMaster.Equ_csv
 
             //}
             //return "success";
+        }
+
+        public dynamic FetchEquityDataFromDb()
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                cmd = new SqlCommand("GetAllEquityData", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                DataTable dt = ds.Tables[0];
+                //foreach (DataColumn col in dt.Columns)
+                //{
+                //    Console.Write($" {col.ColumnName} ");
+                //}
+                //Console.WriteLine();
+                //foreach (DataRow dr in dt.Rows)
+                //{
+                //    Console.WriteLine($"{dr[0]} - {dr[1]} - {dr[2]} - {dr[3]} - {dr[4]} - {dr[5]}");
+                //}
+                return dt;
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                return sqlerror.Message;
+            }
         }
     }
     }

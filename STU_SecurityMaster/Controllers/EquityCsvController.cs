@@ -17,6 +17,13 @@ namespace STU_SecurityMaster.Controllers
                 Directory.CreateDirectory(_uploadDirectory);
             }
         }
+        [HttpGet("getEquityData")]
+        public async Task<IActionResult> GetEquityData()
+        {
+            Equity_csv_ops eps = new Equity_csv_ops();
+            var data=eps.FetchEquityDataFromDb();
+            return Ok(data);
+        }
         [HttpPost("uploadEquity")]
         public async Task<IActionResult> UploadCSVFile(IFormFile file)
         {

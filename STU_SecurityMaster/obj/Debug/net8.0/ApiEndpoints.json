@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "STU_SecurityMaster.Controllers.EquityCsvController",
+    "Method": "GetEquityData",
+    "RelativePath": "api/EquityCsv/getEquityData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.EquityCsvController",
     "Method": "UploadCSVFile",
     "RelativePath": "api/EquityCsv/uploadEquity",
     "HttpMethod": "POST",
