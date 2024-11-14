@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "WDBHDQ3iqkeVpz8FcpgTtCq4VhLNjpQZGRJB7QMN+wM=",
+  "Source": "Security_viewAPI",
+  "BasePath": "_content/Security_viewAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

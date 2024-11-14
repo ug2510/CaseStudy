@@ -20,3 +20,4 @@ C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\refi
 C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.pdb
 C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.genruntimeconfig.cache
 C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\ref\CaseStudy_2.dll
+C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.sourcelink.json

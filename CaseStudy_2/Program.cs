@@ -32,9 +32,9 @@ namespace CaseStudy_2
 
             //Console.WriteLine("Constituency data loading process is complete.");
 
-            string filePath = @"C:\Users\uagaundalkar\Downloads\SP - 20201231-20211231 S_P 500 Prices.csv"; 
-            char delimiter = ','; 
-            string connectionString = @"Server=192.168.0.13\sqlexpress,49753; Database=STU_SecurityMaster; User Id=sa; Password=sa@12345678; TrustServerCertificate=True"; 
+            string filePath = @"C:\Users\uagaundalkar\Downloads\SP - 20201231-20211231 S_P 500 Prices.csv";
+            char delimiter = ',';
+            string connectionString = @"Server=192.168.0.13\sqlexpress,49753; Database=STU_SecurityMaster; User Id=sa; Password=sa@12345678; TrustServerCertificate=True";
 
             PriceRepo pricesRepo = new PriceRepo(connectionString, filePath, delimiter);
 
@@ -43,6 +43,8 @@ namespace CaseStudy_2
             controller.LoadFileToDatabase("InsertSP500Prices");
 
             Console.WriteLine("SP500 prices data loading process is complete.");
+
+
         }
     }
 }
