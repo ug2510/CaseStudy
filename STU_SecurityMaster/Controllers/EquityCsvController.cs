@@ -9,8 +9,10 @@ namespace STU_SecurityMaster.Controllers
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
 
+
         public EquityCsvController()
         {
+
             // Ensure the upload directory exists
             if (!Directory.Exists(_uploadDirectory))
             {
