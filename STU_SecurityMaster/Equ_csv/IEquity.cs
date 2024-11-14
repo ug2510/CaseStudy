@@ -3,5 +3,6 @@
     public interface IEquity
     {
         string FetchDataFromCSV(string path);
+        public dynamic FetchEquityDataFromDb();
     }
 }

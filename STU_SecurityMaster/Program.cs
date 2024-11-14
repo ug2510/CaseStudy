@@ -1,5 +1,5 @@
 
-using DataAccess.Data;
+//using DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 using STU_SecurityMaster.Bonds_csv;
 using STU_SecurityMaster.Equ_csv;
@@ -16,7 +16,7 @@ namespace STU_SecurityMaster
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
