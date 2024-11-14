@@ -68,7 +68,7 @@ function Navbar() {
   };
 
   const handleNavigateToPlaceholder = () => {
-    navigate('/placeholder'); // Replace '/placeholder' with the actual path later
+    navigate('/placeholder'); 
   };
 
   return (
@@ -87,11 +87,11 @@ function Navbar() {
           Security Master App
         </Typography>
 
+        
         <Button color="inherit" onClick={handleNavigateToPlaceholder}>
           Placeholder
         </Button>
 
-        {/* Vertical Divider */}
         <Divider orientation="vertical" flexItem sx={{ mx: 2, bgcolor: 'white' }} />
 
         <Box component="form" onSubmit={handleSearchSubmit} sx={{ display: 'flex' }}>

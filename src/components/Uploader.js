@@ -1,33 +1,56 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Box, Typography, Button, Stack, Paper, IconButton } from "@mui/material";
+import { Box, Typography, Button, Stack, Paper, IconButton, Modal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import bondTemplateUrl from '../assets/Data_Security_for_Bonds.csv'
-import equityTemplateUrl from '../assets/Data_Security_for_Equity.csv'
+import Papa from 'papaparse'; 
+import bondTemplateUrl from '../assets/Data_Security_for_Bonds.csv';
+import equityTemplateUrl from '../assets/Data_Security_for_Equity.csv';
 
 function Uploader() {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [fileUploaded, setFileUploaded] = useState(null);  // Store the actual file
+  const [fileUploaded, setFileUploaded] = useState(null);
   const [uploadedFileName, setUploadedFileName] = useState("");
+  const [previewData, setPreviewData] = useState([]);
+  const [progress, setProgress] = useState(0);
+  const [openPreview, setOpenPreview] = useState(false);
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const onDrop = useCallback((acceptedFiles) => {
     if (acceptedFiles.length > 0) {
       const file = acceptedFiles[0];
-      setFileUploaded(file);  // Store the file object
-      setUploadedFileName(file.name); 
+
+      // File type validation
+      if (file.type !== "text/csv") {
+        alert("Please upload a valid CSV file.");
+        return;
+      }
+
+      setFileUploaded(file);
+      setUploadedFileName(file.name);
+
+      // Parse CSV for preview
+      Papa.parse(file, {
+        header: true,
+        complete: (result) => {
+          setPreviewData(result.data.slice(0, 5)); // Show the first 5 rows as a preview
+          setOpenPreview(true);
+        },
+        error: (error) => console.error("CSV Parsing Error:", error),
+      });
     }
   }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
+  const { getRootProps, getInputProps } = useDropzone({ onDrop }); // Remove noClick to allow prompt on first click
 
   const handleCancelUpload = () => {
     setFileUploaded(null);
     setUploadedFileName("");
+    setPreviewData([]);
+    setProgress(0);
   };
 
   const handleSubmit = async () => {
@@ -37,23 +60,27 @@ function Uploader() {
       const apiEndpoint =
         selectedTemplate === "equity"
           ? "https://192.168.112.150:7109/api/EquityCsv/upload"
-          : "https://192.168.112.150:7109/api/BondCsv/upload"; 
+          : "https://192.168.112.150:7109/api/BondCsv/upload";
 
       try {
         const response = await axios.post(apiEndpoint, formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
+          headers: { "Content-Type": "multipart/form-data" },
+          onUploadProgress: (progressEvent) => {
+            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            setProgress(percentCompleted);
           },
         });
 
         if (response.status === 200) {
-          navigate("/", {
-            state: { successMessage: "CSV uploaded successfully! Check details by hitting on Master View." },
-          });
+          setMessage("CSV uploaded successfully! Check details by hitting on Master View.");
+          navigate("/", { state: { successMessage: message } });
         }
       } catch (error) {
         console.error("File upload error:", error);
-        alert("Failed to upload file.");
+        setMessage("Failed to upload file.");
+      } finally {
+        setProgress(0);
+        handleCancelUpload();
       }
     }
   };
@@ -117,11 +144,16 @@ function Uploader() {
             </IconButton>
           </Paper>
         ) : (
-          <Typography variant="h6">
-            Drag and drop files here, or click to select files
-          </Typography>
+          <Typography variant="h6">Drag and drop files here, or click to select files</Typography>
         )}
       </Box>
+
+      {progress > 0 && (
+        <Box sx={{ width: '100%', mt: 2 }}>
+          <LinearProgress variant="determinate" value={progress} />
+          <Typography variant="caption">{`Uploading: ${progress}%`}</Typography>
+        </Box>
+      )}
 
       <Button
         variant="contained"
@@ -132,6 +164,48 @@ function Uploader() {
       >
         Submit
       </Button>
+
+      <Modal open={openPreview} onClose={() => setOpenPreview(false)}>
+        <Box sx={{ width: 500, margin: 'auto', mt: 5, padding: 3, bgcolor: 'background.paper', borderRadius: 1 }}>
+          <Typography variant="h6" gutterBottom>
+            File Preview
+          </Typography>
+          <TableContainer component={Paper} sx={{ maxHeight: 300 }}>
+            <Table size="small" stickyHeader aria-label="file preview">
+              <TableHead>
+                <TableRow>
+                  {Object.keys(previewData[0] || {}).map((key) => (
+                    <TableCell key={key} sx={{ fontWeight: 'bold', backgroundColor: '#f5f5f5' }}>
+                      {key}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {previewData.map((row, index) => (
+                  <TableRow key={index} sx={{ '&:nth-of-type(odd)': { backgroundColor: '#fafafa' } }}>
+                    {Object.values(row).map((value, idx) => (
+                      <TableCell key={idx}>{value || '-'}</TableCell>
+                    ))}
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <Button onClick={() => setOpenPreview(false)} sx={{ mt: 2 }}>
+            Close Preview
+          </Button>
+        </Box>
+      </Modal>
+
+      <Modal open={!!message} onClose={() => setMessage('')}>
+        <Box sx={{ width: 300, height: 200, margin: 'auto', mt: 5, padding: 2, bgcolor: 'background.paper', borderRadius: 1, textAlign: 'center' }}>
+          <Typography variant="body1">{message}</Typography>
+          <Button onClick={() => setMessage('')} sx={{ mt: 2 }}>
+            Close
+          </Button>
+        </Box>
+      </Modal>
     </Box>
   );
 }
