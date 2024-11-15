@@ -1,47 +1,235 @@
-import React from 'react';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
+import React, { useState, useEffect } from "react";
+import SecurityDetailsDialog from "./SecurityDetailsDialog";
+import Tile from "./Tile";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Grid,
+  TextField,
+} from "@mui/material";
 
-function SecurityTable({ securities }) {
+function SecurityTable() {
+  const [securities, setSecurities] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [selectedSecurity, setSelectedSecurity] = useState(null);
+  const [isEquityData, setIsEquityData] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const fetchData = (isEquity) => {
+    setIsLoading(true);
+    const url = isEquity
+      ? "https://localhost:7109/api/EquityCsv/getEquityData"
+      : "https://localhost:7109/api/BondCsv/getBondData";
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) throw new Error("Network response was not ok");
+        return response.json();
+      })
+      .then((data) => {
+        setSecurities(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setIsLoading(false);
+      });
+  };
+
+  useEffect(() => {
+    fetchData(isEquityData);
+  }, [isEquityData]);
+
+  const handleDetailsClick = (security) => {
+    setSelectedSecurity(security);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const toggleTable = () => {
+    setIsEquityData(!isEquityData);
+  };
+
   return (
-    <TableContainer component={Paper}>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Security Name</TableCell>
-            <TableCell align="right">Open Price</TableCell>
-            <TableCell align="right">Close Price</TableCell>
-            <TableCell align="right">Total Shares Outstanding</TableCell>
-            <TableCell align="right">Dividend Declared Date</TableCell>
-            <TableCell align="center">Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {securities.map((security) => (
-            <TableRow key={security.id}>
-              <TableCell>{security.name}</TableCell>
-              <TableCell align="right" style={{ color: security.openPrice < 0 ? 'red' : 'green' }}>
-                ${security.openPrice.toLocaleString()}
-              </TableCell>
-              <TableCell align="right" style={{ color: security.closePrice < 0 ? 'red' : 'green' }}>
-                ${security.closePrice.toLocaleString()}
-              </TableCell>
-              <TableCell align="right">{security.totalShares.toLocaleString()}</TableCell>
-              <TableCell align="right">
-                {new Date(security.dividendDeclaredDate).toLocaleDateString('en-US')}
-              </TableCell>
-              <TableCell align="center">
-                <Button variant="contained" color="primary" size="small" style={{ marginRight: '5px' }}>
-                  Edit
-                </Button>
-                <Button variant="contained" color="secondary" size="small">
-                  Delete
-                </Button>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <>
+      <Tile isEquityData={isEquityData} inactiveCount={0} />
+      <Button
+        variant="contained"
+        color={isEquityData ? "primary" : "secondary"}
+        onClick={toggleTable}
+        style={{ marginBottom: "20px" }}
+      >
+        {isEquityData ? "Switch to Bond Table" : "Switch to Equity Table"}
+      </Button>
+
+      {/* Loading Spinner */}
+      {isLoading && <div>Loading...</div>}
+
+      {/* Conditional Rendering for Equity or Bond Table */}
+      {isEquityData ? (
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Security Name</TableCell>
+                <TableCell align="right">Open Price</TableCell>
+                <TableCell align="right">Close Price</TableCell>
+                <TableCell align="right">Total Shares Outstanding</TableCell>
+                <TableCell align="right">Dividend Declared Date</TableCell>
+                <TableCell align="center">Actions</TableCell>
+              </TableRow>
+            </TableHead>
+
+            <TableBody>
+              {securities.map((security) => (
+                <TableRow key={security.SID}>
+                  <TableCell>{security["security Name"] || "N/A"}</TableCell>
+                  <TableCell
+                    align="right"
+                    style={{
+                      color: security["open Price"] < 0 ? "red" : "green",
+                    }}
+                  >
+                    ${security["open Price"]?.toLocaleString() || "N/A"}
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    style={{
+                      color: security["close Price"] < 0 ? "red" : "green",
+                    }}
+                  >
+                    ${security["close Price"]?.toLocaleString() || "N/A"}
+                  </TableCell>
+                  <TableCell align="right">
+                    {security["shares Outstanding"]?.toLocaleString() || "N/A"}
+                  </TableCell>
+                  <TableCell align="right">
+                    {security["declared Date"]
+                      ? new Date(security["declared Date"]).toLocaleDateString(
+                          "en-US"
+                        )
+                      : "N/A"}
+                  </TableCell>
+                  <TableCell align="center">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                      style={{ marginRight: "5px" }}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      size="small"
+                      style={{ marginLeft: "5px" }}
+                      onClick={() => handleDetailsClick(security)}
+                    >
+                      Details
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="warning"
+                      size="small"
+                      style={{ marginLeft: "5px" }}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      ) : (
+        <TableContainer component={Paper}>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Bond Name</TableCell>
+                <TableCell align="right">Coupon Rate</TableCell>
+                <TableCell align="right">Maturity Date</TableCell>
+                <TableCell align="right">Price</TableCell>
+                <TableCell align="center">Actions</TableCell>
+              </TableRow>
+            </TableHead>
+
+            <TableBody>
+              {securities.map((security) => (
+                <TableRow key={security.SID}>
+                  <TableCell>{security["bond Name"] || "N/A"}</TableCell>
+                  <TableCell
+                    align="right"
+                    style={{
+                      color: security["coupon Rate"] < 0 ? "red" : "green",
+                    }}
+                  >
+                    {security["coupon Rate"]?.toLocaleString() || "N/A"}%
+                  </TableCell>
+                  <TableCell align="right">
+                    {security["maturity Date"]
+                      ? new Date(security["maturity Date"]).toLocaleDateString(
+                          "en-US"
+                        )
+                      : "N/A"}
+                  </TableCell>
+                  <TableCell align="right">
+                    ${security["price"]?.toLocaleString() || "N/A"}
+                  </TableCell>
+                  <TableCell align="center">
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      size="small"
+                      style={{ marginRight: "5px" }}
+                    >
+                      Edit
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      size="small"
+                      style={{ marginLeft: "5px" }}
+                      onClick={() => handleDetailsClick(security)}
+                    >
+                      Details
+                    </Button>
+                    <Button
+                      variant="contained"
+                      color="warning"
+                      size="small"
+                      style={{ marginLeft: "5px" }}
+                    >
+                      Delete
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
+
+      <SecurityDetailsDialog
+        open={open}
+        onClose={handleClose}
+        selectedSecurity={selectedSecurity}
+      />
+    </>
   );
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Stack, Switch, Box } from '@mui/material';
+import { Typography, Stack, Switch, Box, Modal, Button, Divider, List, ListItem, ListItemText } from '@mui/material';
 import Tile from './Tile';
 import SecurityTable from './SecurityTable';
 import SecurityMasterService from '../services/SecurityMasterService';
@@ -9,11 +9,11 @@ function MasterView() {
   const [securities, setSecurities] = useState([]);
   const [activeCount, setActiveCount] = useState(0);
   const [inactiveCount, setInactiveCount] = useState(0);
-  const [selectedType, setSelectedType] = useState("equity");
+  const [selectedType, setSelectedType] = useState("equity"); // Initial type set to "equity"
+  const [selectedSecurity, setSelectedSecurity] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
-  const currencies = ['USD', 'EUR', 'JPY'];
-  const pfCreditRatings = ['AAA', 'AA', 'A', 'BBB'];
-
+  // Fetch data based on selectedType (either "equity" or "bond")
   useEffect(() => {
     fetchData(selectedType);
   }, [selectedType]);
@@ -28,11 +28,23 @@ function MasterView() {
       .catch((error) => console.error("Failed to fetch securities data:", error));
   };
 
+  // Handle switch toggle between equity and bond
   const handleToggle = () => {
     setSelectedType((prevType) => (prevType === "equity" ? "bond" : "equity"));
   };
 
-  // Custom styled switch with white border
+  // Handle security click for modal view
+  const handleSecurityClick = (security) => {
+    setSelectedSecurity(security);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedSecurity(null);
+  };
+
+  // Styled switch with white border
   const WhiteBorderSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase': {
       color: theme.palette.common.white,
@@ -49,22 +61,19 @@ function MasterView() {
 
   return (
     <div style={{ padding: '20px', marginTop: '-200px' }}>
-      <Stack direction="row" justifyContent="center" alignItems="center" spacing={2} mt={2}>
-        <Typography variant="body1">Bond</Typography>
-        <WhiteBorderSwitch
-          checked={selectedType === "equity"}
-          onChange={handleToggle}
-        />
-        <Typography variant="body1">Equity</Typography>
-      </Stack>
-
       <br />
-
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
-
       <br />
-
-      <SecurityTable securities={securities} />
+     
+      <SecurityTable securities={securities} onSecurityClick={handleSecurityClick} />
     </div>
   );
 }
