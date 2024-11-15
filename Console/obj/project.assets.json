@@ -4322,23 +4322,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\spbhuva\\.nuget\\packages\\": {},
+    "C:\\Users\\uagaundalkar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\Console_App.csproj",
+      "projectUniqueName": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\Console_App.csproj",
       "projectName": "Console_App",
-      "projectPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\Console_App.csproj",
-      "packagesPath": "C:\\Users\\spbhuva\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\obj\\",
+      "projectPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\Console_App.csproj",
+      "packagesPath": "C:\\Users\\uagaundalkar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\spbhuva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\uagaundalkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4354,8 +4354,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\STU_SecurityMaster.csproj": {
-              "projectPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\STU_SecurityMaster.csproj"
+            "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\STU_SecurityMaster\\STU_SecurityMaster.csproj": {
+              "projectPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\STU_SecurityMaster\\STU_SecurityMaster.csproj"
             }
           }
         }

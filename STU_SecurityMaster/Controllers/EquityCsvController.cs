@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using STU_SecurityMaster.Equ_csv;
+using System.Data;
 
 namespace STU_SecurityMaster.Controllers
 {
@@ -8,7 +10,7 @@ namespace STU_SecurityMaster.Controllers
     public class EquityCsvController:ControllerBase
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
-
+        private readonly IConfiguration _configuration;
 
         public EquityCsvController()
         {
@@ -19,6 +21,7 @@ namespace STU_SecurityMaster.Controllers
                 Directory.CreateDirectory(_uploadDirectory);
             }
         }
+
         [HttpGet("getEquityData")]
         public async Task<IActionResult> GetEquityData()
         {
@@ -26,7 +29,24 @@ namespace STU_SecurityMaster.Controllers
             var data=eps.FetchEquityDataFromDb();
             return Ok(data);
         }
-        [HttpPost("uploadEquity")]
+
+        [HttpGet("activeEquityCount")]
+        public IActionResult GetActiveEquityCount()
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops();
+                int activeCount = eps.CountActiveSecurities();
+                return Ok(new { ActiveCount = activeCount });
+            }
+            catch (Exception ex)
+            {
+                // Handle errors
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving active securities count: {ex.Message}");
+            }
+        }
+
+    [HttpPost("uploadEquity")]
         public async Task<IActionResult> UploadCSVFile(IFormFile file)
         {
             if (file == null || file.Length == 0)
