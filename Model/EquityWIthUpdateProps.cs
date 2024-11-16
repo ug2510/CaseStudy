@@ -10,10 +10,10 @@ namespace Model
     public class EquityWithUpdateProps
     {
         public string Description { get; set; }
-        public int SharesOutstanding { get; set; }
+        public decimal SharesOutstanding { get; set; }
         public string PriceCurrency { get; set; }
-        public int OpenPrice { get; set; }
-        public int ClosePrice { get; set; }
+        public decimal OpenPrice { get; set; }
+        public decimal ClosePrice { get; set; }
         public DateTime DividendDeclaredDate { get; set; }
         public string PFCreditRating { get; set; }
     }
