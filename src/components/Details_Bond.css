@@ -1,0 +1,68 @@
+/* Container styling */
+.details-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styling */
+  .details-header {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 10px;
+  }
+  
+  /* Cards container styling */
+  .cards-container {
+    display: flex; /* Align cards horizontally */
+    flex-direction: row; /* Ensure horizontal stacking */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Center the cards horizontally */
+  }
+  
+  /* DetailsCard styling */
+  .details-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    width: 300px; /* Set a consistent card width */
+    padding: 0;
+  }
+  
+  /* Title styling for the card */
+  .details-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ffe6e6; /* Light red header */
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+    text-transform: uppercase; /* Optional: Makes the title uppercase */
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for highlight */
+  }
+  
+  /* Content styling for the card */
+  .details-card-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .details-card-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .details-card-item span {
+    font-weight: bold;
+    color: #333;
+  }
+  

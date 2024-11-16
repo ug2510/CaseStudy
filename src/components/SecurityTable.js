@@ -68,6 +68,10 @@ function SecurityTable() {
     console.log(security);
     navigate(`/details/${security.sid}`);
   };
+  const handleDetailsClick2 = (security) => {
+    console.log(security);
+    navigate(`/detailsbond/${security.sid}`);
+  };
 
   const handleCloseModal = () => {
     setIsEditModalOpen(false);
@@ -177,7 +181,7 @@ const handleDeleteClickBonds = async (security) => {
                   <TableCell
                     align="right"
                     style={{
-                      color: security["close Price"] > 0 ? "red" : "green",
+                      color: security["close Price"] < 0 ? "red" : "green",
                     }}
                   >
                     ${security["close Price"]?.toLocaleString() || "N/A"}
@@ -276,7 +280,7 @@ const handleDeleteClickBonds = async (security) => {
                       color="secondary"
                       size="small"
                       style={{ marginLeft: "5px" }}
-                      onClick={() => handleDetailsClick(security)} // Navigate to details
+                      onClick={() => handleDetailsClick2(security)} 
                     >
                       Details
                     </Button>

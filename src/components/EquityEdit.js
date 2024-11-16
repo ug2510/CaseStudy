@@ -42,7 +42,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
   const handleFormSubmit = async (data) => {
     const sid = initialData?.sid; 
     if (!sid) {
-      console.error("SID is missing in initial data.");
       return;
     }
     const payload = {

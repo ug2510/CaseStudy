@@ -6,14 +6,13 @@ function Tile({isEquityData}) {
   const [inactiveEquityCount, setInactiveEquityCount] = useState(null);
   const [activeBondCount, setActiveBondCount] = useState(null);
   const [inactiveBondCount, setInactiveBondCount] = useState(null);
-  console.log("out: ", isEquityData);
+
 
   useEffect(() => {
     if (isEquityData === true || isEquityData === false) {
      const fetchCounts = async () => {
         try {
           if (isEquityData) {
-            console.log("Equity: ", isEquityData);
             const activeResponse = await fetch(
               "https://localhost:7109/api/EquityCsv/equityStatusCount"
             );
@@ -27,7 +26,6 @@ function Tile({isEquityData}) {
             setInactiveEquityCount(inactiveData.inActiveCount);
           } else {
             if (!isEquityData) {
-              console.log("Bond: ", isEquityData);
               const activeResponse = await fetch(
                 "https://localhost:7109/api/BondCsv/bondStatusCount"
               );
