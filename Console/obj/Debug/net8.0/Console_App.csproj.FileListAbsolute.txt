@@ -257,3 +257,13 @@ C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Micros
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\obj\Debug\net8.0\Console_App.sourcelink.json
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\Console\bin\Debug\net8.0\Serilog.Sinks.File.dll

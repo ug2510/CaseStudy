@@ -6,11 +6,22 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Data.Common;
 using Model;
+using STU_SecurityMaster.Bonds_csv;
 
 namespace STU_SecurityMaster.Equ_csv
 {
-    public class Equity_csv_ops:IEquity
+    public class Equity_csv_ops : IEquity
     {
+        private readonly ILogger<Equity_csv_ops> _logger;
+        public Equity_csv_ops(ILogger<Equity_csv_ops> logger)
+            {
+            _logger = logger;
+            }
+
+        public Equity_csv_ops()
+        {
+        }
+
         public string FetchDataFromCSV(string path)
         {
 
@@ -102,9 +113,11 @@ namespace STU_SecurityMaster.Equ_csv
                         }
                     }
                 }
+                _logger.LogInformation("Equity Data was transferred from CSV to SQL SERVER");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return $"Error: {ex.Message}";
             }
 
@@ -146,12 +159,14 @@ namespace STU_SecurityMaster.Equ_csv
                 da.Fill(ds);
 
                 DataTable dt = ds.Tables[0];
+                _logger.LogInformation($"Equity Data with SID {sid} was fetched");
 
                 return dt;
             }
             catch (SqlException sqlerror)
             {
                 Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message);
                 return sqlerror.Message;
             }
         }
@@ -178,12 +193,16 @@ namespace STU_SecurityMaster.Equ_csv
                 //foreach (DataRow dr in dt.Rows)
                 //{
                 //    Console.WriteLine($"{dr[0]} - {dr[1]} - {dr[2]} - {dr[3]} - {dr[4]} - {dr[5]}");
+
                 //}
+
+                _logger.LogInformation("ALl Equity Data Was Fetched");
                 return dt;
             }
             catch (SqlException sqlerror)
             {
                 Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message); 
                 return sqlerror.Message;
             }
         }
@@ -211,10 +230,12 @@ namespace STU_SecurityMaster.Equ_csv
                     }
                     conn.Close();
                 }
+                _logger.LogInformation("Active Equities count was Fetched");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error counting active securities: " + ex.Message);
+                _logger.LogError(ex.Message);   
                 throw;
             }
 
@@ -245,15 +266,19 @@ namespace STU_SecurityMaster.Equ_csv
                     else Console.WriteLine("Not successfull");
                     conn.Close();
                 }
+                _logger.LogInformation($"Equity with SID {sid} was Updated");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error updating Equity Data " + ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
+
                 throw;
             }
         }
@@ -275,15 +300,20 @@ namespace STU_SecurityMaster.Equ_csv
                     else Console.WriteLine("Not successfull");
                     conn.Close();
                 }
+                _logger.LogInformation($"Equity with SID {sid} was disabled");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error updating Equity Data " + ex.Message);
+                _logger.LogError(ex.Message);
+
                 throw;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
+
                 throw;
             }
         }

@@ -12,6 +12,17 @@ namespace STU_SecurityMaster.Bonds_csv
 {
     public class Bond_csv_ops : IBond
     {
+        private readonly ILogger<Bond_csv_ops> _logger;
+
+        public Bond_csv_ops(ILogger<Bond_csv_ops> logger)
+        {
+            _logger = logger;
+        }
+
+        public Bond_csv_ops()
+        {
+        }
+
         public dynamic FetchBondsDataFromDb()
         {
             SqlConnection conn;
@@ -27,15 +38,48 @@ namespace STU_SecurityMaster.Bonds_csv
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 DataTable dt = ds.Tables[0];
+                _logger.LogInformation("All Bonds were Fetched");
                 return dt;
             }
             catch (SqlException sqlerror)
             {
                 Console.WriteLine("Cannot get Bond details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message);
                 return sqlerror.Message;
             }
         }
-
+        public dynamic FetchBondDataFromDbbyID(int sid)
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+        
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                cmd = new SqlCommand("GetBondDetailsBySID", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+        
+                cmd.Parameters.Add(new SqlParameter("@SID", SqlDbType.Int));
+                cmd.Parameters["@SID"].Value = sid;
+        
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+        
+                DataTable dt = ds.Tables[0];
+                _logger.LogInformation($"Bond Data with SID {sid} was fetched");
+                return dt;
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message);
+                return sqlerror.Message;
+            }
+        }
+        
         public string FetchDataFromCSV(string path)
         {
 
@@ -180,9 +224,11 @@ namespace STU_SecurityMaster.Bonds_csv
                         }
                     }
                 }
+                _logger.LogInformation("Bond Data Transferred from CSV to SQL SERVER");
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.Message);
                 return $"Error: {ex.Message}";
             }
 
@@ -226,10 +272,12 @@ namespace STU_SecurityMaster.Bonds_csv
                     }
                     conn.Close();
                 }
+                _logger.LogInformation("Active Securities Counts was feteched");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error counting active securities: " + ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
 
@@ -252,15 +300,18 @@ namespace STU_SecurityMaster.Bonds_csv
                     else Console.WriteLine("Not successfull");
                     conn.Close();
                 }
+                _logger.LogInformation($"Bond with SID {sid} was Disabled");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error updating Bond Data " + ex.Message);
+                _logger.LogError(ex.Message);   
                 throw;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }
@@ -289,15 +340,18 @@ namespace STU_SecurityMaster.Bonds_csv
                     else Console.WriteLine("Not successfull");
                     conn.Close();
                 }
+                _logger.LogInformation($"Bond with SID {sid} was Updated");
             }
             catch (SqlException ex)
             {
                 Console.WriteLine("Error updating Bond Data " + ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                _logger.LogError(ex.Message);
                 throw;
             }
         }

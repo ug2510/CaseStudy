@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Model;
 using STU_SecurityMaster.Bonds_csv;
 using STU_SecurityMaster.Equ_csv;
+using System.Data;
 
 namespace STU_SecurityMaster.Controllers
 {
@@ -12,13 +13,31 @@ namespace STU_SecurityMaster.Controllers
     public class BondCsvController : ControllerBase
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
+        private readonly ILogger<Bond_csv_ops> _logger;
 
-        public BondCsvController()
+       
+        public BondCsvController(ILogger<Bond_csv_ops> logger)
         {
+            _logger = logger;
             // Ensure the upload directory exists
             if (!Directory.Exists(_uploadDirectory))
             {
                 Directory.CreateDirectory(_uploadDirectory);
+            }
+        }
+        [HttpGet("getBondDetailsBySID/{sid}")]
+        public IActionResult GetBondDetailsBySID(int sid)
+        {
+            Bond_csv_ops eps = new Bond_csv_ops(_logger);
+            var equityData = eps.FetchBondDataFromDbbyID(sid);
+            if (equityData is DataTable dt && dt.Rows.Count > 0)
+            {
+                // Convert the DataTable to JSON or the required format
+                return Ok(equityData);
+            }
+            else
+            {
+                return NotFound($"No equity data found for SID: {sid}");
             }
         }
         [HttpPost("uploadBonds")]
@@ -46,7 +65,7 @@ namespace STU_SecurityMaster.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
-                Bond_csv_ops bond = new Bond_csv_ops();
+                Bond_csv_ops bond = new Bond_csv_ops(_logger);
                 string result = bond.FetchDataFromCSV(filePath);
                 // Return the file path to the frontend
                 //return Ok(new { filePath = filePath });
@@ -61,7 +80,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getBondsData")]
         public async Task<IActionResult> GetBondsData()
         {
-            Bond_csv_ops eps = new Bond_csv_ops();
+            Bond_csv_ops eps = new Bond_csv_ops(_logger);
             var data = eps.FetchBondsDataFromDb();
             return Ok(data);
         }
@@ -70,7 +89,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops();
+                Bond_csv_ops eps = new Bond_csv_ops(_logger);
                 var statusCount = eps.CountActiveSecurities();
                 return Ok(statusCount);
             }
@@ -84,7 +103,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops();
+                Bond_csv_ops eps = new Bond_csv_ops(_logger);
                 eps.UpdateBondData(sid, bond);
                 return Ok(bond);
             }
@@ -108,7 +127,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops();
+                Bond_csv_ops eps = new Bond_csv_ops(_logger);
                 eps.SoftDeleteBond(sid);
                 return Ok("Deleted Successfully");
             }

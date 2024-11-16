@@ -272,3 +272,13 @@ C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\obj\Debug\ne
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\obj\Debug\net8.0\STU_SecurityMaster.pdb
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\obj\Debug\net8.0\STU_SecurityMaster.genruntimeconfig.cache
 C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\obj\Debug\net8.0\ref\STU_SecurityMaster.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\spbhuva\source\repos\STU_SecurityMaster\STU_SecurityMaster\bin\Debug\net8.0\Serilog.Sinks.File.dll

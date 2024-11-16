@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\STU_SecurityMaster.props" />
-</Project>

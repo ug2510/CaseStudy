@@ -1,6 +1,7 @@
 
 //using DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using STU_SecurityMaster.Bonds_csv;
 using STU_SecurityMaster.Equ_csv;
 
@@ -15,7 +16,9 @@ namespace STU_SecurityMaster
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration)
+              .Enrich.FromLogContext().WriteTo.File("log/MyLog.txt").CreateLogger();
+            builder.Host.UseSerilog();
             builder.Services.AddControllers().AddNewtonsoftJson();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
