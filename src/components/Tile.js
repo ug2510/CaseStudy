@@ -1,49 +1,65 @@
 import React, { useEffect, useState } from "react";
 import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 
-function Tile({ isEquityData }) {
-  const [activeCount, setActiveCount] = useState(null);
-  const [notActiveCount, setInactiveCount] = useState(null);
+function Tile({isEquityData}) {
+  const [activeEquityCount, setActiveEquityCount] = useState(null);
+  const [inactiveEquityCount, setInactiveEquityCount] = useState(null);
+  const [activeBondCount, setActiveBondCount] = useState(null);
+  const [inactiveBondCount, setInactiveBondCount] = useState(null);
+  console.log("out: ", isEquityData);
 
   useEffect(() => {
-    if (isEquityData) {
+    if (isEquityData === true || isEquityData === false) {
       const fetchCounts = async () => {
         try {
-          // Fetch active count
-          const activeResponse = await fetch(
-            "https://localhost:7109/api/EquityCsv/activeEquityCount"
-          );
-          const activeData = await activeResponse.json();
-          setActiveCount(activeData.activeCount);
+          if (isEquityData) {
+            console.log("Equity: ", isEquityData);
+            const activeResponse = await fetch(
+              "https://localhost:7109/api/EquityCsv/equityStatusCount"
+            );
+            const activeData = await activeResponse.json();
+            setActiveEquityCount(activeData.activeCount);
 
-          // Fetch inactive count
-          const inactiveResponse = await fetch(
-            "https://localhost:7109/api/EquityCsv/NotactiveEquityCount"
-          );
-          const inactiveData = await inactiveResponse.json();
-          setInactiveCount(inactiveData.notActiveCount);
+            const inactiveResponse = await fetch(
+              "https://localhost:7109/api/EquityCsv/equityStatusCount"
+            );
+            const inactiveData = await inactiveResponse.json();
+            setInactiveEquityCount(inactiveData.inActiveCount);
+          } else {
+            if (!isEquityData) {
+              console.log("Bond: ", isEquityData);
+              const activeResponse = await fetch(
+                "https://localhost:7109/api/BondCsv/bondStatusCount"
+              );
+              const activeData1 = await activeResponse.json();
+              setActiveBondCount(activeData1.activeCount);
+
+              const inactiveResponse = await fetch(
+                "https://localhost:7109/api/BondCsv/bondStatusCount"
+              );
+              const inactiveData = await inactiveResponse.json();
+              setInactiveBondCount(inactiveData.inActiveCount);
+            }
+          }
         } catch (error) {
           console.error("Error fetching counts:", error);
         }
       };
-
-      fetchCounts();
-    } else {
-      // Reset counts when not showing equity data
-      setActiveCount(null);
-      setInactiveCount(null);
+      
+    fetchCounts();
     }
-  }, [isEquityData]);
+
+  }, [isEquityData]); 
 
   return (
     <Box sx={{ marginBottom: 4 }}>
       <Grid container spacing={2} justifyContent="center">
-        {isEquityData && (
+        {isEquityData ? (
           <>
             <Grid item xs={12} sm={6} md={4}>
               <Card sx={{ textAlign: "center", backgroundColor: "#e0f7fa" }}>
                 <CardContent>
-                  <Typography variant="h6">Active Securities</Typography>
+                  <Typography variant="h6">Active Equities</Typography>
                   <Typography
                     variant="h4"
                     sx={{
@@ -51,7 +67,9 @@ function Tile({ isEquityData }) {
                       fontWeight: "bold",
                     }}
                   >
-                    {activeCount !== null ? activeCount : "Loading..."}
+                    {activeEquityCount !== null
+                      ? activeEquityCount
+                      : "Loading..."}
                   </Typography>
                 </CardContent>
               </Card>
@@ -59,7 +77,7 @@ function Tile({ isEquityData }) {
             <Grid item xs={12} sm={6} md={4}>
               <Card sx={{ textAlign: "center", backgroundColor: "#ffebee" }}>
                 <CardContent>
-                  <Typography variant="h6">Inactive Securities</Typography>
+                  <Typography variant="h6">Inactive Equities</Typography>
                   <Typography
                     variant="h4"
                     sx={{
@@ -67,7 +85,46 @@ function Tile({ isEquityData }) {
                       fontWeight: "bold",
                     }}
                   >
-                    {notActiveCount !== null ? notActiveCount : "Loading..."}
+                    {inactiveEquityCount !== null
+                      ? inactiveEquityCount
+                      : "Loading..."}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          </>
+        ) : (
+          <>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#e0f7fa" }}>
+                <CardContent>
+                  <Typography variant="h6">Active Bonds</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "green",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {activeBondCount !== null ? activeBondCount : "Loading..."}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#ffebee" }}>
+                <CardContent>
+                  <Typography variant="h6">Inactive Bonds</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "red",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {inactiveBondCount !== null
+                      ? inactiveBondCount
+                      : "Loading..."}
                   </Typography>
                 </CardContent>
               </Card>

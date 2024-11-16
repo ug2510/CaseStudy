@@ -63,12 +63,6 @@ function MasterView() {
     <div style={{ padding: '20px', marginTop: '-200px' }}>
       <br />
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
       
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
       <br />
