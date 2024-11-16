@@ -262,7 +262,7 @@ namespace STU_SecurityMaster.Equ_csv
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand("SoftDeleteEquity", conn))
+                using (SqlCommand cmd = new SqlCommand("SoftDeleteSecurity", conn))
                 {
                     conn.Open();
                     cmd.CommandType = CommandType.StoredProcedure;

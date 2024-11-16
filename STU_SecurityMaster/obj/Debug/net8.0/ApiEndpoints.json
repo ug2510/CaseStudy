@@ -1,6 +1,53 @@
 [
   {
     "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
+    "Method": "GetBondsData",
+    "RelativePath": "api/BondCsv/getBondsData",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
+    "Method": "SoftDeleteBond",
+    "RelativePath": "api/BondCsv/SoftDeleteBond{sid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
+    "Method": "UpdateEquity",
+    "RelativePath": "api/BondCsv/updateBond{sid}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "bond",
+        "Type": "Model.BondWithUpdateProps",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
     "Method": "UploadCSVFile",
     "RelativePath": "api/BondCsv/uploadBonds",
     "HttpMethod": "POST",

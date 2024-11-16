@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Model;
 using STU_SecurityMaster.Bonds_csv;
 using STU_SecurityMaster.Equ_csv;
 
@@ -54,6 +56,59 @@ namespace STU_SecurityMaster.Controllers
             {
                 // Handle errors
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error uploading file: {ex.Message}");
+            }
+        }
+        [HttpGet("getBondsData")]
+        public async Task<IActionResult> GetBondsData()
+        {
+            Bond_csv_ops eps = new Bond_csv_ops();
+            var data = eps.FetchBondsDataFromDb();
+            return Ok(data);
+        }
+        [HttpPut("updateBond{sid}")]
+        public IActionResult UpdateEquity([FromRoute] int sid, [FromBody] BondWithUpdateProps bond)
+        {
+            try
+            {
+                Bond_csv_ops eps = new Bond_csv_ops();
+                eps.UpdateBondData(sid, bond);
+                return Ok(bond);
+            }
+            catch (DbUpdateException dbex)
+            {
+                if (dbex.InnerException != null)
+                {
+                    return BadRequest(dbex.InnerException.Message);
+                }
+                return BadRequest(dbex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Handle errors
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
+            }
+        }
+        
+        [HttpDelete("SoftDeleteBond{sid}")]
+        public IActionResult SoftDeleteBond([FromRoute] int sid)
+        {
+            try
+            {
+                Bond_csv_ops eps = new Bond_csv_ops();
+                eps.SoftDeleteBond(sid);
+                return Ok("Deleted Successfully");
+            }
+            catch (DbUpdateException dbex)
+            {
+                if (dbex.InnerException != null)
+                {
+                    return BadRequest(dbex.InnerException.Message);
+                }
+                return BadRequest(dbex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
             }
         }
     }

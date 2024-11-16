@@ -4,11 +4,38 @@ using System.Globalization;
 using ChoETL;
 using System.Data.SqlClient;
 using STU_SecurityMaster.Bonds_csv;
+using System.Data;
+using Model;
+using STU_SecurityMaster.Equ_csv;
 
 namespace STU_SecurityMaster.Bonds_csv
 {
     public class Bond_csv_ops : IBond
     {
+        public dynamic FetchBondsDataFromDb()
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                cmd = new SqlCommand("GetAllBondsData", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                DataTable dt = ds.Tables[0];
+                return dt;
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Bond details " + sqlerror.Message);
+                return sqlerror.Message;
+            }
+        }
+
         public string FetchDataFromCSV(string path)
         {
 
@@ -175,6 +202,74 @@ namespace STU_SecurityMaster.Bonds_csv
             //}
             //return "success";
         }
+
+        public void SoftDeleteBond(int sid)
+        {
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("SoftDeleteSecurity", conn))
+                {
+                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@security_id", sid);
+                    int a = cmd.ExecuteNonQuery();
+                    if (a > 0) Console.WriteLine("Record Soft Deleted Successfully");
+                    else Console.WriteLine("Not successfull");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error updating Bond Data " + ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public void UpdateBondData(int sid, BondWithUpdateProps bond)
+        {
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("UpdateBond", conn))
+                {
+                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@security_id", sid);
+                    cmd.Parameters.AddWithValue("@description", bond.Description);
+                    cmd.Parameters.AddWithValue("@coupon_rate", bond.CouponRate);
+                    cmd.Parameters.AddWithValue("@is_callable", bond.IsCallable);
+                    cmd.Parameters.AddWithValue("@penultimate_cpn_date", bond.PenultimateCouponDate);
+                    cmd.Parameters.AddWithValue("@pf_credit_rating", bond.PfCreditRating);
+                    cmd.Parameters.AddWithValue("@ask_price", bond.AskPrice);
+                    cmd.Parameters.AddWithValue("@bid_price", bond.BidPrice);
+                    int a = cmd.ExecuteNonQuery();
+                    if (a > 0) Console.WriteLine("Record Updated Successfully");
+                    else Console.WriteLine("Not successfull");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error updating Bond Data " + ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
     }
 }
 
