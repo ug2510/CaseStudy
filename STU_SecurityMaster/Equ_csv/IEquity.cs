@@ -8,5 +8,6 @@ namespace STU_SecurityMaster.Equ_csv
         public dynamic FetchEquityDataFromDbbyID(int sid);
         public dynamic FetchEquityDataFromDb();
         public void UpdateEquityData(int sid,EquityWithUpdateProps equity);
+        public void SoftDeleteEquity(int sid);
     }
 }

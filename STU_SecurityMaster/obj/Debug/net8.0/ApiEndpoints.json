@@ -53,6 +53,22 @@
   },
   {
     "ContainingType": "STU_SecurityMaster.Controllers.EquityCsvController",
+    "Method": "SoftDeleteEquity",
+    "RelativePath": "api/EquityCsv/SoftDeleteEquity{sid}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sid",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.EquityCsvController",
     "Method": "UpdateEquity",
     "RelativePath": "api/EquityCsv/updateEquity{sid}",
     "HttpMethod": "PUT",

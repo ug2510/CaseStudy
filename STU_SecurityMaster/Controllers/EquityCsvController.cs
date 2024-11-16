@@ -84,10 +84,31 @@ namespace STU_SecurityMaster.Controllers
             catch (Exception ex)
             {
                 // Handle errors
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving active securities count: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
             }
         }
-
+        [HttpDelete("SoftDeleteEquity{sid}")]
+        public IActionResult SoftDeleteEquity([FromRoute] int sid)
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops();
+                eps.SoftDeleteEquity(sid);
+                return Ok("Deleted Successfully");
+            }
+            catch (DbUpdateException dbex)
+            {
+                if (dbex.InnerException != null)
+                {
+                    return BadRequest(dbex.InnerException.Message);
+                }
+                return BadRequest(dbex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
+            }
+        }
         [HttpPost("uploadEquity")]
         public async Task<IActionResult> UploadCSVFile(IFormFile file)
         {

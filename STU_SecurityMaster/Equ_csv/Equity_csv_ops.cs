@@ -254,6 +254,36 @@ namespace STU_SecurityMaster.Equ_csv
                 throw;
             }
         }
+
+        public void SoftDeleteEquity(int sid)
+        {
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("SoftDeleteEquity", conn))
+                {
+                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@security_id", sid);
+                    int a = cmd.ExecuteNonQuery();
+                    if (a > 0) Console.WriteLine("Record Soft Deleted Successfully");
+                    else Console.WriteLine("Not successfull");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error updating Equity Data " + ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
     }
     }
 
