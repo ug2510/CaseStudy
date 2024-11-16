@@ -252,3 +252,5 @@ C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\obj\Debug\n
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\obj\Debug\net8.0\Console_App.pdb
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\obj\Debug\net8.0\Console_App.genruntimeconfig.cache
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\obj\Debug\net8.0\ref\Console_App.dll
+C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\bin\Debug\net8.0\Model.dll
+C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\Console\bin\Debug\net8.0\Model.pdb

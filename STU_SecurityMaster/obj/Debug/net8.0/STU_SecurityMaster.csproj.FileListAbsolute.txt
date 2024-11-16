@@ -178,3 +178,5 @@ C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\obj\Debug\net8.0\STU_SecurityMaster.pdb
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\obj\Debug\net8.0\STU_SecurityMaster.genruntimeconfig.cache
 C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\obj\Debug\net8.0\ref\STU_SecurityMaster.dll
+C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\bin\Debug\net8.0\Model.dll
+C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\bin\Debug\net8.0\Model.pdb

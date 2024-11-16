@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\model\\equitywithupdateprops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|solutionrelative:model\\equitywithupdateprops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|solutionrelative:model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5FB3CE8A-4F6C-4860-A0BA-87C5076C25FD}|DataAccess\\DataAccess.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5FB3CE8A-4F6C-4860-A0BA-87C5076C25FD}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\equ_csv\\iequity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\iequity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|solutionrelative:model\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5FB3CE8A-4F6C-4860-A0BA-87C5076C25FD}|DataAccess\\DataAccess.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\dataaccess\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,14 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\tpjain\\documents\\case study\\casestudyproj\\casestudy\\stu_securitymaster\\controllers\\bondcsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\bondcsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -75,39 +67,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EquityCsvController.cs",
-              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "RelativeToolTip": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "ViewState": "AgIAAB8AAABAMzMzM3MwwCYAAAA+AAAAAAAAAA==",
+              "Title": "EquityWIthUpdateProps.cs",
+              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\Model\\EquityWIthUpdateProps.cs",
+              "RelativeDocumentMoniker": "Model\\EquityWIthUpdateProps.cs",
+              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\Model\\EquityWIthUpdateProps.cs",
+              "RelativeToolTip": "Model\\EquityWIthUpdateProps.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:53:49.508Z",
+              "WhenOpened": "2024-11-16T03:50:54.174Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Equity_csv_ops.cs",
-              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "RelativeDocumentMoniker": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "RelativeToolTip": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "ViewState": "AgIAAKAAAAAAzMzMzEwhwLoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:52:14.747Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\DataAccess\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DataAccess\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\DataAccess\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DataAccess\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAADgmZmZmRkWwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:51:49.257Z"
             },
             {
               "$type": "Document",
@@ -117,21 +85,36 @@
               "RelativeDocumentMoniker": "Model\\Equity_csv.cs",
               "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\Model\\Equity_csv.cs",
               "RelativeToolTip": "Model\\Equity_csv.cs",
-              "ViewState": "AgIAADoAAABAMzMzM3MywAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:51:40.007Z"
+              "WhenOpened": "2024-11-14T19:51:40.007Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BondCsvController.cs",
-              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "RelativeToolTip": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "ViewState": "AgIAACEAAABAMzMzMzMwwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "EquityCsvController.cs",
+              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
+              "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
+              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
+              "RelativeToolTip": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAgwEgAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T19:50:59.057Z"
+              "WhenOpened": "2024-11-14T19:53:49.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IEquity.cs",
+              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Equ_csv\\IEquity.cs",
+              "RelativeDocumentMoniker": "STU_SecurityMaster\\Equ_csv\\IEquity.cs",
+              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Equ_csv\\IEquity.cs",
+              "RelativeToolTip": "STU_SecurityMaster\\Equ_csv\\IEquity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T14:15:45.877Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -147,13 +130,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Program.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Program.cs",
               "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\STU_SecurityMaster\\Program.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Program.cs",
-              "ViewState": "AgIAAAoAAAAANDMzMzMbwAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACsAAAAAAAAAAAArwC0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T13:32:35.841Z"
             },
@@ -168,18 +151,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T10:51:20.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\Model\\Class1.cs",
-              "RelativeDocumentMoniker": "Model\\Class1.cs",
-              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\CaseStudyProj\\CaseStudy\\Model\\Class1.cs",
-              "RelativeToolTip": "Model\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:16:17.887Z"
             }
           ]
         }

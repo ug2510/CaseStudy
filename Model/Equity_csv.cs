@@ -5,7 +5,7 @@ namespace STU_SecurityMaster
 {
     public class Equity_csv
     {
-        [Column("Bloomberg Unique ")]
+        [Column("Bloomberg Unique Id")]
         public int BBGUniqueId { get; set; }
         [Column("Security Name")]
         public string SecurityName { get; set; }
