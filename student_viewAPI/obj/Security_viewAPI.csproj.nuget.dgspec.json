@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\student_viewAPI\\Security_viewAPI.csproj": {}
+    "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Security_viewAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\student_viewAPI\\Security_viewAPI.csproj": {
+    "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Security_viewAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\student_viewAPI\\Security_viewAPI.csproj",
+        "projectUniqueName": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Security_viewAPI.csproj",
         "projectName": "Security_viewAPI",
-        "projectPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\student_viewAPI\\Security_viewAPI.csproj",
-        "packagesPath": "C:\\Users\\uagaundalkar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\student_viewAPI\\obj\\",
+        "projectPath": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Security_viewAPI.csproj",
+        "packagesPath": "C:\\Users\\tpjain\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\uagaundalkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tpjain\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
