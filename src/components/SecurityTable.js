@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SecurityDetailsDialog from "./SecurityDetailsDialog";
+import { useNavigate } from "react-router-dom";
 import Tile from "./Tile";
 import {
   Table,
@@ -24,6 +25,7 @@ function SecurityTable() {
   const [selectedSecurity, setSelectedSecurity] = useState(null);
   const [isEquityData, setIsEquityData] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
@@ -51,8 +53,8 @@ function SecurityTable() {
   }, [isEquityData]);
 
   const handleDetailsClick = (security) => {
-    setSelectedSecurity(security);
-    setOpen(true);
+    console.log(security);
+    navigate(`/details/${security.sid}`);
   };
 
   const handleClose = () => {
@@ -108,7 +110,7 @@ function SecurityTable() {
                   <TableCell
                     align="right"
                     style={{
-                      color: security["close Price"] < 0 ? "red" : "green",
+                      color: security["close Price"] > 0 ? "red" : "green",
                     }}
                   >
                     ${security["close Price"]?.toLocaleString() || "N/A"}
@@ -204,7 +206,7 @@ function SecurityTable() {
                       color="secondary"
                       size="small"
                       style={{ marginLeft: "5px" }}
-                      onClick={() => handleDetailsClick(security)}
+                      onClick={() => handleDetailsClick(security)} // Navigate to details
                     >
                       Details
                     </Button>

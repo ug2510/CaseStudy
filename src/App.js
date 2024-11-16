@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Analyze from "./components/Analyze";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Details from "./components/Details";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/sec-view" element={<MasterView />} />
             <Route path="/sec-upload" element={<Uploader />} />
             <Route path="/placeholder" element={<Analyze />} />
+            <Route path="/details/:id" element={<Details />} />
           </Routes>
         </LocalizationProvider>
       </header>

@@ -4,6 +4,7 @@ import Tile from './Tile';
 import SecurityTable from './SecurityTable';
 import SecurityMasterService from '../services/SecurityMasterService';
 import { styled } from '@mui/material/styles';
+import PriceChart from './PriceChart';
 
 function MasterView() {
   const [securities, setSecurities] = useState([]);
@@ -73,7 +74,7 @@ function MasterView() {
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
       <br />
      
-      <SecurityTable securities={securities} onSecurityClick={handleSecurityClick} />
+      <SecurityTable securities={securities} onSecurityClick={handleSecurityClick} />      
     </div>
   );
 }
