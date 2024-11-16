@@ -21,6 +21,21 @@ namespace STU_SecurityMaster.Controllers
                 Directory.CreateDirectory(_uploadDirectory);
             }
         }
+        [HttpGet("getBondDetailsBySID/{sid}")]
+        public IActionResult GetBondDetailsBySID(int sid)
+        {
+            Bond_csv_ops eps = new Bond_csv_ops();
+            var equityData = eps.FetchBondDataFromDbbyID(sid);
+            if (equityData is DataTable dt && dt.Rows.Count > 0)
+            {
+                // Convert the DataTable to JSON or the required format
+                return Ok(equityData);
+            }
+            else
+            {
+                return NotFound($"No equity data found for SID: {sid}");
+            }
+        }
         [HttpPost("uploadBonds")]
         public async Task<IActionResult> UploadCSVFile(IFormFile file)
         {
