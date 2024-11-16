@@ -1,121 +1,246 @@
-import React from "react";
+// import React, { useState, useEffect, useCallback } from "react";
+// import ApexCharts from "react-apexcharts";
+// import axios from "axios";
+
+// const PriceChart = () => {
+//   const [tickerName, setTickerName] = useState(""); // To hold the ticker name from input
+//   const [chartData, setChartData] = useState([]); // To hold the chart data
+//   const [loading, setLoading] = useState(false); // To manage the loading state
+
+//   // Function to handle ticker name input change
+//   const handleInputChange = (e) => {
+//     setTickerName(e.target.value);
+//   };
+
+//   // Function to fetch data based on the ticker name
+//   const fetchData = (async () => {
+//     if (!tickerName) {
+//       alert("Please enter a ticker name.");
+//       return;
+//     }
+
+//     setLoading(true); // Start loading
+
+//     try {
+//       const response = await axios.get(
+//         `https://localhost:7134/api/Security/getSecuritiesbyName/${tickerName}`
+//       );
+//       const data = response.data; // Assuming the response data is in the expected format
+//       if (data && data.length > 0) {
+//         // Process the data for the chart
+//         const dates = data.map((item) => item.asOfDate.substring(0, 10));
+
+//         const closePrices = data.map((item) => item.closePrice);
+//         // console.log(dates);
+//         setChartData({
+//           dates,
+//           closePrices,
+//         });
+//       } else {
+//         alert("No data found for this ticker.");
+//       }
+//     } catch (error) {
+//       console.error("Error fetching data: ", error);
+//       alert("An error occurred while fetching data.");
+//     } finally {
+//       setLoading(false); // Stop loading
+//     }
+//   }); // Use `useCallback` to memoize this function, ensuring it's not recreated on every render
+
+//   // useEffect(() => {
+//   //   if (tickerName) {
+//   //     fetchData();
+//   //   }
+//   // }, [fetchData, tickerName]); // Add `fetchData` to the dependency array to resolve the ESLint warning
+//   console.log(chartData);
+//   const chartOptions = {
+//     chart: {
+//       type: "line",
+//       height: "auto",
+//       toolbar: {
+//         show: true,
+//         tools: {
+//           download: true,
+//           selection: false,
+//           zoom: true,
+//           zoomin: false,
+//           zoomout: false,
+//           pan: false,
+//           reset: true,
+//         },
+//       },
+//     },
+//     title: {
+//       text: "Stock Price",
+//       align: "center",
+//       style: {
+//         fontSize: "24px",
+//       },
+//     },
+//     xaxis: {
+//       categories: chartData.dates,
+//       title: {
+//         text: "Date",
+//       },
+//     },
+//     yaxis: {
+//       title: {
+//         text: "Closing Price",
+//       },
+//     },
+//     tooltip: {
+//       x: {
+//         format: "yyyy-MM-dd",
+//       },
+//       theme: "dark", // Tooltip theme to match dark theme of the app
+//       style: {
+//         fontSize: "14px", // Tooltip font size
+//         // White text for tooltips
+//       },
+//     },
+//     grid: {
+//       borderColor: "#444",
+//     },
+//     stroke: {
+//       curve: "smooth",
+//     },
+//     fill: {
+//       type: "solid",
+//       opacity: 0.3,
+//     },
+//   };
+
+//   const chartSeries = [
+//     {
+//       name: "Close Price",
+//       data: chartData.closePrices || [], // Ensure we have data for the chart
+//     },
+//   ];
+
+//   return (
+//     <div className="App-header">
+//       {/* Input field for ticker name */}
+//       <div>
+//         <input
+//           type="text"
+//           value={tickerName}
+//           onChange={handleInputChange}
+//           placeholder="Enter Ticker Symbol"
+//         />
+//         <button onClick={fetchData} disabled={loading}>
+//           {loading ? "Loading..." : "Fetch Data"}
+//         </button>
+//       </div>
+
+//       {/* Display the chart if data is available */}
+//       {chartData.dates && chartData.dates.length > 0 ? (
+//         <ApexCharts
+//           options={chartOptions}
+//           series={chartSeries}
+//           type="line"
+//           height="350"
+//         />
+//       ) : (
+//         !loading && <p>No data available for this ticker.</p>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default PriceChart;
+
+import React, { useState, useEffect } from "react";
 import ApexCharts from "react-apexcharts";
+import axios from "axios";
 
 const PriceChart = () => {
-  // const [chartData, setChartData] = useState([]);
-  // const [loadi/ng, setLoading] = useState(true);
-  // const chartRef = useRef(null);
+  const [tickerName, setTickerName] = useState(""); // To hold the ticker name from input
+  const [chartData, setChartData] = useState({ dates: [], closePrices: [] }); // To hold the chart data
+  const [loading, setLoading] = useState(false); // To manage the loading state
 
-  // Fetch data from an API
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       // Replace with your API URL
-  //       const response = await axios.get(
-  //         "https://api.example.com/stock-prices"
-  //       );
-  //       const data = response.data;
+  // Function to handle ticker name input change
+  const handleInputChange = (e) => {
+    setTickerName(e.target.value);
+  };
 
-  //       // Example of transforming your data into a format suitable for the chart
-  //       const dates = data.map((item) => item.Date);
-  //       const closePrices = data.map((item) => item.Close);
+  // Function to fetch data based on the ticker name
+  const fetchData = async () => {
+    if (!tickerName) {
+      console.log("Please enter a ticker name.");
+      return;
+    }
 
-  //       setChartData({
-  //         dates,
-  //         closePrices,
-  //       });
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
+    setLoading(true); // Start loading
 
-  //   fetchData();
-  // }, []);
-  const data = [
-    {
-      Date: "2020-12-31",
-      Close: 92.84999847,
-    },
-    {
-      Date: "2021-01-04",
-      Close: 89.90000153,
-    },
-    {
-      Date: "2021-01-05",
-      Close: 92.84999847,
-    },
-    {
-      Date: "2021-01-06",
-      Close: 89.90000153,
-    },
-    {
-      Date: "2021-01-07",
-      Close: 92.84999847,
-    },
-    {
-      Date: "2021-01-08",
-      Close: 92.84999847,
-    },
-    // Add more data points here if needed
-  ];
+    try {
+      const response = await axios.get(
+        `https://localhost:7134/api/Security/getSecuritiesbyName/${tickerName}`
+      );
+      const data = response.data; // Assuming the response data is in the expected format
+      if (data && data.length > 0) {
+        // Process the data for the chart
+        const dates = data.map((item) => item.asOfDate.substring(0, 10));
+        const closePrices = data.map((item) => item.closePrice);
 
-  // Prepare data for ApexCharts
-  const dates = data.map((item) => item.Date);
-  const closePrices = data.map((item) => item.Close);
+        setChartData({
+          dates,
+          closePrices,
+        });
+      } else {
+        console.log("No data found for this ticker.");
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+      alert("An error occurred while fetching data.");
+    } finally {
+      setLoading(false); // Stop loading
+    }
+  };
+
+  // Fetch data whenever the ticker name changes
+  useEffect(() => {
+    if (tickerName) {
+      fetchData(); // Fetch data on ticker name change
+    } else {
+      setChartData({ dates: [], closePrices: [] }); // Clear data when ticker is empty
+    }
+  }, [tickerName]); // Dependency array ensures fetchData runs whenever tickerName changes
+
+  console.log(chartData); // Log chart data to verify it is being set correctly
 
   const chartOptions = {
     chart: {
       type: "line",
       height: "auto",
       toolbar: {
-        show: true, // Set this to `false` to hide the toolbar
+        show: true,
         tools: {
-          download: true, // Set to `true` to enable download button
-          selection: false, // Set to `false` to hide the selection tool (zooming)
-          zoom: true, // Set to `true` to enable zoom functionality
-          zoomin: false, // Set to `false` to disable zoom-in button
-          zoomout: false, // Set to `false` to disable zoom-out button
-          pan: false, // Set to `false` to disable pan functionality
-          reset: true, // Set to `true` to enable reset button
+          download: true,
+          selection: false,
+          zoom: true,
+          zoomin: false,
+          zoomout: false,
+          pan: false,
+          reset: true,
         },
       },
-      // Dynamic height, can adjust based on the container size
     },
     title: {
       text: "Stock Price",
       align: "center",
       style: {
-        fontSize: "24px", // Adjust font size as per your preference
-        color: "#ffffff", // White title color to match your dark theme
+        fontSize: "24px",
       },
     },
     xaxis: {
-      categories: dates,
+      categories: chartData.dates,
       title: {
         text: "Date",
-        style: {
-          color: "#ffffff", // White text for the X-axis label
-        },
-      },
-      labels: {
-        style: {
-          colors: "#ffffff", // White text for the X-axis labels
-        },
       },
     },
     yaxis: {
       title: {
         text: "Closing Price",
-        style: {
-          color: "#ffffff", // White text for the Y-axis label
-        },
-      },
-      labels: {
-        style: {
-          colors: "#ffffff", // White text for the Y-axis labels
-        },
       },
     },
     tooltip: {
@@ -125,11 +250,10 @@ const PriceChart = () => {
       theme: "dark", // Tooltip theme to match dark theme of the app
       style: {
         fontSize: "14px", // Tooltip font size
-        color: "#ffffff", // White text for tooltips
       },
     },
     grid: {
-      borderColor: "#444", // Dark grid border to fit the theme
+      borderColor: "#444",
     },
     stroke: {
       curve: "smooth",
@@ -143,18 +267,36 @@ const PriceChart = () => {
   const chartSeries = [
     {
       name: "Close Price",
-      data: closePrices,
+      data: chartData.closePrices || [], // Ensure we have data for the chart
     },
   ];
 
   return (
     <div className="App-header">
-      <ApexCharts
-        options={chartOptions}
-        series={chartSeries}
-        type="line"
-        height="350"
-      />
+      {/* Input field for ticker name */}
+      <div>
+        <input
+          type="text"
+          value={tickerName}
+          onChange={handleInputChange}
+          placeholder="Enter Ticker Symbol"
+        />
+        <button onClick={fetchData} disabled={loading || !tickerName}>
+          {loading ? "Loading..." : "Fetch Data"}
+        </button>
+      </div>
+
+      {/* Display the chart if data is available */}
+      {chartData.dates.length > 0 ? (
+        <ApexCharts
+          options={chartOptions}
+          series={chartSeries}
+          type="line"
+          height="350"
+        />
+      ) : (
+        !loading && <p>No data available for this ticker.</p>
+      )}
     </div>
   );
 };
