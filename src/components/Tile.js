@@ -1,24 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Card, CardContent, Typography, Grid } from '@mui/material';
+import React, { useEffect, useState } from "react";
+import { Box, Card, CardContent, Typography, Grid } from "@mui/material";
 
-function Tile({ isEquityData, inactiveCount }) {
+function Tile({ isEquityData }) {
   const [activeCount, setActiveCount] = useState(null);
+  const [notActiveCount, setInactiveCount] = useState(null);
 
   useEffect(() => {
     if (isEquityData) {
-      const fetchActiveCount = async () => {
+      const fetchCounts = async () => {
         try {
-          const response = await fetch('https://localhost:7109/api/EquityCsv/activeEquityCount');
-          const data = await response.json();
-          setActiveCount(data.activeCount);
+          // Fetch active count
+          const activeResponse = await fetch(
+            "https://localhost:7109/api/EquityCsv/activeEquityCount"
+          );
+          const activeData = await activeResponse.json();
+          setActiveCount(activeData.activeCount);
+
+          // Fetch inactive count
+          const inactiveResponse = await fetch(
+            "https://localhost:7109/api/EquityCsv/NotactiveEquityCount"
+          );
+          const inactiveData = await inactiveResponse.json();
+          setInactiveCount(inactiveData.notActiveCount);
         } catch (error) {
-          console.error('Error fetching active count:', error);
+          console.error("Error fetching counts:", error);
         }
       };
 
-      fetchActiveCount();
+      fetchCounts();
     } else {
-      setActiveCount(null);  // Reset active count when showing bonds
+      // Reset counts when not showing equity data
+      setActiveCount(null);
+      setInactiveCount(null);
     }
   }, [isEquityData]);
 
@@ -28,18 +41,34 @@ function Tile({ isEquityData, inactiveCount }) {
         {isEquityData && (
           <>
             <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ textAlign: 'center', backgroundColor: '#e0f7fa' }}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#e0f7fa" }}>
                 <CardContent>
                   <Typography variant="h6">Active Securities</Typography>
-                  <Typography variant="h4">{activeCount !== null ? activeCount : 'Loading...'}</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "green",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {activeCount !== null ? activeCount : "Loading..."}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ textAlign: 'center', backgroundColor: '#ffebee' }}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#ffebee" }}>
                 <CardContent>
                   <Typography variant="h6">Inactive Securities</Typography>
-                  <Typography variant="h4">{inactiveCount}</Typography>
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      color: "red",
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {notActiveCount !== null ? notActiveCount : "Loading..."}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
