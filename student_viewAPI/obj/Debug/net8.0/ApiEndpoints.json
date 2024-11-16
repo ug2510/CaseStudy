@@ -1,12 +1,44 @@
 [
   {
     "ContainingType": "Security_viewAPI.Controllers.SecurityController",
+    "Method": "GetOverviewByDate",
+    "RelativePath": "api/Security/getOverviewByDate",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "date",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
     "Method": "GetSecurities",
     "RelativePath": "api/Security/getSecurities",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
+    "Method": "GetSecuritiesbyName",
+    "RelativePath": "api/Security/getSecuritiesbyName/{ticker}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

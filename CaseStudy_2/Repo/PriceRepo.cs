@@ -1,9 +1,100 @@
-﻿using System;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Data.SqlClient;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+
+//namespace CaseStudy_2.Repo
+//{
+//    public class PriceRepo
+//    {
+//        private readonly string _connectionString;
+//        private readonly string _filePath;
+//        private readonly char _delimiter;
+
+//        public PriceRepo(string connectionString, string filePath, char delimiter = ',')
+//        {
+//            _connectionString = connectionString;
+//            _filePath = filePath;
+//            _delimiter = delimiter;
+//        }
+
+//        // Method to load file and insert data into the database using the stored procedure
+//        public void LoadFileAndInsertData(string storedProcedureName)
+//        {
+//            var data = LoadFile();
+//            InsertDataUsingStoredProcedure(storedProcedureName, data);
+//        }
+//        private List<string[]> LoadFile()
+//        {
+//            var data = new List<string[]>();
+
+//            using (var reader = new StreamReader(_filePath))
+//            {
+//                bool isFirstLine = true;
+//                string line;
+
+//                while ((line = reader.ReadLine()) != null)
+//                {
+//                    if (isFirstLine)
+//                    {
+//                        isFirstLine = false; // Skip the header row
+//                        continue;
+//                    }
+
+//                    if (string.IsNullOrWhiteSpace(line)) continue;
+
+//                    string[] fields = line.Split(_delimiter);
+
+//                    // Ensure the file has exactly 8 columns (or adjust based on your file structure)
+//                    if (fields.Length == 8)
+//                    {
+//                        data.Add(fields);
+//                    }
+//                    else
+//                    {
+//                        Console.WriteLine($"Skipping invalid line: {line}");
+//                    }
+//                }
+//            }
+
+//            return data;
+//        }
+
+//        private void InsertDataUsingStoredProcedure(string storedProcedureName, List<string[]> data)
+//        {
+//            using (SqlConnection connection = new SqlConnection(_connectionString))
+//            {
+//                connection.Open();
+
+//                foreach (var row in data)
+//                {
+//                    using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
+//                    {
+//                        command.CommandType = System.Data.CommandType.StoredProcedure;
+
+//                        command.Parameters.AddWithValue("@Date", row[0]);
+//                        command.Parameters.AddWithValue("@Open", row[1]);
+//                        command.Parameters.AddWithValue("@High", row[2]);
+//                        command.Parameters.AddWithValue("@Low", row[3]);
+//                        command.Parameters.AddWithValue("@Close", row[4]);
+//                        command.Parameters.AddWithValue("@Adj_Close", row[5]);
+//                        command.Parameters.AddWithValue("@Volume", row[6]);
+//                        command.Parameters.AddWithValue("@Ticker", row[7]);
+
+//                        command.ExecuteNonQuery();
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace CaseStudy_2.Repo
 {
@@ -20,12 +111,13 @@ namespace CaseStudy_2.Repo
             _delimiter = delimiter;
         }
 
-        // Method to load file and insert data into the database using the stored procedure
-        public void LoadFileAndInsertData(string storedProcedureName)
+        // Method to load file and insert data into the database using SqlBulkCopy
+        public void LoadFileAndInsertData()
         {
             var data = LoadFile();
-            InsertDataUsingStoredProcedure(storedProcedureName, data);
+            BulkInsertData(data);
         }
+
         private List<string[]> LoadFile()
         {
             var data = new List<string[]>();
@@ -62,32 +154,49 @@ namespace CaseStudy_2.Repo
             return data;
         }
 
-        private void InsertDataUsingStoredProcedure(string storedProcedureName, List<string[]> data)
+        private void BulkInsertData(List<string[]> data)
         {
+            // Create a DataTable to hold the data
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("Date", typeof(string));       // Adjust types as necessary
+            dataTable.Columns.Add("Open", typeof(string));
+            dataTable.Columns.Add("High", typeof(string));
+            dataTable.Columns.Add("Low", typeof(string));
+            dataTable.Columns.Add("Close", typeof(string));
+            dataTable.Columns.Add("Adj_Close", typeof(string));
+            dataTable.Columns.Add("Volume", typeof(string));
+            dataTable.Columns.Add("Ticker", typeof(string));
+
+            // Add rows to the DataTable
+            foreach (var row in data)
+            {
+                dataTable.Rows.Add(row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]);
+            }
+
+            // Perform the bulk insert using SqlBulkCopy
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
-
-                foreach (var row in data)
+                using (SqlBulkCopy bulkCopy = new SqlBulkCopy(connection))
                 {
-                    using (SqlCommand command = new SqlCommand(storedProcedureName, connection))
-                    {
-                        command.CommandType = System.Data.CommandType.StoredProcedure;
+                    bulkCopy.DestinationTableName = "Staging_SP500_Prices"; // Set to your target table name
 
-                        command.Parameters.AddWithValue("@Date", row[0]);
-                        command.Parameters.AddWithValue("@Open", row[1]);
-                        command.Parameters.AddWithValue("@High", row[2]);
-                        command.Parameters.AddWithValue("@Low", row[3]);
-                        command.Parameters.AddWithValue("@Close", row[4]);
-                        command.Parameters.AddWithValue("@Adj_Close", row[5]);
-                        command.Parameters.AddWithValue("@Volume", row[6]);
-                        command.Parameters.AddWithValue("@Ticker", row[7]);
+                    // Map the columns in the DataTable to the columns in the SQL table
+                    bulkCopy.ColumnMappings.Add("Date", "Date");
+                    bulkCopy.ColumnMappings.Add("Open", "Open");
+                    bulkCopy.ColumnMappings.Add("High", "High");
+                    bulkCopy.ColumnMappings.Add("Low", "Low");
+                    bulkCopy.ColumnMappings.Add("Close", "Close");
+                    bulkCopy.ColumnMappings.Add("Adj_Close", "Adj_Close");
+                    bulkCopy.ColumnMappings.Add("Volume", "Volume");
+                    bulkCopy.ColumnMappings.Add("Ticker", "Ticker");
 
-                        command.ExecuteNonQuery();
-                    }
+                    // Execute the bulk copy
+                    bulkCopy.WriteToServer(dataTable);
                 }
             }
         }
     }
 }
+
 
