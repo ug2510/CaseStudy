@@ -49,19 +49,19 @@ namespace STU_SecurityMaster.Controllers
             return Ok(data);
         }
 
-        [HttpGet("activeEquityCount")]
-        public IActionResult GetActiveEquityCount()
+        [HttpGet("equityStatusCount")]
+        public IActionResult GetEquityStatusCount()
         {
             try
             {
                 Equity_csv_ops eps = new Equity_csv_ops();
-                int activeCount = eps.CountActiveSecurities();
-                return Ok(new { ActiveCount = activeCount });
+                var statusCount = eps.CountActiveSecurities();
+                return Ok(statusCount);
             }
             catch (Exception ex)
             {
                 // Handle errors
-                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving active securities count: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving securities status count: {ex.Message}");
             }
         }
         [HttpPut("updateEquity{sid}")]

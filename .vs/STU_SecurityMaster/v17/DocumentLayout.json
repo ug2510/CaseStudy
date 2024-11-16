@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5FB3CE8A-4F6C-4860-A0BA-87C5076C25FD}|DataAccess\\DataAccess.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5FB3CE8A-4F6C-4860-A0BA-87C5076C25FD}|DataAccess\\DataAccess.csproj|solutionrelative:dataaccess\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\bonds_csv\\bond_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -94,7 +94,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Program.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Program.cs",
@@ -112,14 +112,14 @@
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
               "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAADgvzMAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T14:28:07.345Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\DataAccess\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "DataAccess\\Data\\ApplicationDbContext.cs",
@@ -131,19 +131,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Equity_csv_ops.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "ViewState": "AgIAABoAAAAA9v////8PwH4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMEAAADAzszMzEwQwL0AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T13:51:53.935Z"
+              "WhenOpened": "2024-11-12T13:51:53.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "STU_SecurityMaster.csproj",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\STU_SecurityMaster.csproj",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\STU_SecurityMaster.csproj",
@@ -155,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Equity_csv.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\Equity_csv.cs",
               "RelativeDocumentMoniker": "Model\\Equity_csv.cs",

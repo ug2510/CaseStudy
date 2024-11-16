@@ -187,26 +187,29 @@ namespace STU_SecurityMaster.Equ_csv
                 return sqlerror.Message;
             }
         }
-        public int CountActiveSecurities()
+        public object CountActiveSecurities()
         {
             int activeCount = 0;
+            int inActiveCount = 0;
             string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
-                using (SqlCommand cmd = new SqlCommand("CountActiveEquitySecurities", conn))
+                using (SqlCommand cmd = new SqlCommand("EquitiesStatusCount", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     conn.Open();
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            activeCount = reader.GetInt32(reader.GetOrdinal("active_count"));
+                            activeCount= (reader.GetInt32(reader.GetOrdinal("active_equity_count")));
+                            inActiveCount =(reader.GetInt32(reader.GetOrdinal("inactive_equity_count")));
                         }
                     }
+                    conn.Close();
                 }
             }
             catch (SqlException ex)
@@ -215,7 +218,7 @@ namespace STU_SecurityMaster.Equ_csv
                 throw;
             }
 
-            return activeCount;
+            return new { activeCount,inActiveCount};
         }
 
         public void UpdateEquityData(int sid,EquityWithUpdateProps equity)
