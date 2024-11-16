@@ -1,25 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
+import pfCreditRatingsData from '../assets/utility-state-serve.json'; 
 
-const BondEdit = ({ pfCreditRatings = [] }) => {
+const BondEdit = () => {
   const { control, handleSubmit, formState: { errors, isDirty, isValid } } = useForm({ mode: 'onChange' });
   const [isCouponEntered, setIsCouponEntered] = useState(false);
+  const [pfCreditRatings, setPfCreditRatings] = useState([]);
+
+  useEffect(() => {
+    if (pfCreditRatingsData?.PF_Credit_Rating) {
+      setPfCreditRatings(pfCreditRatingsData.PF_Credit_Rating);
+    }
+  }, []);
 
   const handleFormSubmit = (data) => {
     console.log("Form data submitted:", data);
   };
 
+  const textFieldStyles = { textAlign: 'left' };
+
   return (
     <Box sx={{ backgroundColor: 'white', p: 4, borderRadius: 2, boxShadow: 3, maxWidth: 600, mx: 'auto' }}>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          
           <TextField
             label="Security Name"
             variant="outlined"
             disabled
             fullWidth
+            InputProps={{ style: textFieldStyles }}
           />
 
           <Controller
@@ -35,6 +45,7 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 fullWidth
                 error={!!errors.description}
                 helperText={errors?.description?.message}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
@@ -55,6 +66,7 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                   setIsCouponEntered(e.target.value !== '');
                 }}
                 helperText={isCouponEntered ? 'Coupon rate applied' : ''}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
@@ -80,15 +92,14 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
             {errors.callableFlag && <FormHelperText error>{errors.callableFlag.message}</FormHelperText>}
           </FormControl>
 
-          {/* Maturity - Disabled */}
           <TextField
             label="Maturity"
             variant="outlined"
             disabled
             fullWidth
+            InputProps={{ style: textFieldStyles }}
           />
 
-          {/* Penultimate Coupon Date - Editable Date */}
           <Controller
             name="penultimateCouponDate"
             control={control}
@@ -106,11 +117,11 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 }}
                 error={!!errors.penultimateCouponDate}
                 helperText={errors?.penultimateCouponDate?.message}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* PF Credit Rating - Dropdown */}
           <FormControl fullWidth>
             <InputLabel>PF Credit Rating</InputLabel>
             <Controller
@@ -135,7 +146,6 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
             {errors.pfCreditRating && <FormHelperText error>{errors.pfCreditRating.message}</FormHelperText>}
           </FormControl>
 
-          {/* Ask Price - Numeric validation */}
           <Controller
             name="askPrice"
             control={control}
@@ -153,11 +163,11 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 error={!!errors.askPrice}
                 helperText={errors?.askPrice?.message}
                 type="number"
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* Bid Price - Numeric validation */}
           <Controller
             name="bidPrice"
             control={control}
@@ -175,11 +185,11 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 error={!!errors.bidPrice}
                 helperText={errors?.bidPrice?.message}
                 type="number"
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* Update Button */}
           <Button
             type="submit"
             variant="contained"

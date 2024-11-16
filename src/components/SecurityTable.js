@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SecurityDetailsDialog from "./SecurityDetailsDialog";
 import { useNavigate } from "react-router-dom";
 import Tile from "./Tile";
+import EquityEdit from "./EquityEdit";
 import {
   Table,
   TableBody,
@@ -26,6 +26,7 @@ function SecurityTable() {
   const [isEquityData, setIsEquityData] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
@@ -52,18 +53,27 @@ function SecurityTable() {
     fetchData(isEquityData);
   }, [isEquityData]);
 
+  
+
   const handleDetailsClick = (security) => {
     console.log(security);
     navigate(`/details/${security.sid}`);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseModal = () => {
+    setIsEditModalOpen(false);
+    setSelectedSecurity(null);
   };
 
   const toggleTable = () => {
     setIsEquityData(!isEquityData);
   };
+
+  const handleEditClick = (security) => {
+    setSelectedSecurity(security); // Store the selected row data
+    setIsEditModalOpen(true); // Open the modal
+  };
+
 
   return (
     <>
@@ -131,6 +141,7 @@ function SecurityTable() {
                       color="primary"
                       size="small"
                       style={{ marginRight: "5px" }}
+                      onClick={() => handleEditClick(security)}
                     >
                       Edit
                     </Button>
@@ -224,13 +235,25 @@ function SecurityTable() {
             </TableBody>
           </Table>
         </TableContainer>
-      )}
+      )} 
+       <Dialog
+        open={isEditModalOpen}
+        onClose={handleCloseModal}
+        fullWidth
+        maxWidth="sm"
+      >
+        
+      <br />
+      <br />
+        <EquityEdit
+          initialData={selectedSecurity} 
+          onClose={handleCloseModal} 
+        />
+        
+      <br />
+      <br />
+      </Dialog>
 
-      <SecurityDetailsDialog
-        open={open}
-        onClose={handleClose}
-        selectedSecurity={selectedSecurity}
-      />
     </>
   );
 }

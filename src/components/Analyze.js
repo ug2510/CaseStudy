@@ -15,6 +15,7 @@ import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import InsertChartIcon from "@mui/icons-material/InsertChart"; // Graph icon
 import PriceChart from "./PriceChart";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
 const columns = [
   { field: "asOfDate", headerName: "As Of Date", width: 120 },
@@ -133,7 +134,7 @@ const Analyze = () => {
       <Typography variant="h6" gutterBottom>
         Security Details
       </Typography>
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           justifyContent: "space-between",
@@ -173,8 +174,67 @@ const Analyze = () => {
             <InsertChartIcon fontSize="large" />
           </IconButton>
         </Tooltip>
-      </Box>
+      </Box> */}
 
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 2,
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <DatePicker
+            label="Select Date"
+            value={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                sx={{
+                  input: { color: "black", backgroundColor: "black" },
+                  ".MuiInputLabel-root": { color: "black" },
+                  ".MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "gray" },
+                    "&:hover fieldset": { borderColor: "darkgray" },
+                    "&.Mui-focused fieldset": { borderColor: "black" },
+                  },
+                }}
+              />
+            )}
+          />
+          <Tooltip title="Reset Data">
+            <IconButton
+              onClick={() => {
+                setSelectedDate(null); // Reset the date
+                fetchData(null); // Fetch all data
+              }}
+              sx={{
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.1)", // Light black background on hover
+                },
+              }}
+            >
+              <RefreshIcon fontSize="large" />
+            </IconButton>
+          </Tooltip>
+        </Box>
+        <Tooltip title="Chart Analysis">
+          <IconButton
+            onClick={handleOpenChartModal}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "rgba(0, 0, 0, 0.1)", 
+              },
+            }}
+          >
+            <InsertChartIcon fontSize="medium" />
+          </IconButton>
+        </Tooltip>
+      </Box>
       <DataGrid
         rows={filteredData}
         columns={columns}
