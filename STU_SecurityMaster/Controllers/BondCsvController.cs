@@ -70,7 +70,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops();
+                Bond_csv_ops eps = new Bond_csv_ops();
                 var statusCount = eps.CountActiveSecurities();
                 return Ok(statusCount);
             }
