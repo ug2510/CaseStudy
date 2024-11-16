@@ -1385,6 +1385,16 @@
           }
         }
       },
+      "Model/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Model.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Model.dll": {}
+        }
+      },
       "STU_SecurityMaster/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1393,6 +1403,7 @@
           "CsvHelper": "33.0.1",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "8.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10",
+          "Model": "1.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
         "compile": {
@@ -4310,6 +4321,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Model/1.0.0": {
+      "type": "project",
+      "path": "../Model/Model.csproj",
+      "msbuildProject": "../Model/Model.csproj"
+    },
     "STU_SecurityMaster/1.0.0": {
       "type": "project",
       "path": "../STU_SecurityMaster/STU_SecurityMaster.csproj",
@@ -4322,23 +4338,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\uagaundalkar\\.nuget\\packages\\": {},
+    "C:\\Users\\spbhuva\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\Console_App.csproj",
+      "projectUniqueName": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\Console_App.csproj",
       "projectName": "Console_App",
-      "projectPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\Console_App.csproj",
-      "packagesPath": "C:\\Users\\uagaundalkar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\Console\\obj\\",
+      "projectPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\Console_App.csproj",
+      "packagesPath": "C:\\Users\\spbhuva\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Console\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\uagaundalkar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\spbhuva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4354,8 +4370,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\STU_SecurityMaster\\STU_SecurityMaster.csproj": {
-              "projectPath": "C:\\Users\\uagaundalkar\\source\\repos\\CaseStudy_2\\STU_SecurityMaster\\STU_SecurityMaster.csproj"
+            "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\STU_SecurityMaster.csproj": {
+              "projectPath": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\STU_SecurityMaster.csproj"
             }
           }
         }

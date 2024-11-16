@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e2b7c80d2b6645c2730eb918fdc3456e3986d1e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+801bff8f549cf5b4c6a5e2cf3f7537dfbe70ea8e")]
 [assembly: System.Reflection.AssemblyProductAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,6 +2,9 @@
 using Microsoft.Data.SqlClient;
 using STU_SecurityMaster.Equ_csv;
 using System.Data;
+using System.Data.SqlClient;
+using Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace STU_SecurityMaster.Controllers
 {
@@ -19,6 +22,22 @@ namespace STU_SecurityMaster.Controllers
             if (!Directory.Exists(_uploadDirectory))
             {
                 Directory.CreateDirectory(_uploadDirectory);
+            }
+        }
+
+        [HttpGet("getEquityDetailsBySID/{sid}")]
+        public IActionResult GetEquityDetailsBySID(int sid)
+        {
+            Equity_csv_ops eps = new Equity_csv_ops();
+            var equityData = eps.FetchEquityDataFromDbbyID(sid);
+            if (equityData is DataTable dt && dt.Rows.Count > 0)
+            {
+                // Convert the DataTable to JSON or the required format
+                return Ok(equityData);
+            }
+            else
+            {
+                return NotFound($"No equity data found for SID: {sid}");
             }
         }
 
@@ -45,8 +64,52 @@ namespace STU_SecurityMaster.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving active securities count: {ex.Message}");
             }
         }
-
-    [HttpPost("uploadEquity")]
+        [HttpPut("updateEquity{sid}")]
+        public IActionResult UpdateEquity([FromRoute] int sid,[FromBody] EquityWithUpdateProps equity)
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops();
+                eps.UpdateEquityData(sid,equity);
+                return Ok(equity);
+            }
+            catch (DbUpdateException dbex)
+            {
+                if (dbex.InnerException != null)
+                {
+                    return BadRequest(dbex.InnerException.Message);
+                }
+                return BadRequest(dbex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Handle errors
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
+            }
+        }
+        [HttpDelete("SoftDeleteEquity{sid}")]
+        public IActionResult SoftDeleteEquity([FromRoute] int sid)
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops();
+                eps.SoftDeleteEquity(sid);
+                return Ok("Deleted Successfully");
+            }
+            catch (DbUpdateException dbex)
+            {
+                if (dbex.InnerException != null)
+                {
+                    return BadRequest(dbex.InnerException.Message);
+                }
+                return BadRequest(dbex.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
+            }
+        }
+        [HttpPost("uploadEquity")]
         public async Task<IActionResult> UploadCSVFile(IFormFile file)
         {
             if (file == null || file.Length == 0)

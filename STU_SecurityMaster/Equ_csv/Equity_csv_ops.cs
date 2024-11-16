@@ -4,6 +4,8 @@ using System.Globalization;
 using ChoETL;
 using System.Data.SqlClient;
 using System.Data;
+using System.Data.Common;
+using Model;
 
 namespace STU_SecurityMaster.Equ_csv
 {
@@ -123,6 +125,36 @@ namespace STU_SecurityMaster.Equ_csv
             //return "success";
         }
 
+        public dynamic FetchEquityDataFromDbbyID(int sid)
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                cmd = new SqlCommand("GetEquityDataBySID", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add(new SqlParameter("@SID", SqlDbType.Int));
+                cmd.Parameters["@SID"].Value = sid;
+
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+
+                DataTable dt = ds.Tables[0];
+
+                return dt;
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                return sqlerror.Message;
+            }
+        }
         public dynamic FetchEquityDataFromDb()
         {
             SqlConnection conn;
@@ -184,6 +216,73 @@ namespace STU_SecurityMaster.Equ_csv
             }
 
             return activeCount;
+        }
+
+        public void UpdateEquityData(int sid,EquityWithUpdateProps equity)
+        {
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("UpdateSecurity", conn))
+                {
+                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@security_id", sid);
+                    cmd.Parameters.AddWithValue("@description", equity.Description);
+                    cmd.Parameters.AddWithValue("@shares_outs", equity.SharesOutstanding);
+                    cmd.Parameters.AddWithValue("@price_curr", equity.PriceCurrency);
+                    cmd.Parameters.AddWithValue("@open_price", equity.OpenPrice);
+                    cmd.Parameters.AddWithValue("@close_price", equity.ClosePrice);
+                    cmd.Parameters.AddWithValue("@div_declared_date", equity.DividendDeclaredDate);
+                    cmd.Parameters.AddWithValue("@pf_credit_rating", equity.PFCreditRating);
+                    int a = cmd.ExecuteNonQuery();
+                    if (a > 0) Console.WriteLine("Record Updated Successfully");
+                    else Console.WriteLine("Not successfull");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error updating Equity Data " + ex.Message);
+                throw;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+
+        public void SoftDeleteEquity(int sid)
+        {
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlCommand cmd = new SqlCommand("SoftDeleteSecurity", conn))
+                {
+                    conn.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@security_id", sid);
+                    int a = cmd.ExecuteNonQuery();
+                    if (a > 0) Console.WriteLine("Record Soft Deleted Successfully");
+                    else Console.WriteLine("Not successfull");
+                    conn.Close();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error updating Equity Data " + ex.Message);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
         }
     }
     }
