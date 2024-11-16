@@ -35,7 +35,37 @@ namespace STU_SecurityMaster.Bonds_csv
                 return sqlerror.Message;
             }
         }
-
+        public dynamic FetchBondDataFromDbbyID(int sid)
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
+        
+            try
+            {
+                conn = new SqlConnection(connectionString);
+                cmd = new SqlCommand("GetBondDetailsBySID", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+        
+                cmd.Parameters.Add(new SqlParameter("@SID", SqlDbType.Int));
+                cmd.Parameters["@SID"].Value = sid;
+        
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+        
+                DataTable dt = ds.Tables[0];
+        
+                return dt;
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                return sqlerror.Message;
+            }
+        }
+        
         public string FetchDataFromCSV(string path)
         {
 
