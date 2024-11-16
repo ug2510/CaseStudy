@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
+    "Method": "GetEquityStatusCount",
+    "RelativePath": "api/BondCsv/bondStatusCount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "STU_SecurityMaster.Controllers.BondCsvController",
     "Method": "GetBondsData",
     "RelativePath": "api/BondCsv/getBondsData",
     "HttpMethod": "GET",
@@ -64,8 +74,8 @@
   },
   {
     "ContainingType": "STU_SecurityMaster.Controllers.EquityCsvController",
-    "Method": "GetActiveEquityCount",
-    "RelativePath": "api/EquityCsv/activeEquityCount",
+    "Method": "GetEquityStatusCount",
+    "RelativePath": "api/EquityCsv/equityStatusCount",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

@@ -65,6 +65,20 @@ namespace STU_SecurityMaster.Controllers
             var data = eps.FetchBondsDataFromDb();
             return Ok(data);
         }
+        [HttpGet("bondStatusCount")]
+        public IActionResult GetEquityStatusCount()
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops();
+                var statusCount = eps.CountActiveSecurities();
+                return Ok(statusCount);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving securities status count: {ex.Message}");
+            }
+        }
         [HttpPut("updateBond{sid}")]
         public IActionResult UpdateEquity([FromRoute] int sid, [FromBody] BondWithUpdateProps bond)
         {
