@@ -3,14 +3,18 @@ import { Box, Card, CardContent, Typography, Grid } from '@mui/material';
 
 function Tile({ isEquityData, inactiveCount }) {
   const [activeCount, setActiveCount] = useState(null);
+   const [InactiveCount, setInActiveCount] = useState(null);
 
   useEffect(() => {
     if (isEquityData) {
       const fetchActiveCount = async () => {
         try {
-          const response = await fetch('https://localhost:7109/api/EquityCsv/activeEquityCount');
+          const response = await fetch(
+            "https://localhost:7109/api/EquityCsv/equityStatusCount"
+          );
           const data = await response.json();
           setActiveCount(data.activeCount);
+          setInActiveCount(data.inActiveCount);
         } catch (error) {
           console.error('Error fetching active count:', error);
         }
@@ -28,18 +32,20 @@ function Tile({ isEquityData, inactiveCount }) {
         {isEquityData && (
           <>
             <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ textAlign: 'center', backgroundColor: '#e0f7fa' }}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#e0f7fa" }}>
                 <CardContent>
                   <Typography variant="h6">Active Securities</Typography>
-                  <Typography variant="h4">{activeCount !== null ? activeCount : 'Loading...'}</Typography>
+                  <Typography variant="h4">
+                    {activeCount !== null ? activeCount : "Loading..."}
+                  </Typography>
                 </CardContent>
               </Card>
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
-              <Card sx={{ textAlign: 'center', backgroundColor: '#ffebee' }}>
+              <Card sx={{ textAlign: "center", backgroundColor: "#ffebee" }}>
                 <CardContent>
                   <Typography variant="h6">Inactive Securities</Typography>
-                  <Typography variant="h4">{inactiveCount}</Typography>
+                  <Typography variant="h4">{InactiveCount}</Typography>
                 </CardContent>
               </Card>
             </Grid>

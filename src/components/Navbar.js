@@ -1,46 +1,55 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, InputBase, Box, Button, Divider } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  InputBase,
+  Box,
+  Button,
+  Divider,
+} from "@mui/material";
+import HomeIcon from "@mui/icons-material/Home";
+import SearchIcon from "@mui/icons-material/Search";
+import { styled, alpha } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
+const Search = styled("div")(({ theme }) => ({
+  position: "relative",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
+  "&:hover": {
     backgroundColor: alpha(theme.palette.common.white, 0.25),
   },
   marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
+  width: "100%",
+  [theme.breakpoints.up("sm")]: {
     marginLeft: theme.spacing(1),
-    width: 'auto',
+    width: "auto",
   },
 }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
+const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  height: "100%",
+  position: "absolute",
+  pointerEvents: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 }));
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
+  color: "inherit",
+  "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "20ch",
       },
     },
   },
@@ -48,7 +57,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   const handleSearchIconClick = () => {
@@ -63,12 +72,12 @@ function Navbar() {
     event.preventDefault();
     if (searchQuery.trim()) {
       console.log("Search query:", searchQuery);
-      setSearchQuery('');
+      setSearchQuery("");
     }
   };
 
   const handleNavigateToPlaceholder = () => {
-    navigate('/placeholder'); 
+    navigate("/placeholder");
   };
 
   return (
@@ -78,23 +87,38 @@ function Navbar() {
           edge="start"
           color="inherit"
           aria-label="home"
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
         >
           <HomeIcon />
         </IconButton>
-        
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            position: "relative",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}
+        >
           Security Master App
         </Typography>
 
-        
-        <Button color="inherit" onClick={handleNavigateToPlaceholder}>
-          Placeholder
+        <Button color="inherit" onClick={handleNavigateToPlaceholder} sx={{marginLeft:"795px"}}>
+          Price Analysis
         </Button>
 
-        <Divider orientation="vertical" flexItem sx={{ mx: 2, bgcolor: 'white' }} />
+        <Divider
+          orientation="vertical"
+          flexItem
+          sx={{ mx: 2, bgcolor: "white" }}
+        />
 
-        <Box component="form" onSubmit={handleSearchSubmit} sx={{ display: 'flex' }}>
+        <Box
+          component="form"
+          onSubmit={handleSearchSubmit}
+          sx={{ display: "flex" }}
+        >
           <IconButton color="inherit" onClick={handleSearchIconClick}>
             <SearchIcon />
           </IconButton>
@@ -108,7 +132,7 @@ function Navbar() {
                 placeholder="Search…"
                 value={searchQuery}
                 onChange={handleSearchChange}
-                inputProps={{ 'aria-label': 'search' }}
+                inputProps={{ "aria-label": "search" }}
                 autoFocus
               />
             </Search>

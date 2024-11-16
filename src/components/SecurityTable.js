@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import SecurityDetailsDialog from "./SecurityDetailsDialog";
+import { useNavigate } from "react-router-dom";
 import Tile from "./Tile";
+import EquityEdit from "./EquityEdit";
+import BondEdit from "./BondEdit";
 import {
   Table,
   TableBody,
@@ -24,16 +26,19 @@ function SecurityTable() {
   const [selectedSecurity, setSelectedSecurity] = useState(null);
   const [isEquityData, setIsEquityData] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
     const url = isEquity
       ? "https://localhost:7109/api/EquityCsv/getEquityData"
-      : "https://localhost:7109/api/BondCsv/getBondData";
+      : "https://localhost:7109/api/BondCsv/getBondsData";
 
     fetch(url)
       .then((response) => {
         if (!response.ok) throw new Error("Network response was not ok");
+        console.log(response);
         return response.json();
       })
       .then((data) => {
@@ -44,24 +49,34 @@ function SecurityTable() {
         console.error("Error fetching data:", error);
         setIsLoading(false);
       });
+      console.log(isEquityData, securities);
   };
 
   useEffect(() => {
     fetchData(isEquityData);
   }, [isEquityData]);
+ 
+  
 
   const handleDetailsClick = (security) => {
-    setSelectedSecurity(security);
-    setOpen(true);
+    console.log(security);
+    navigate(`/details/${security.sid}`);
   };
 
-  const handleClose = () => {
-    setOpen(false);
+  const handleCloseModal = () => {
+    setIsEditModalOpen(false);
+    setSelectedSecurity(null);
   };
 
   const toggleTable = () => {
     setIsEquityData(!isEquityData);
   };
+
+  const handleEditClick = (security) => {
+    setSelectedSecurity(security); // Store the selected row data
+    setIsEditModalOpen(true); // Open the modal
+  };
+
 
   return (
     <>
@@ -108,7 +123,7 @@ function SecurityTable() {
                   <TableCell
                     align="right"
                     style={{
-                      color: security["close Price"] < 0 ? "red" : "green",
+                      color: security["close Price"] > 0 ? "red" : "green",
                     }}
                   >
                     ${security["close Price"]?.toLocaleString() || "N/A"}
@@ -129,6 +144,7 @@ function SecurityTable() {
                       color="primary"
                       size="small"
                       style={{ marginRight: "5px" }}
+                      onClick={() => handleEditClick(security)}
                     >
                       Edit
                     </Button>
@@ -171,27 +187,28 @@ function SecurityTable() {
             <TableBody>
               {securities.map((security) => (
                 <TableRow key={security.SID}>
-                  <TableCell>{security["bond Name"] || "N/A"}</TableCell>
+                  <TableCell>{security["security Name"] || "N/A"}</TableCell>
                   <TableCell
                     align="right"
                     style={{
-                      color: security["coupon Rate"] < 0 ? "red" : "green",
+                      color: security["couponRate"] < 0 ? "red" : "green",
                     }}
                   >
-                    {security["coupon Rate"]?.toLocaleString() || "N/A"}%
+                    {security["couponRate"]?.toLocaleString() || "N/A"}%
                   </TableCell>
                   <TableCell align="right">
-                    {security["maturity Date"]
-                      ? new Date(security["maturity Date"]).toLocaleDateString(
+                    {security["maturityDate"]
+                      ? new Date(security["maturityDate"]).toLocaleDateString(
                           "en-US"
                         )
                       : "N/A"}
                   </TableCell>
                   <TableCell align="right">
-                    ${security["price"]?.toLocaleString() || "N/A"}
+                    ${security["lastPrice"]?.toLocaleString() || "N/A"}
                   </TableCell>
                   <TableCell align="center">
                     <Button
+                      onClick={() => handleEditClick(security)}
                       variant="contained"
                       color="primary"
                       size="small"
@@ -204,7 +221,7 @@ function SecurityTable() {
                       color="secondary"
                       size="small"
                       style={{ marginLeft: "5px" }}
-                      onClick={() => handleDetailsClick(security)}
+                      onClick={() => handleDetailsClick(security)} // Navigate to details
                     >
                       Details
                     </Button>
@@ -223,12 +240,38 @@ function SecurityTable() {
           </Table>
         </TableContainer>
       )}
+      <Dialog
+        open={isEditModalOpen}
+        onClose={handleCloseModal}
+        fullWidth
+        maxWidth="sm"
+      >
+        <br />
+        <br />
+        {isEquityData ? (
+          <EquityEdit
+            initialData={selectedSecurity}
+            onClose={handleCloseModal}
+          />
+        ) : (
+          <BondEdit initialData={selectedSecurity} onClose={handleCloseModal} />
+        )}
+        <br />
+        <br />
+      </Dialog>
+      {/* <Dialog
+        open={isEditModalOpen}
+        onClose={handleCloseModal}
+        fullWidth
+        maxWidth="sm"
+      >
+        <br />
+        <br />
+        <EquityEdit initialData={selectedSecurity} onClose={handleCloseModal} />
 
-      <SecurityDetailsDialog
-        open={open}
-        onClose={handleClose}
-        selectedSecurity={selectedSecurity}
-      />
+        <br />
+        <br />
+      </Dialog> */}
     </>
   );
 }

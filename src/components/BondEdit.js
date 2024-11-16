@@ -1,32 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box } from '@mui/material';
 import { useForm, Controller } from 'react-hook-form';
-
-const BondEdit = ({ pfCreditRatings = [] }) => {
-  const { control, handleSubmit, formState: { errors, isDirty, isValid } } = useForm({ mode: 'onChange' });
+import pfCreditRatingsData from '../assets/utility-state-serve.json'; 
+import { format } from "date-fns";
+const BondEdit = ({ initialData }) => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+    setValue, 
+  } = useForm({ mode: "onChange" });
   const [isCouponEntered, setIsCouponEntered] = useState(false);
+  const [pfCreditRatings, setPfCreditRatings] = useState([]);
+console.log(initialData); 
+
+  useEffect(() => {
+
+
+    if (pfCreditRatingsData?.PF_Credit_Rating) {
+      setPfCreditRatings(pfCreditRatingsData.PF_Credit_Rating);
+    }
+     if (initialData) {setValue("Security Name", initialData["security Name"]);
+    setValue("description", initialData["security Description"]);
+    setValue("coupon", initialData["couponRate"]);
+    const callableFlagValue = initialData["isCallable"] ? "Yes" : "No";
+    setValue("callableFlag", callableFlagValue);
+     const maturityDate = initialData["maturityDate"]
+       ? format(new Date(initialData["maturityDate"]), "yyyy-MM-dd")
+       : "";
+    setValue("maturity", maturityDate);
+    const penultimateCouponDate = initialData["penultimateCouponDate"]
+      ? format(new Date(initialData["penultimateCouponDate"]), "yyyy-MM-dd")
+      : "";
+    setValue("penultimateCouponDate", penultimateCouponDate);
+    
+    setValue("pfCreditRating", initialData["pf Credit Rating"]);
+    setValue("askPrice", initialData["askPrice"]);
+     setValue("bidPrice", initialData["bidPrice"]);
+     }
+
+  }, [initialData, setValue]);
 
   const handleFormSubmit = (data) => {
     console.log("Form data submitted:", data);
   };
 
+  const textFieldStyles = { textAlign: "left" };
+
   return (
-    <Box sx={{ backgroundColor: 'white', p: 4, borderRadius: 2, boxShadow: 3, maxWidth: 600, mx: 'auto' }}>
+    <Box
+      sx={{
+        backgroundColor: "white",
+        p: 4,
+        borderRadius: 2,
+        boxShadow: 3,
+        maxWidth: 600,
+        mx: "auto",
+      }}
+    >
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          
-          <TextField
-            label="Security Name"
-            variant="outlined"
-            disabled
-            fullWidth
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          <Controller
+            name="Security Name"
+            control={control}
+            
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Security Name"
+                variant="outlined"
+                disabled // This makes the field immutable (non-editable)
+                fullWidth
+               
+              />
+            )}
           />
 
           <Controller
             name="description"
             control={control}
             defaultValue=""
-            rules={{ required: 'Description is required' }}
+            rules={{ required: "Description is required" }}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -35,6 +89,7 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 fullWidth
                 error={!!errors.description}
                 helperText={errors?.description?.message}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
@@ -52,9 +107,10 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 type="number"
                 onChange={(e) => {
                   field.onChange(e);
-                  setIsCouponEntered(e.target.value !== '');
+                  setIsCouponEntered(e.target.value !== "");
                 }}
-                helperText={isCouponEntered ? 'Coupon rate applied' : ''}
+                helperText={isCouponEntered ? "Coupon rate applied" : ""}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
@@ -65,7 +121,7 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
               name="callableFlag"
               control={control}
               defaultValue=""
-              rules={{ required: 'Callable Flag is required' }}
+              rules={{ required: "Callable Flag is required" }}
               render={({ field }) => (
                 <Select
                   {...field}
@@ -77,23 +133,35 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 </Select>
               )}
             />
-            {errors.callableFlag && <FormHelperText error>{errors.callableFlag.message}</FormHelperText>}
+            {errors.callableFlag && (
+              <FormHelperText error>
+                {errors.callableFlag.message}
+              </FormHelperText>
+            )}
           </FormControl>
 
-          {/* Maturity - Disabled */}
-          <TextField
-            label="Maturity"
-            variant="outlined"
-            disabled
-            fullWidth
+          <Controller
+            name="maturity"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Maturity"
+                variant="outlined"
+                disabled
+                fullWidth
+                 // Ensure the field value is set correctly
+                InputProps={{ style: textFieldStyles }}
+              />
+            )}
           />
 
-          {/* Penultimate Coupon Date - Editable Date */}
           <Controller
             name="penultimateCouponDate"
             control={control}
             defaultValue=""
-            rules={{ required: 'Penultimate Coupon Date is required' }}
+            rules={{ required: "Penultimate Coupon Date is required" }}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -106,18 +174,18 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 }}
                 error={!!errors.penultimateCouponDate}
                 helperText={errors?.penultimateCouponDate?.message}
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* PF Credit Rating - Dropdown */}
           <FormControl fullWidth>
             <InputLabel>PF Credit Rating</InputLabel>
             <Controller
               name="pfCreditRating"
               control={control}
               defaultValue=""
-              rules={{ required: 'PF Credit Rating is required' }}
+              rules={{ required: "PF Credit Rating is required" }}
               render={({ field }) => (
                 <Select
                   {...field}
@@ -132,17 +200,23 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 </Select>
               )}
             />
-            {errors.pfCreditRating && <FormHelperText error>{errors.pfCreditRating.message}</FormHelperText>}
+            {errors.pfCreditRating && (
+              <FormHelperText error>
+                {errors.pfCreditRating.message}
+              </FormHelperText>
+            )}
           </FormControl>
 
-          {/* Ask Price - Numeric validation */}
           <Controller
             name="askPrice"
             control={control}
             defaultValue=""
             rules={{
-              required: 'Ask Price is required',
-              pattern: { value: /^\d+(\.\d{1,2})?$/, message: 'Invalid price format' },
+              required: "Ask Price is required",
+              pattern: {
+                value: /^\d+(\.\d{1,2})?$/,
+                message: "Invalid price format",
+              },
             }}
             render={({ field }) => (
               <TextField
@@ -153,18 +227,21 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 error={!!errors.askPrice}
                 helperText={errors?.askPrice?.message}
                 type="number"
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* Bid Price - Numeric validation */}
           <Controller
             name="bidPrice"
             control={control}
             defaultValue=""
             rules={{
-              required: 'Bid Price is required',
-              pattern: { value: /^\d+(\.\d{1,2})?$/, message: 'Invalid price format' },
+              required: "Bid Price is required",
+              pattern: {
+                value: /^\d+(\.\d{1,2})?$/,
+                message: "Invalid price format",
+              },
             }}
             render={({ field }) => (
               <TextField
@@ -175,16 +252,17 @@ const BondEdit = ({ pfCreditRatings = [] }) => {
                 error={!!errors.bidPrice}
                 helperText={errors?.bidPrice?.message}
                 type="number"
+                InputProps={{ style: textFieldStyles }}
               />
             )}
           />
 
-          {/* Update Button */}
           <Button
             type="submit"
             variant="contained"
             color="primary"
             disabled={!isDirty || !isValid}
+            
           >
             Update
           </Button>

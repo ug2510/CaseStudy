@@ -1,7 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Box, Typography, Button, Stack, Paper, IconButton } from "@mui/material";
-import DownloadIcon from "@mui/icons-material/Download";
+import { Box, Typography, Button, Stack, Paper, IconButton, Modal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress } from "@mui/material";import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";

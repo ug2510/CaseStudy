@@ -4,19 +4,26 @@ import HomePage from './components/HomePage';
 import MasterView from './components/MasterView';
 import Uploader from './components/Uploader';
 import Navbar from "./components/Navbar";
-import PriceChart from "./components/PriceChart.js"
+import Analyze from "./components/Analyze";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import Details from "./components/Details";
+
 function App() {
   return (
     <div className="App">
-      <PriceChart/>
+      
       <header className="App-header">
         <Navbar />
-        
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/sec-view" element={<MasterView />} />
-          <Route path="/sec-upload" element={<Uploader />} />
-        </Routes>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/sec-view" element={<MasterView />} />
+            <Route path="/sec-upload" element={<Uploader />} />
+            <Route path="/placeholder" element={<Analyze />} />
+            <Route path="/details/:id" element={<Details />} />
+          </Routes>
+        </LocalizationProvider>
       </header>
 
     </div>

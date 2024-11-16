@@ -1,23 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { DataGrid } from '@mui/x-data-grid';
-import { Box, Typography, CircularProgress, TextField } from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers';
-import dayjs from 'dayjs';
+import React, { useEffect, useState } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import {
+  Box,
+  Typography,
+  CircularProgress,
+  TextField,
+  IconButton,
+  Tooltip,
+  Dialog,
+  DialogActions,
+  DialogContent,
+} from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers";
+import dayjs from "dayjs";
+import InsertChartIcon from "@mui/icons-material/InsertChart"; // Graph icon
+import PriceChart from "./PriceChart";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
 const columns = [
-  { field: 'asOfDate', headerName: 'As Of Date', width: 120 },
-  { field: 'ticker', headerName: 'Ticker', width: 100 },
-  { field: 'security', headerName: 'Security', width: 200 },
-  { field: 'gicsSector', headerName: 'GICS Sector', width: 150 },
-  { field: 'gicsSubIndustry', headerName: 'GICS Sub-Industry', width: 180 },
-  { field: 'headquarterLocation', headerName: 'Headquarter Location', width: 180 },
-  { field: 'founded', headerName: 'Founded', width: 100 },
-  { field: 'open', headerName: 'Open', width: 100 },
-  { field: 'close', headerName: 'Close', width: 100 },
-  { field: 'dtdChange', headerName: 'DTD Change', width: 120 },
-  { field: 'mtdChange', headerName: 'MTD Change', width: 120 },
-  { field: 'qtdChange', headerName: 'QTD Change', width: 120 },
-  { field: 'ytdChange', headerName: 'YTD Change', width: 120 },
+  { field: "asOfDate", headerName: "As Of Date", width: 120 },
+  { field: "ticker", headerName: "Ticker", width: 100 },
+  { field: "security", headerName: "Security", width: 200 },
+  { field: "gicsSector", headerName: "GICS Sector", width: 150 },
+  { field: "gicsSubIndustry", headerName: "GICS Sub-Industry", width: 180 },
+  {
+    field: "headquarterLocation",
+    headerName: "Headquarter Location",
+    width: 180,
+  },
+  { field: "founded", headerName: "Founded", width: 100 },
+  { field: "open", headerName: "Open", width: 100 },
+  { field: "close", headerName: "Close", width: 100 },
+  { field: "dtdChange", headerName: "DTD Change", width: 120 },
+  { field: "mtdChange", headerName: "MTD Change", width: 120 },
+  { field: "qtdChange", headerName: "QTD Change", width: 120 },
+  { field: "ytdChange", headerName: "YTD Change", width: 120 },
 ];
 
 const Analyze = () => {
@@ -29,18 +46,25 @@ const Analyze = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
 
-  const fetchData = async () => {
+  const [openChartModal, setOpenChartModal] = useState(false);
+
+  const fetchData = async (date) => {
     try {
-      const response = await fetch(`https://localhost:7134/api/Security/getSecurities`);
-      
+      const url = date
+        ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(
+            date
+          ).format("YYYY-MM-DD")}`
+        : "https://localhost:7134/api/Security/getSecurities";
+
+      const response = await fetch(url);
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error("Failed to fetch data");
       }
 
       const result = await response.json();
 
       const formattedData = result.map((item, index) => ({
-        id: page * 10 + index + 1,
+        id: index + 1,
         asOfDate: item.asOfDate,
         ticker: item.ticker,
         security: item.securityName,
@@ -56,7 +80,8 @@ const Analyze = () => {
         ytdChange: item.ytdChangePercentage,
       }));
 
-      setData((prevData) => [...prevData, ...formattedData]);
+      setData(formattedData);
+      setFilteredData(formattedData);
 
       if (formattedData.length === 0) {
         setHasMore(false);
@@ -69,10 +94,8 @@ const Analyze = () => {
   };
 
   useEffect(() => {
-    if (hasMore) {
-      fetchData(page);
-    }
-  }, [page, hasMore]);
+    fetchData(selectedDate);
+  }, [selectedDate]);
 
   const handleScrollEnd = () => {
     if (!loading && hasMore) {
@@ -81,18 +104,24 @@ const Analyze = () => {
     }
   };
 
-  useEffect(() => {
-    if (selectedDate) {
-      const filtered = data.filter((row) => dayjs(row.asOfDate).isSameOrAfter(dayjs(selectedDate), 'day'));
-      setFilteredData(filtered);
-    } else {
-      setFilteredData(data);
-    }
-  }, [selectedDate, data]);
+  const handleOpenChartModal = () => {
+    setOpenChartModal(true);
+  };
+
+  const handleCloseChartModal = () => {
+    setOpenChartModal(false);
+  };
 
   if (error) {
     return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
         <Typography variant="h6" color="error">
           Error: {error}
         </Typography>
@@ -101,30 +130,110 @@ const Analyze = () => {
   }
 
   return (
-    <Box sx={{ height: 500, width: '95%', padding: 2, marginTop: '-50px' }}>
+    <Box sx={{ height: 500, width: "95%", padding: 2, marginTop: "-50px" }}>
       <Typography variant="h6" gutterBottom>
         Security Details
       </Typography>
-      <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
-      <DatePicker
-        label="Select Date"
-        value={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        renderInput={(params) => (
+      {/* <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 2,
+        }}
+      >
+        <DatePicker
+          label="Select Date"
+          value={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          renderInput={(params) => (
             <TextField
-            {...params}
-            sx={{
-                input: { color: 'black', backgroundColor: 'black' }, // Set input text to black
-                '.MuiInputLabel-root': { color: 'black' }, // Set label color to black
-                '.MuiOutlinedInput-root': {
-                '& fieldset': { borderColor: 'gray' }, // Set border color to gray
-                '&:hover fieldset': { borderColor: 'darkgray' }, // Darker border on hover
-                '&.Mui-focused fieldset': { borderColor: 'black' }, // Black border on focus
+              {...params}
+              sx={{
+                input: { color: "black", backgroundColor: "black" },
+                ".MuiInputLabel-root": { color: "black" },
+                ".MuiOutlinedInput-root": {
+                  "& fieldset": { borderColor: "gray" },
+                  "&:hover fieldset": { borderColor: "darkgray" },
+                  "&.Mui-focused fieldset": { borderColor: "black" },
                 },
-            }}
+              }}
             />
-        )}
+          )}
         />
+        <Tooltip title="Chart Analysis">
+          <IconButton
+            onClick={handleOpenChartModal}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "rgba(0, 0, 0, 0.1)", // Light black background on hover
+              },
+            }}
+          >
+            <InsertChartIcon fontSize="large" />
+          </IconButton>
+        </Tooltip>
+      </Box> */}
+
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: 2,
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <DatePicker
+            label="Select Date"
+            value={selectedDate}
+            onChange={(date) => setSelectedDate(date)}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                sx={{
+                  input: { color: "black", backgroundColor: "black" },
+                  ".MuiInputLabel-root": { color: "black" },
+                  ".MuiOutlinedInput-root": {
+                    "& fieldset": { borderColor: "gray" },
+                    "&:hover fieldset": { borderColor: "darkgray" },
+                    "&.Mui-focused fieldset": { borderColor: "black" },
+                  },
+                }}
+              />
+            )}
+          />
+          <Tooltip title="Reset Data">
+            <IconButton
+              onClick={() => {
+                setSelectedDate(null); // Reset the date
+                fetchData(null); // Fetch all data
+              }}
+              sx={{
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.1)", // Light black background on hover
+                },
+              }}
+            >
+              <RefreshIcon fontSize="large" />
+            </IconButton>
+          </Tooltip>
+        </Box>
+        <Tooltip title="Chart Analysis">
+          <IconButton
+            onClick={handleOpenChartModal}
+            sx={{
+              color: "black",
+              "&:hover": {
+                backgroundColor: "rgba(0, 0, 0, 0.1)", 
+              },
+            }}
+          >
+            <InsertChartIcon fontSize="medium" />
+          </IconButton>
+        </Tooltip>
       </Box>
       <DataGrid
         rows={filteredData}
@@ -134,17 +243,30 @@ const Analyze = () => {
         onRowsScrollEnd={handleScrollEnd}
         checkboxSelection
         sx={{
-          '.MuiTablePagination-root': { color: 'black' },
-          '.MuiTablePagination-toolbar': { color: 'black' },
-          '.MuiTablePagination-selectIcon': { color: 'black' },
-          '& .MuiDataGrid-cell': { color: 'black' },
+          ".MuiTablePagination-root": { color: "black" },
+          ".MuiTablePagination-toolbar": { color: "black" },
+          ".MuiTablePagination-selectIcon": { color: "black" },
+          "& .MuiDataGrid-cell": { color: "black" },
         }}
       />
+
       {loading && (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+        <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
           <CircularProgress />
         </Box>
       )}
+
+      {/* Modal for Price Chart */}
+      <Dialog open={openChartModal} onClose={handleCloseChartModal}>
+        <DialogContent>
+          <PriceChart />
+        </DialogContent>
+        <DialogActions>
+          <IconButton onClick={handleCloseChartModal} color="primary">
+            Close
+          </IconButton>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

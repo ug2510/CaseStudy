@@ -1,54 +1,83 @@
-import React, { useState, useEffect } from 'react';
-import { TextField, Button, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
+import React, { useState, useEffect } from "react";
+import { format } from "date-fns";
+import {
+  TextField,
+  Button,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
+  FormHelperText,
+  Box,
+} from "@mui/material";
+import { useForm, Controller } from "react-hook-form";
+import pfCreditRatingsData from "../assets/utility-state-serve.json";
 
-const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
-  const [formData, setFormData] = useState(null);  
-  const { control, handleSubmit, formState: { errors, isDirty, isValid }, setValue } = useForm({ mode: 'onChange' });
+const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+    setValue,
+  } = useForm({ mode: "onChange" });
 
   useEffect(() => {
-    const initialData = {
-      securityName: '',
-      description: '',
-      pricingCurrency: '',
-      totalSharesOutstanding: '',
-      openPrice: '',
-      closePrice: '',
-      dividendDeclaredDate: '',
-      pfCreditRating: '',
-    };
-    setFormData(initialData);
-  }, []);
+    if (initialData) {
+      const formattedDate = initialData["declared Date"]
+        ? format(new Date(initialData["declared Date"]), "yyyy-MM-dd")
+        : "";
+
+      setValue("dividendDeclaredDate", formattedDate);
+      setValue("securityName", initialData["security Name"]);
+      setValue("description", initialData["security Description"]);
+      setValue("pricingCurrency", initialData["price Currency"]);
+      setValue("totalSharesOutstanding", initialData["shares Outstanding"]);
+      setValue("openPrice", initialData["open Price"]);
+      setValue("closePrice", initialData["close Price"]);
+      setValue("pfCreditRating", initialData["pf Credit Rating"]);
+    }
+  }, [initialData, setValue]);
 
   const handleFormSubmit = (data) => {
     console.log("Form data submitted:", data);
   };
 
-  const handleChange = (e) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  const currencyList = ["USD", "KRW", "GBP", "EUR"];
+
+  const uniqueCurrencies = [...new Set(currencyList)];
 
   return (
-    <Box sx={{ backgroundColor: 'white', p: 4, borderRadius: 2, boxShadow: 3, maxWidth: 600, mx: 'auto' }}>
+    <Box
+      sx={{
+        backgroundColor: "white",
+        p: 5, 
+        borderRadius: 2,
+        boxShadow: 3,
+        maxWidth: 1000, 
+        mx: "auto", 
+      }}
+    >
       <form onSubmit={handleSubmit(handleFormSubmit)}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           
-          <TextField
-            label="Security Name"
-            variant="outlined"
-            value={formData?.securityName}
-            disabled
-            fullWidth
+          <Controller
+            name="securityName"
+            control={control}
+            render={({ field }) => (
+              <TextField
+                {...field}
+                label="Security Name"
+                variant="outlined"
+                disabled
+                fullWidth
+                sx={{ mb: 2 }} 
+              />
+            )}
           />
-
           <Controller
             name="description"
             control={control}
-            defaultValue={formData?.description}
-            rules={{ required: 'Description is required' }}
+            rules={{ required: "Description is required" }}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -57,46 +86,45 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 fullWidth
                 error={!!errors.description}
                 helperText={errors?.description?.message}
-                onChange={handleChange}
+                sx={{ mb: 2 }} 
               />
             )}
           />
 
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ mb: 2 }}>
             <InputLabel>Pricing Currency</InputLabel>
             <Controller
               name="pricingCurrency"
               control={control}
-              defaultValue={formData?.pricingCurrency}
-              rules={{ required: 'Currency is required' }}
+              rules={{ required: "Currency is required" }}
               render={({ field }) => (
                 <Select
                   {...field}
                   label="Pricing Currency"
-                  onChange={(e) => {
-                    field.onChange(e);
-                    handleChange(e);
-                  }}
+                  value={field.value || "Pricing Currency"}
                   error={!!errors.pricingCurrency}
                 >
-                  {currencies.map((currency) => (
-                    <MenuItem key={currency} value={currency}>
+                  {uniqueCurrencies.map((currency, index) => (
+                    <MenuItem key={index} value={currency}>
                       {currency}
                     </MenuItem>
                   ))}
                 </Select>
               )}
             />
-            {errors.pricingCurrency && <FormHelperText error>{errors.pricingCurrency.message}</FormHelperText>}
+            {errors.pricingCurrency && (
+              <FormHelperText error>
+                {errors.pricingCurrency.message}
+              </FormHelperText>
+            )}
           </FormControl>
 
           <Controller
             name="totalSharesOutstanding"
             control={control}
-            defaultValue={formData?.totalSharesOutstanding}
             rules={{
-              required: 'Total Shares Outstanding is required',
-              pattern: { value: /^\d+$/, message: 'Must be a valid number' },
+              required: "Total Shares Outstanding is required",
+              pattern: { value: /^\d+$/, message: "Must be a valid number" },
             }}
             render={({ field }) => (
               <TextField
@@ -106,19 +134,20 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 fullWidth
                 error={!!errors.totalSharesOutstanding}
                 helperText={errors?.totalSharesOutstanding?.message}
-                onChange={handleChange}
                 type="number"
+                sx={{ mb: 2 }}
               />
             )}
           />
-
           <Controller
             name="openPrice"
             control={control}
-            defaultValue={formData?.openPrice}
             rules={{
-              required: 'Open Price is required',
-              pattern: { value: /^\d+(\.\d{1,2})?$/, message: 'Invalid price format' },
+              required: "Open Price is required",
+              pattern: {
+                value: /^\d+(\.\d{1,2})?$/,
+                message: "Invalid price format",
+              },
             }}
             render={({ field }) => (
               <TextField
@@ -128,19 +157,20 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 fullWidth
                 error={!!errors.openPrice}
                 helperText={errors?.openPrice?.message}
-                onChange={handleChange}
                 type="number"
+                sx={{ mb: 2 }} 
               />
             )}
           />
-
           <Controller
             name="closePrice"
             control={control}
-            defaultValue={formData?.closePrice}
             rules={{
-              required: 'Close Price is required',
-              pattern: { value: /^\d+(\.\d{1,2})?$/, message: 'Invalid price format' },
+              required: "Close Price is required",
+              pattern: {
+                value: /^\d+(\.\d{1,2})?$/,
+                message: "Invalid price format",
+              },
             }}
             render={({ field }) => (
               <TextField
@@ -150,17 +180,15 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 fullWidth
                 error={!!errors.closePrice}
                 helperText={errors?.closePrice?.message}
-                onChange={handleChange}
                 type="number"
+                sx={{ mb: 2 }}
               />
             )}
           />
-
           <Controller
             name="dividendDeclaredDate"
             control={control}
-            defaultValue={formData?.dividendDeclaredDate}
-            rules={{ required: 'Dividend Declared Date is required' }}
+            rules={{ required: "Dividend Declared Date is required" }}
             render={({ field }) => (
               <TextField
                 {...field}
@@ -173,28 +201,24 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 }}
                 error={!!errors.dividendDeclaredDate}
                 helperText={errors?.dividendDeclaredDate?.message}
+                sx={{ mb: 2 }} 
               />
             )}
           />
-
-          <FormControl fullWidth>
+          <FormControl fullWidth sx={{ mb: 2 }}>
             <InputLabel>PF Credit Rating</InputLabel>
             <Controller
               name="pfCreditRating"
               control={control}
-              defaultValue={formData?.pfCreditRating}
-              rules={{ required: 'PF Credit Rating is required' }}
+              rules={{ required: "PF Credit Rating is required" }}
               render={({ field }) => (
                 <Select
                   {...field}
                   label="PF Credit Rating"
-                  onChange={(e) => {
-                    field.onChange(e);
-                    handleChange(e);
-                  }}
+                  value={field.value || "PF Credit Rating"}
                   error={!!errors.pfCreditRating}
                 >
-                  {pfCreditRatings.map((rating) => (
+                  {pfCreditRatingsData.PF_Credit_Rating?.map((rating) => (
                     <MenuItem key={rating} value={rating}>
                       {rating}
                     </MenuItem>
@@ -202,7 +226,11 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
                 </Select>
               )}
             />
-            {errors.pfCreditRating && <FormHelperText error>{errors.pfCreditRating.message}</FormHelperText>}
+            {errors.pfCreditRating && (
+              <FormHelperText error>
+                {errors.pfCreditRating.message}
+              </FormHelperText>
+            )}
           </FormControl>
 
           <Button
@@ -210,11 +238,13 @@ const EquityEdit = ({ pfCreditRatings = [], currencies = [] }) => {
             variant="contained"
             color="primary"
             disabled={!isDirty || !isValid}
+            
           >
             Update
           </Button>
         </Box>
       </form>
+      
     </Box>
   );
 };
