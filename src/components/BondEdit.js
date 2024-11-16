@@ -3,7 +3,8 @@ import { TextField, Button, MenuItem, FormControl, InputLabel, Select, FormHelpe
 import { useForm, Controller } from 'react-hook-form';
 import pfCreditRatingsData from '../assets/utility-state-serve.json'; 
 import { format } from "date-fns";
-const BondEdit = ({ initialData }) => {
+import axios from 'axios';
+const BondEdit = ({ initialData ,onClose}) => {
   const {
     control,
     handleSubmit,
@@ -41,7 +42,37 @@ console.log(initialData);
 
   }, [initialData, setValue]);
 
-  const handleFormSubmit = (data) => {
+  const handleFormSubmit = async  (data) => {
+    const sid = initialData?.sid;
+    if (!sid) {
+      console.error("SID is missing in initial data.");
+      return;
+    }
+    const payload = {
+      description: data.description,
+      couponRate: data.coupon,
+      isCallable: data.callableFlag === "Yes",
+      penultimateCouponDate: new Date(data.penultimateCouponDate).toISOString(),
+      askPrice: data.askPrice,
+      bidPrice: data.bidPrice,
+      pfCreditRating: data.pfCreditRating,
+    };
+    const apiUrl = `https://localhost:7109/api/BondCsv/updateBond${sid}`;
+    try {
+      const response = await axios.put(apiUrl, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.status === 200 || response.status === 204) {
+        alert("Equity updated successfully!");
+        onClose();
+      }
+    } catch (error) {
+      console.error("Error updating data:", error);
+      alert("Failed to update equity. Please try again.");
+    }
     console.log("Form data submitted:", data);
   };
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Tile from "./Tile";
+import axios from "axios";
 import EquityEdit from "./EquityEdit";
 import BondEdit from "./BondEdit";
 import {
@@ -28,6 +29,7 @@ function SecurityTable() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+   const [inactiveCount, setInactiveCount] = useState(0);
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
@@ -43,6 +45,10 @@ function SecurityTable() {
       })
       .then((data) => {
         setSecurities(data);
+        const count = data.filter(
+          (security) => security.status === "inactive"
+        ).length;
+        setInactiveCount(count);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -55,7 +61,7 @@ function SecurityTable() {
   useEffect(() => {
     fetchData(isEquityData);
   }, [isEquityData]);
- 
+
   
 
   const handleDetailsClick = (security) => {
@@ -73,14 +79,62 @@ function SecurityTable() {
   };
 
   const handleEditClick = (security) => {
-    setSelectedSecurity(security); // Store the selected row data
-    setIsEditModalOpen(true); // Open the modal
+    setSelectedSecurity(security); 
+    setIsEditModalOpen(true); 
   };
+  const handleDeleteClick = async (security) => {
+    const sid = security.sid;
+    console.log(sid)
+    if (!sid) {
+      alert("Security ID is missing!");
+      return;
+    }
 
+    const apiUrl = `https://localhost:7109/api/EquityCsv/SoftDeleteEquity${sid}`;
+
+    try {
+      const response = await axios.delete(apiUrl,{
+        headers: { "Content-Type": "application/json" }
+      }); 
+      if (response.status === 200 || response.status === 204) {
+        alert("Equity disabled successfully!");
+
+        setSecurities((prev) => prev.filter((item) => item.SID !== sid));
+      }
+    } catch (error) {
+      console.error("Error disabling equity:", error);
+      alert("Failed to disable equity. Please try again.");
+    }
+  };
+const handleDeleteClickBonds = async (security) => {
+  const sid = security.sid;
+  console.log(sid);
+  if (!sid) {
+    alert("Security ID is missing!");
+    return;
+  }
+
+  const apiUrl = `https://localhost:7109/api/BondCsv/SoftDeleteBond${sid}`;
+
+  try {
+    const response = await axios.delete(apiUrl, {
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.status === 200 || response.status === 204) {
+      alert("Bond disabled successfully!");
+      fetchData(isEquityData);
+      setSecurities((prev) => prev.filter((item) => item.SID !== sid));
+      
+    }
+  } catch (error) {
+    console.error("Error disabling equity:", error);
+    alert("Failed to disable equity. Please try again.");
+  }
+};
 
   return (
     <>
-      <Tile isEquityData={isEquityData} inactiveCount={0} />
+      <Tile isEquityData={isEquityData} inactiveCount={inactiveCount} />
       <Button
         variant="contained"
         color={isEquityData ? "primary" : "secondary"}
@@ -162,6 +216,7 @@ function SecurityTable() {
                       color="warning"
                       size="small"
                       style={{ marginLeft: "5px" }}
+                      onClick={() => handleDeleteClick(security)}
                     >
                       Delete
                     </Button>
@@ -230,6 +285,7 @@ function SecurityTable() {
                       color="warning"
                       size="small"
                       style={{ marginLeft: "5px" }}
+                      onClick={() => handleDeleteClickBonds(security)}
                     >
                       Delete
                     </Button>
@@ -240,6 +296,23 @@ function SecurityTable() {
           </Table>
         </TableContainer>
       )}
+      {/* <Dialog
+        open={isEditModalOpen}
+        onClose={handleCloseModal}
+        fullWidth
+        maxWidth="sm"
+      >
+        
+      <br />
+      <br />
+        <EquityEdit
+          initialData={selectedSecurity} 
+          onClose={handleCloseModal} 
+        />
+        
+      <br />
+      <br />
+      </Dialog> */}
       <Dialog
         open={isEditModalOpen}
         onClose={handleCloseModal}
@@ -259,19 +332,6 @@ function SecurityTable() {
         <br />
         <br />
       </Dialog>
-      {/* <Dialog
-        open={isEditModalOpen}
-        onClose={handleCloseModal}
-        fullWidth
-        maxWidth="sm"
-      >
-        <br />
-        <br />
-        <EquityEdit initialData={selectedSecurity} onClose={handleCloseModal} />
-
-        <br />
-        <br />
-      </Dialog> */}
     </>
   );
 }

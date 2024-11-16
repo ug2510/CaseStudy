@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { format } from "date-fns";
+import axios from "axios";
 import {
   TextField,
   Button,
@@ -38,28 +39,60 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
     }
   }, [initialData, setValue]);
 
-  const handleFormSubmit = (data) => {
-    console.log("Form data submitted:", data);
+  const handleFormSubmit = async (data) => {
+    const sid = initialData?.sid; 
+    if (!sid) {
+      console.error("SID is missing in initial data.");
+      return;
+    }
+    const payload = {
+      description: data.description,
+      sharesOutstanding: parseInt(data.totalSharesOutstanding, 10),
+      priceCurrency: data.pricingCurrency,
+      openPrice: parseFloat(data.openPrice),
+      closePrice: parseFloat(data.closePrice),
+      dividendDeclaredDate: new Date(data.dividendDeclaredDate).toISOString(),
+      pfCreditRating: data.pfCreditRating,
+    };
+  
+    const apiUrl = `https://localhost:7109/api/EquityCsv/updateEquity${sid}`;
+  
+    try {
+      const response = await axios.put(apiUrl, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  
+      if (response.status === 200 || response.status === 204) {
+        alert("Equity updated successfully!");
+        onClose(); 
+      }
+    } catch (error) {
+      console.error("Error updating data:", error);
+      alert("Failed to update equity. Please try again.");
+    }
   };
+  
+  
+  
 
-  const currencyList = ["USD", "KRW", "GBP", "EUR"];
-
+  const currencyList = currencies.length ? currencies : ["USD", "KRW", "GBP", "EUR"];
   const uniqueCurrencies = [...new Set(currencyList)];
 
   return (
     <Box
       sx={{
         backgroundColor: "white",
-        p: 5, 
+        p: 5,
         borderRadius: 2,
         boxShadow: 3,
-        maxWidth: 1000, 
-        mx: "auto", 
+        maxWidth: 1000,
+        mx: "auto",
       }}
     >
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
-          
           <Controller
             name="securityName"
             control={control}
@@ -70,7 +103,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 variant="outlined"
                 disabled
                 fullWidth
-                sx={{ mb: 2 }} 
+                sx={{ mb: 2 }}
               />
             )}
           />
@@ -86,7 +119,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 fullWidth
                 error={!!errors.description}
                 helperText={errors?.description?.message}
-                sx={{ mb: 2 }} 
+                sx={{ mb: 2 }}
               />
             )}
           />
@@ -101,7 +134,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 <Select
                   {...field}
                   label="Pricing Currency"
-                  value={field.value || "Pricing Currency"}
+                  value={field.value || ""}
                   error={!!errors.pricingCurrency}
                 >
                   {uniqueCurrencies.map((currency, index) => (
@@ -113,9 +146,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
               )}
             />
             {errors.pricingCurrency && (
-              <FormHelperText error>
-                {errors.pricingCurrency.message}
-              </FormHelperText>
+              <FormHelperText error>{errors.pricingCurrency.message}</FormHelperText>
             )}
           </FormControl>
 
@@ -158,7 +189,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 error={!!errors.openPrice}
                 helperText={errors?.openPrice?.message}
                 type="number"
-                sx={{ mb: 2 }} 
+                sx={{ mb: 2 }}
               />
             )}
           />
@@ -201,7 +232,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 }}
                 error={!!errors.dividendDeclaredDate}
                 helperText={errors?.dividendDeclaredDate?.message}
-                sx={{ mb: 2 }} 
+                sx={{ mb: 2 }}
               />
             )}
           />
@@ -215,7 +246,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
                 <Select
                   {...field}
                   label="PF Credit Rating"
-                  value={field.value || "PF Credit Rating"}
+                  value={field.value || ""}
                   error={!!errors.pfCreditRating}
                 >
                   {pfCreditRatingsData.PF_Credit_Rating?.map((rating) => (
@@ -227,9 +258,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
               )}
             />
             {errors.pfCreditRating && (
-              <FormHelperText error>
-                {errors.pfCreditRating.message}
-              </FormHelperText>
+              <FormHelperText error>{errors.pfCreditRating.message}</FormHelperText>
             )}
           </FormControl>
 
@@ -238,13 +267,11 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
             variant="contained"
             color="primary"
             disabled={!isDirty || !isValid}
-            
           >
             Update
           </Button>
         </Box>
       </form>
-      
     </Box>
   );
 };
