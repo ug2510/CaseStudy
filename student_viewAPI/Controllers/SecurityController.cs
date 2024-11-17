@@ -84,6 +84,61 @@ namespace Security_viewAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified date.");
     }
 }
+[HttpGet("getAllDetailsByTicker/{ticker}")]
+public async Task<IActionResult> getAllDetailsByTicker(string ticker)
+{
+    try
+    {
+        var securities = new List<CandleStick>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            using (SqlCommand command = new SqlCommand($"select * from [dbo].[SP500_Prices] where ticker ='{ticker}'order by [Date]", connection))
+            {
+                await connection.OpenAsync();
+
+                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    while (reader.Read())
+                    {
+                        securities.Add(new CandleStick
+                        {
+                            Date = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0), // Assuming this is the Date column
+                            Open = reader.IsDBNull(1) ? (decimal?)null : reader.GetDecimal(1), // Open price
+                            High = reader.IsDBNull(2) ? (decimal?)null : reader.GetDecimal(2), // High price
+                            Low = reader.IsDBNull(3) ? (decimal?)null : reader.GetDecimal(3), // Low price
+                            Close = reader.IsDBNull(4) ? (decimal?)null : reader.GetDecimal(4), // Close price
+                            Adj_Close = reader.IsDBNull(5) ? (decimal?)null : reader.GetDecimal(5), // Adjusted Close price
+                            Volume = reader.IsDBNull(6) ? (decimal?)null : reader.GetDecimal(6), // Volume
+                            Ticker = reader.IsDBNull(7) ? null : reader.GetString(7), // Ticker
+                            DTDChangePercentage = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8), // Daily Change Percentage
+                            MTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9), // Monthly Change Percentage
+                            QTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10), // Quarterly Change Percentage
+                            YTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11) // Year-to-Date Change Percentage
+
+                        });
+
+                    }
+                }
+            }
+        }
+        if (securities.Count == 0)
+        {
+            Console.WriteLine("No data found for the specified Ticker.");
+            _logger.LogError("No data found for the specified Ticker.");
+            return NotFound("No data found for the specified Ticker.");
+        }
+        _logger.LogInformation($"Data of Ticker :{ticker} was fetched.");
+        return Ok(securities);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+        _logger.LogError($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified Ticker.");
+
+
+    }
+}
 
         [HttpGet("getSecuritiesbyName/{ticker}")]
         public async Task<IActionResult> GetSecuritiesbyName(string ticker)
