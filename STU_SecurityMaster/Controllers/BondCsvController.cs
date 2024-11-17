@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Model;
 using STU_SecurityMaster.Bonds_csv;
 using STU_SecurityMaster.Equ_csv;
+using System.Configuration;
 using System.Data;
 
 namespace STU_SecurityMaster.Controllers
@@ -14,12 +15,14 @@ namespace STU_SecurityMaster.Controllers
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
         private readonly ILogger<Bond_csv_ops> _logger;
+        private readonly IConfiguration _configuration;
 
-       
-        public BondCsvController(ILogger<Bond_csv_ops> logger)
+
+        public BondCsvController(ILogger<Bond_csv_ops> logger, IConfiguration configuration)
         {
             _logger = logger;
-            // Ensure the upload directory exists
+            _configuration = configuration;
+           
             if (!Directory.Exists(_uploadDirectory))
             {
                 Directory.CreateDirectory(_uploadDirectory);
@@ -28,11 +31,11 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getBondDetailsBySID/{sid}")]
         public IActionResult GetBondDetailsBySID(int sid)
         {
-            Bond_csv_ops eps = new Bond_csv_ops(_logger);
+            Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
             var equityData = eps.FetchBondDataFromDbbyID(sid);
             if (equityData is DataTable dt && dt.Rows.Count > 0)
             {
-                // Convert the DataTable to JSON or the required format
+              
                 return Ok(equityData);
             }
             else
@@ -65,22 +68,22 @@ namespace STU_SecurityMaster.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
-                Bond_csv_ops bond = new Bond_csv_ops(_logger);
+                Bond_csv_ops bond = new Bond_csv_ops(_logger, _configuration);
                 string result = bond.FetchDataFromCSV(filePath);
                 // Return the file path to the frontend
-                //return Ok(new { filePath = filePath });
+               
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                // Handle errors
+              
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error uploading file: {ex.Message}");
             }
         }
         [HttpGet("getBondsData")]
         public async Task<IActionResult> GetBondsData()
         {
-            Bond_csv_ops eps = new Bond_csv_ops(_logger);
+            Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
             var data = eps.FetchBondsDataFromDb();
             return Ok(data);
         }
@@ -89,7 +92,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger);
+                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
                 var statusCount = eps.CountActiveSecurities();
                 return Ok(statusCount);
             }
@@ -103,7 +106,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger);
+                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
                 eps.UpdateBondData(sid, bond);
                 return Ok(bond);
             }
@@ -127,7 +130,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger);
+                Bond_csv_ops eps = new Bond_csv_ops(_logger,_configuration);
                 eps.SoftDeleteBond(sid);
                 return Ok("Deleted Successfully");
             }
