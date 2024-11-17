@@ -32,3 +32,80 @@
 2024-11-17 10:53:48.703 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.7113ms
 2024-11-17 10:53:48.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
 2024-11-17 10:53:48.805 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.6738ms
+2024-11-17 11:31:57.344 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 11:31:57.378 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 11:31:57.452 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 11:31:57.454 +05:30 [INF] Hosting environment: Development
+2024-11-17 11:31:57.454 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 11:31:58.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:31:58.457 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 267.2725ms
+2024-11-17 11:31:58.477 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:31:58.486 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 9.4856ms
+2024-11-17 11:31:58.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:31:58.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.2283ms
+2024-11-17 11:31:58.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:31:58.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.338ms
+2024-11-17 11:32:04.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:32:04.334 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:32:04.354 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:04.830 +05:30 [INF] All data was feteched
+2024-11-17 11:32:04.835 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:04.872 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 508.3417ms
+2024-11-17 11:32:04.874 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:32:04.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 549.6517ms
+2024-11-17 11:32:33.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:32:33.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 26.2014ms
+2024-11-17 11:32:39.519 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:32:39.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:32:39.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 3.3986ms
+2024-11-17 11:32:39.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.6207ms
+2024-11-17 11:32:39.600 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:32:39.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.0982ms
+2024-11-17 11:32:39.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/favicon-32x32.png - null null
+2024-11-17 11:32:39.628 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-17 11:32:39.630 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/favicon-32x32.png - 200 628 image/png 15.3345ms
+2024-11-17 11:32:45.869 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesbyName/A - null null
+2024-11-17 11:32:45.874 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI)'
+2024-11-17 11:32:45.881 +05:30 [INF] Route matched with {action = "GetSecuritiesbyName", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesbyName(System.String) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:45.943 +05:30 [INF] Data of Ticker :A was fetched.
+2024-11-17 11:32:45.944 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:45.949 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI) in 66.1825ms
+2024-11-17 11:32:45.950 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI)'
+2024-11-17 11:32:45.951 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesbyName/A - 200 null application/json; charset=utf-8 82.1289ms
+2024-11-17 11:32:55.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities/1 - null null
+2024-11-17 11:32:55.441 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-17 11:32:55.444 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:55.540 +05:30 [INF] 
+2024-11-17 11:32:55.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:55.543 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 96.7456ms
+2024-11-17 11:32:55.544 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-17 11:32:55.545 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities/1 - 200 null application/json; charset=utf-8 120.0603ms
+2024-11-17 11:33:11.995 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:33:11.998 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:33:11.999 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:33:12.047 +05:30 [INF] All data was feteched
+2024-11-17 11:33:12.048 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:33:12.055 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 55.1645ms
+2024-11-17 11:33:12.057 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:33:12.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 63.2849ms
+2024-11-17 11:37:45.077 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 11:37:45.105 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 11:37:45.180 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 11:37:45.185 +05:30 [INF] Hosting environment: Development
+2024-11-17 11:37:45.186 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 11:37:45.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:37:46.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 347.0355ms
+2024-11-17 11:37:46.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:37:46.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 10.2112ms
+2024-11-17 11:37:46.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:37:46.113 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.1518ms
+2024-11-17 11:37:46.182 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:37:46.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 127.5127ms
+2024-11-17 11:37:57.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:37:57.117 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:37:57.135 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:37:57.597 +05:30 [INF] All data was feteched
+2024-11-17 11:37:57.602 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:37:57.630 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 491.5983ms
+2024-11-17 11:37:57.632 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:37:57.633 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 524.0041ms

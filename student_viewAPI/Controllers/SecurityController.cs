@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Security_viewAPI.Model;
 using System.Data;
 using System.Data;
@@ -12,13 +13,13 @@ namespace Security_viewAPI.Controllers
 
     public class SecurityController : ControllerBase
     {
-        private readonly string _connectionString = @"Server=192.168.0.13\sqlexpress,49753; Database=STU_SecurityMaster; User Id=sa; Password=sa@12345678; TrustServerCertificate=True";
         private readonly ILogger _logger;  // Declare a logger field
-
-        // Constructor injection of ILogger
-        public SecurityController(ILogger<SecurityController> logger)
+        private readonly string _connectionString;
+        
+        public SecurityController(ILogger<SecurityController> logger, IConfiguration configuration)
         {
             _logger = logger;  // Initialize the logger
+            _connectionString = configuration.GetConnectionString("IVPConn");
         }
         [HttpGet("getOverviewByDate")]
         public async Task<IActionResult> GetOverviewByDate(DateTime date)

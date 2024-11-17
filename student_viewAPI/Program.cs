@@ -7,6 +7,11 @@ namespace student_viewAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var configuration = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+           .Build();
+
             // Add services to the container.
             Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration)
              .Enrich.FromLogContext().WriteTo.File("log/MyLog.txt").CreateLogger();
