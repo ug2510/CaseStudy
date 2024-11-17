@@ -51,9 +51,7 @@ const Analyze = () => {
   const fetchData = async (date) => {
     try {
       const url = date
-        ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(
-            date
-          ).format("YYYY-MM-DD")}`
+        ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(date).format("YYYY-MM-DD")}`
         : "https://localhost:7134/api/Security/getSecurities";
 
       const response = await fetch(url);
@@ -72,24 +70,28 @@ const Analyze = () => {
         gicsSubIndustry: item.gicsSubIndustry,
         headquarterLocation: item.headquartersLocation,
         founded: item.founded,
-        open: item.openPrice,
-        close: item.closePrice,
-        dtdChange: item.dtdChangePercentage,
-        mtdChange: item.mtdChangePercentage,
-        qtdChange: item.qtdChangePercentage,
-        ytdChange: item.ytdChangePercentage,
+        open: `$${item.openPrice}`,
+        close: `$${item.closePrice}`,
+        dtdChange: `${item.dtdChangePercentage}%`,
+        mtdChange: `${item.mtdChangePercentage}%`,
+        qtdChange: `${item.qtdChangePercentage}%`,
+        ytdChange: `${item.ytdChangePercentage}%`,
       }));
 
-      setData(formattedData);
-      setFilteredData(formattedData);
-
       if (formattedData.length === 0) {
-        setHasMore(false);
+        setFilteredData([]);
+      } else {
+        setFilteredData(formattedData);
       }
+
+      setData(formattedData);
+      setHasMore(formattedData.length > 0);  
+
     } catch (error) {
-      setError(error.message);
+      // setError(error.message);
+      setFilteredData([]);  
     } finally {
-      setLoading(false);
+      setLoading(false);  
     }
   };
 

@@ -147,10 +147,8 @@ function SecurityTable() {
         {isEquityData ? "Switch to Bond Table" : "Switch to Equity Table"}
       </Button>
 
-      {/* Loading Spinner */}
       {isLoading && <div>Loading...</div>}
 
-      {/* Conditional Rendering for Equity or Bond Table */}
       {isEquityData ? (
         <TableContainer component={Paper}>
           <Table>
@@ -237,7 +235,7 @@ function SecurityTable() {
                 <TableCell>Bond Name</TableCell>
                 <TableCell align="right">Coupon Rate</TableCell>
                 <TableCell align="right">Maturity Date</TableCell>
-                <TableCell align="right">Price</TableCell>
+                <TableCell align="right">Current Price</TableCell>
                 <TableCell align="center">Actions</TableCell>
               </TableRow>
             </TableHead>
