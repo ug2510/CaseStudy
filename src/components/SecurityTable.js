@@ -29,7 +29,8 @@ function SecurityTable() {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-   const [inactiveCount, setInactiveCount] = useState(0);
+  const [inactiveCount, setInactiveCount] = useState(0);
+  const [updateCounts, setUpdateCounts] = useState(() => () => {});
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
@@ -55,14 +56,12 @@ function SecurityTable() {
         console.error("Error fetching data:", error);
         setIsLoading(false);
       });
-      console.log(isEquityData, securities);
+    console.log(isEquityData, securities);
   };
 
   useEffect(() => {
     fetchData(isEquityData);
   }, [isEquityData]);
-
-  
 
   const handleDetailsClick = (security) => {
     console.log(security);
@@ -83,12 +82,12 @@ function SecurityTable() {
   };
 
   const handleEditClick = (security) => {
-    setSelectedSecurity(security); 
-    setIsEditModalOpen(true); 
+    setSelectedSecurity(security);
+    setIsEditModalOpen(true);
   };
   const handleDeleteClick = async (security) => {
     const sid = security.sid;
-    console.log(sid)
+    console.log(sid);
     if (!sid) {
       alert("Security ID is missing!");
       return;
@@ -97,48 +96,48 @@ function SecurityTable() {
     const apiUrl = `https://localhost:7109/api/EquityCsv/SoftDeleteEquity${sid}`;
 
     try {
-      const response = await axios.delete(apiUrl,{
-        headers: { "Content-Type": "application/json" }
-      }); 
+      const response = await axios.delete(apiUrl, {
+        headers: { "Content-Type": "application/json" },
+      });
       if (response.status === 200 || response.status === 204) {
         alert("Equity disabled successfully!");
 
-        setSecurities((prev) => prev.filter((item) => item.SID !== sid));
+        fetchData(true);
+        
       }
     } catch (error) {
       console.error("Error disabling equity:", error);
       alert("Failed to disable equity. Please try again.");
     }
   };
-const handleDeleteClickBonds = async (security) => {
-  const sid = security.sid;
-  console.log(sid);
-  if (!sid) {
-    alert("Security ID is missing!");
-    return;
-  }
-
-  const apiUrl = `https://localhost:7109/api/BondCsv/SoftDeleteBond${sid}`;
-
-  try {
-    const response = await axios.delete(apiUrl, {
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.status === 200 || response.status === 204) {
-      alert("Bond disabled successfully!");
-      fetchData(isEquityData);
-      setSecurities((prev) => prev.filter((item) => item.SID !== sid));
-      
+  const handleDeleteClickBonds = async (security) => {
+    const sid = security.sid;
+    console.log(sid);
+    if (!sid) {
+      alert("Security ID is missing!");
+      return;
     }
-  } catch (error) {
-    console.error("Error disabling equity:", error);
-    alert("Failed to disable equity. Please try again.");
-  }
-};
+
+    const apiUrl = `https://localhost:7109/api/BondCsv/SoftDeleteBond${sid}`;
+
+    try {
+      const response = await axios.delete(apiUrl, {
+        headers: { "Content-Type": "application/json" },
+      });
+      if (response.status === 200 || response.status === 204) {
+        alert("Bond disabled successfully!");
+        fetchData(false);
+        
+      }
+    } catch (error) {
+      console.error("Error disabling bond:", error);
+      alert("Failed to disable bond. Please try again.");
+    }
+  };
 
   return (
     <>
-      <Tile isEquityData={isEquityData} inactiveCount={inactiveCount} />
+      <Tile isEquityData={isEquityData} inactiveCount={inactiveCount} onUpdateCounts={setUpdateCounts} />
       <Button
         variant="contained"
         color={isEquityData ? "primary" : "secondary"}
@@ -280,7 +279,7 @@ const handleDeleteClickBonds = async (security) => {
                       color="secondary"
                       size="small"
                       style={{ marginLeft: "5px" }}
-                      onClick={() => handleDetailsClick2(security)} 
+                      onClick={() => handleDetailsClick2(security)}
                     >
                       Details
                     </Button>
@@ -329,9 +328,10 @@ const handleDeleteClickBonds = async (security) => {
           <EquityEdit
             initialData={selectedSecurity}
             onClose={handleCloseModal}
+            onUpdate={() => fetchData(isEquityData)}
           />
         ) : (
-          <BondEdit initialData={selectedSecurity} onClose={handleCloseModal} />
+          <BondEdit initialData={selectedSecurity} onClose={handleCloseModal} onUpdate={() => fetchData(isEquityData)} />
         )}
         <br />
         <br />

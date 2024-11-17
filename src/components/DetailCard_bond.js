@@ -11,7 +11,7 @@ const DetailsCard = ({ title, data }) => (
   >
     <Box
       sx={{
-        backgroundColor: "#ffe6e6",
+        backgroundColor: "#e6ffe6",
         padding: "10px",
         borderTopLeftRadius: "8px",
         borderTopRightRadius: "8px",
@@ -22,7 +22,7 @@ const DetailsCard = ({ title, data }) => (
       <Typography
         variant="h6"
         sx={{
-          color: "#b71c1c",
+          color: "#00b300",
           fontWeight: "bold",
           margin: 0,
           textAlign: "left", 

@@ -1,48 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import { TextField, Button, MenuItem, FormControl, InputLabel, Select, FormHelperText, Box } from '@mui/material';
-import { useForm, Controller } from 'react-hook-form';
-import pfCreditRatingsData from '../assets/utility-state-serve.json'; 
+import React, { useState, useEffect } from "react";
+import {
+  TextField,
+  Button,
+  MenuItem,
+  FormControl,
+  InputLabel,
+  Select,
+  FormHelperText,
+  Box,
+} from "@mui/material";
+import { useForm, Controller } from "react-hook-form";
+import pfCreditRatingsData from "../assets/utility-state-serve.json";
 import { format } from "date-fns";
-import axios from 'axios';
-const BondEdit = ({ initialData ,onClose}) => {
+import axios from "axios";
+const BondEdit = ({ initialData, onClose, onUpdate }) => {
   const {
     control,
     handleSubmit,
     formState: { errors, isDirty, isValid },
-    setValue, 
+    setValue,
   } = useForm({ mode: "onChange" });
   const [isCouponEntered, setIsCouponEntered] = useState(false);
   const [pfCreditRatings, setPfCreditRatings] = useState([]);
-console.log(initialData); 
+  console.log(initialData);
 
   useEffect(() => {
-
-
     if (pfCreditRatingsData?.PF_Credit_Rating) {
       setPfCreditRatings(pfCreditRatingsData.PF_Credit_Rating);
     }
-     if (initialData) {setValue("Security Name", initialData["security Name"]);
-    setValue("description", initialData["security Description"]);
-    setValue("coupon", initialData["couponRate"]);
-    const callableFlagValue = initialData["isCallable"] ? "Yes" : "No";
-    setValue("callableFlag", callableFlagValue);
-     const maturityDate = initialData["maturityDate"]
-       ? format(new Date(initialData["maturityDate"]), "yyyy-MM-dd")
-       : "";
-    setValue("maturity", maturityDate);
-    const penultimateCouponDate = initialData["penultimateCouponDate"]
-      ? format(new Date(initialData["penultimateCouponDate"]), "yyyy-MM-dd")
-      : "";
-    setValue("penultimateCouponDate", penultimateCouponDate);
-    
-    setValue("pfCreditRating", initialData["pf Credit Rating"]);
-    setValue("askPrice", initialData["askPrice"]);
-     setValue("bidPrice", initialData["bidPrice"]);
-     }
+    if (initialData) {
+      setValue("Security Name", initialData["security Name"]);
+      setValue("description", initialData["security Description"]);
+      setValue("coupon", initialData["couponRate"]);
+      const callableFlagValue = initialData["isCallable"] ? "Yes" : "No";
+      setValue("callableFlag", callableFlagValue);
+      const maturityDate = initialData["maturityDate"]
+        ? format(new Date(initialData["maturityDate"]), "yyyy-MM-dd")
+        : "";
+      setValue("maturity", maturityDate);
+      const penultimateCouponDate = initialData["penultimateCouponDate"]
+        ? format(new Date(initialData["penultimateCouponDate"]), "yyyy-MM-dd")
+        : "";
+      setValue("penultimateCouponDate", penultimateCouponDate);
 
+      setValue("pfCreditRating", initialData["pf Credit Rating"]);
+      setValue("askPrice", initialData["askPrice"]);
+      setValue("bidPrice", initialData["bidPrice"]);
+    }
   }, [initialData, setValue]);
 
-  const handleFormSubmit = async  (data) => {
+  const handleFormSubmit = async (data) => {
     const sid = initialData?.sid;
     if (!sid) {
       console.error("SID is missing in initial data.");
@@ -67,6 +74,9 @@ console.log(initialData);
 
       if (response.status === 200 || response.status === 204) {
         alert("Equity updated successfully!");
+        if (onUpdate) {
+          onUpdate(); 
+        }
         onClose();
       }
     } catch (error) {
@@ -85,16 +95,16 @@ console.log(initialData);
         p: 4,
         borderRadius: 2,
         boxShadow: 3,
-        maxWidth: 600,
+        width: "80%",
+        maxWidth: 1200, 
         mx: "auto",
       }}
     >
-      <form onSubmit={handleSubmit(handleFormSubmit)}>
+      <form onSubmit={handleSubmit(handleFormSubmit)} sx={{maxWidth: "100%"}}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Controller
             name="Security Name"
             control={control}
-            
             render={({ field }) => (
               <TextField
                 {...field}
@@ -102,7 +112,6 @@ console.log(initialData);
                 variant="outlined"
                 disabled // This makes the field immutable (non-editable)
                 fullWidth
-               
               />
             )}
           />
@@ -182,7 +191,7 @@ console.log(initialData);
                 variant="outlined"
                 disabled
                 fullWidth
-                 // Ensure the field value is set correctly
+                // Ensure the field value is set correctly
                 InputProps={{ style: textFieldStyles }}
               />
             )}
@@ -293,7 +302,6 @@ console.log(initialData);
             variant="contained"
             color="primary"
             disabled={!isDirty || !isValid}
-            
           >
             Update
           </Button>
