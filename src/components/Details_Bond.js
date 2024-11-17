@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DetailsCard from "./DetailCard";
+import DetailsCard from "./DetailCard_bond";
 import { Grid, Box } from "@mui/material";
-import "./Details.css"; // Optional for extra styles
+import "./Details.css"; 
 
 function Details() {
   const { id } = useParams();
@@ -74,7 +74,6 @@ function Details() {
     <Box sx={{ padding: "20px" }}>
       <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Security Details</h2>
       <Grid container spacing={3}>
-        {/* Top Row - Two Tables */}
         <Grid item xs={12} md={6}>
           <DetailsCard title="Basic Information" data={basicInfo} />
         </Grid>
@@ -82,7 +81,6 @@ function Details() {
           <DetailsCard title="Financial & Trading Information" data={financialInfo} />
         </Grid>
 
-        {/* Bottom Row - Third Table */}
         <Grid item xs={12}>
           <DetailsCard title="Industry & Geographic Details" data={industryInfo} />
         </Grid>

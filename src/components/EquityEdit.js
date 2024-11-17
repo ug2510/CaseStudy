@@ -14,7 +14,7 @@ import {
 import { useForm, Controller } from "react-hook-form";
 import pfCreditRatingsData from "../assets/utility-state-serve.json";
 
-const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
+const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
   const {
     control,
     handleSubmit,
@@ -39,11 +39,46 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
     }
   }, [initialData, setValue]);
 
+  // const handleFormSubmit = async (data) => {
+  //   const sid = initialData?.sid;
+  //   if (!sid) {
+  //     return;
+  //   }
+  //   const payload = {
+  //     description: data.description,
+  //     sharesOutstanding: parseInt(data.totalSharesOutstanding, 10),
+  //     priceCurrency: data.pricingCurrency,
+  //     openPrice: parseFloat(data.openPrice),
+  //     closePrice: parseFloat(data.closePrice),
+  //     dividendDeclaredDate: new Date(data.dividendDeclaredDate).toISOString(),
+  //     pfCreditRating: data.pfCreditRating,
+  //   };
+
+  //   const apiUrl = `https://localhost:7109/api/EquityCsv/updateEquity${sid}`;
+
+  //   try {
+  //     const response = await axios.put(apiUrl, payload, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+
+  //     if (response.status === 200 || response.status === 204) {
+  //       alert("Equity updated successfully!");
+  //       onClose();
+  //     }
+  //   } catch (error) {
+  //     console.error("Error updating data:", error);
+  //     alert("Failed to update equity. Please try again.");
+  //   }
+  // };
+
   const handleFormSubmit = async (data) => {
-    const sid = initialData?.sid; 
+    const sid = initialData?.sid;
     if (!sid) {
       return;
     }
+
     const payload = {
       description: data.description,
       sharesOutstanding: parseInt(data.totalSharesOutstanding, 10),
@@ -53,30 +88,35 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
       dividendDeclaredDate: new Date(data.dividendDeclaredDate).toISOString(),
       pfCreditRating: data.pfCreditRating,
     };
-  
+
     const apiUrl = `https://localhost:7109/api/EquityCsv/updateEquity${sid}`;
-  
+
     try {
       const response = await axios.put(apiUrl, payload, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-  
+
       if (response.status === 200 || response.status === 204) {
         alert("Equity updated successfully!");
-        onClose(); 
+
+        // Call the parent component's update function
+        if (onUpdate) {
+          onUpdate(); 
+        }
+
+        onClose();
       }
     } catch (error) {
       console.error("Error updating data:", error);
       alert("Failed to update equity. Please try again.");
     }
   };
-  
-  
-  
 
-  const currencyList = currencies.length ? currencies : ["USD", "KRW", "GBP", "EUR"];
+  const currencyList = currencies.length
+    ? currencies
+    : ["USD", "KRW", "GBP", "EUR"];
   const uniqueCurrencies = [...new Set(currencyList)];
 
   return (
@@ -86,11 +126,12 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
         p: 5,
         borderRadius: 2,
         boxShadow: 3,
-        maxWidth: 1000,
+        width: "80%",
+        maxWidth: 1200,
         mx: "auto",
       }}
     >
-      <form onSubmit={handleSubmit(handleFormSubmit)}>
+      <form onSubmit={handleSubmit(handleFormSubmit)} sx={{ maxWidth: "100%" }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <Controller
             name="securityName"
@@ -145,7 +186,9 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
               )}
             />
             {errors.pricingCurrency && (
-              <FormHelperText error>{errors.pricingCurrency.message}</FormHelperText>
+              <FormHelperText error>
+                {errors.pricingCurrency.message}
+              </FormHelperText>
             )}
           </FormControl>
 
@@ -257,7 +300,9 @@ const EquityEdit = ({ initialData, onClose, currencies = [] }) => {
               )}
             />
             {errors.pfCreditRating && (
-              <FormHelperText error>{errors.pfCreditRating.message}</FormHelperText>
+              <FormHelperText error>
+                {errors.pfCreditRating.message}
+              </FormHelperText>
             )}
           </FormControl>
 

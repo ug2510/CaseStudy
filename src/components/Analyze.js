@@ -10,6 +10,7 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
+  Button,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
@@ -45,7 +46,6 @@ const Analyze = () => {
   const [hasMore, setHasMore] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
-
   const [openChartModal, setOpenChartModal] = useState(false);
 
   const fetchData = async (date) => {
@@ -134,47 +134,6 @@ const Analyze = () => {
       <Typography variant="h6" gutterBottom>
         Security Details
       </Typography>
-      {/* <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          marginBottom: 2,
-        }}
-      >
-        <DatePicker
-          label="Select Date"
-          value={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              sx={{
-                input: { color: "black", backgroundColor: "black" },
-                ".MuiInputLabel-root": { color: "black" },
-                ".MuiOutlinedInput-root": {
-                  "& fieldset": { borderColor: "gray" },
-                  "&:hover fieldset": { borderColor: "darkgray" },
-                  "&.Mui-focused fieldset": { borderColor: "black" },
-                },
-              }}
-            />
-          )}
-        />
-        <Tooltip title="Chart Analysis">
-          <IconButton
-            onClick={handleOpenChartModal}
-            sx={{
-              color: "black",
-              "&:hover": {
-                backgroundColor: "rgba(0, 0, 0, 0.1)", // Light black background on hover
-              },
-            }}
-          >
-            <InsertChartIcon fontSize="large" />
-          </IconButton>
-        </Tooltip>
-      </Box> */}
 
       <Box
         sx={{
@@ -204,37 +163,41 @@ const Analyze = () => {
               />
             )}
           />
+        </Box>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <Tooltip title="Chart Analysis">
+            <IconButton
+              onClick={handleOpenChartModal}
+              sx={{
+                color: "black",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.1)",
+                },
+              }}
+            >
+              <InsertChartIcon fontSize="medium" />
+            </IconButton>
+          </Tooltip>
+
           <Tooltip title="Reset Data">
             <IconButton
               onClick={() => {
-                setSelectedDate(null); // Reset the date
-                fetchData(null); // Fetch all data
+                setSelectedDate(null);
+                fetchData(null);
               }}
               sx={{
                 color: "black",
                 "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.1)", // Light black background on hover
+                  backgroundColor: "rgba(0, 0, 0, 0.1)",
                 },
               }}
             >
-              <RefreshIcon fontSize="large" />
+              <RefreshIcon fontSize="medium" />
             </IconButton>
           </Tooltip>
         </Box>
-        <Tooltip title="Chart Analysis">
-          <IconButton
-            onClick={handleOpenChartModal}
-            sx={{
-              color: "black",
-              "&:hover": {
-                backgroundColor: "rgba(0, 0, 0, 0.1)", 
-              },
-            }}
-          >
-            <InsertChartIcon fontSize="medium" />
-          </IconButton>
-        </Tooltip>
       </Box>
+
       <DataGrid
         rows={filteredData}
         columns={columns}
@@ -256,15 +219,14 @@ const Analyze = () => {
         </Box>
       )}
 
-      {/* Modal for Price Chart */}
       <Dialog open={openChartModal} onClose={handleCloseChartModal}>
         <DialogContent>
           <PriceChart />
         </DialogContent>
         <DialogActions>
-          <IconButton onClick={handleCloseChartModal} color="primary">
+          <Button onClick={handleCloseChartModal} color="primary" variant="contained">
             Close
-          </IconButton>
+          </Button>
         </DialogActions>
       </Dialog>
     </Box>

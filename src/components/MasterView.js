@@ -12,8 +12,6 @@ function MasterView() {
   const [selectedType, setSelectedType] = useState("equity"); // Initial type set to "equity"
   const [selectedSecurity, setSelectedSecurity] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-
-  // Fetch data based on selectedType (either "equity" or "bond")
   useEffect(() => {
     fetchData(selectedType);
   }, [selectedType]);
@@ -28,12 +26,10 @@ function MasterView() {
       .catch((error) => console.error("Failed to fetch securities data:", error));
   };
 
-  // Handle switch toggle between equity and bond
   const handleToggle = () => {
     setSelectedType((prevType) => (prevType === "equity" ? "bond" : "equity"));
   };
 
-  // Handle security click for modal view
   const handleSecurityClick = (security) => {
     setSelectedSecurity(security);
     setModalOpen(true);
@@ -44,7 +40,6 @@ function MasterView() {
     setSelectedSecurity(null);
   };
 
-  // Styled switch with white border
   const WhiteBorderSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase': {
       color: theme.palette.common.white,
@@ -61,8 +56,6 @@ function MasterView() {
 
   return (
     <div style={{ padding: '20px', marginTop: '-200px' }}>
-      <br />
-      <br />
       
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
       <br />
