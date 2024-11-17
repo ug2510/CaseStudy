@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import Candles from "./Candles"; // Import the Candles component
+import PriceChart from "./PriceChart"; // Import the PriceChart component
 import {
   Box,
   Typography,
@@ -14,8 +16,8 @@ import {
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
-import InsertChartIcon from "@mui/icons-material/InsertChart"; // Graph icon
-import PriceChart from "./PriceChart";
+import InsertChartIcon from "@mui/icons-material/InsertChart";
+import CandlestickChartIcon from "@mui/icons-material/CandlestickChart";
 import RefreshIcon from "@mui/icons-material/Refresh";
 
 const columns = [
@@ -42,11 +44,10 @@ const Analyze = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
   const [openChartModal, setOpenChartModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null); // Track modal content
 
   const fetchData = async (date) => {
     try {
@@ -78,20 +79,13 @@ const Analyze = () => {
         ytdChange: `${item.ytdChangePercentage}%`,
       }));
 
-      if (formattedData.length === 0) {
-        setFilteredData([]);
-      } else {
-        setFilteredData(formattedData);
-      }
-
+      setFilteredData(formattedData);
       setData(formattedData);
-      setHasMore(formattedData.length > 0);  
-
     } catch (error) {
+      setFilteredData([]);
       // setError(error.message);
-      setFilteredData([]);  
     } finally {
-      setLoading(false);  
+      setLoading(false);
     }
   };
 
@@ -99,19 +93,14 @@ const Analyze = () => {
     fetchData(selectedDate);
   }, [selectedDate]);
 
-  const handleScrollEnd = () => {
-    if (!loading && hasMore) {
-      setPage((prevPage) => prevPage + 1);
-      setLoading(true);
-    }
-  };
-
-  const handleOpenChartModal = () => {
+  const handleOpenModal = (content) => {
+    setModalContent(content);
     setOpenChartModal(true);
   };
 
   const handleCloseChartModal = () => {
     setOpenChartModal(false);
+    setModalContent(null);
   };
 
   if (error) {
@@ -145,39 +134,29 @@ const Analyze = () => {
           marginBottom: 2,
         }}
       >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <DatePicker
-            label="Select Date"
-            value={selectedDate}
-            onChange={(date) => setSelectedDate(date)}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                sx={{
-                  input: { color: "black", backgroundColor: "black" },
-                  ".MuiInputLabel-root": { color: "black" },
-                  ".MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "gray" },
-                    "&:hover fieldset": { borderColor: "darkgray" },
-                    "&.Mui-focused fieldset": { borderColor: "black" },
-                  },
-                }}
-              />
-            )}
-          />
-        </Box>
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <DatePicker
+          label="Select Date"
+          value={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          renderInput={(params) => <TextField {...params} />}
+        />
+
+        <Box sx={{ display: "flex", alignItems: "left", gap: 2 }}>
           <Tooltip title="Chart Analysis">
             <IconButton
-              onClick={handleOpenChartModal}
-              sx={{
-                color: "black",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.1)",
-                },
-              }}
+              onClick={() => handleOpenModal(<PriceChart />)}
+              sx={{ color: "black" }}
             >
               <InsertChartIcon fontSize="medium" />
+            </IconButton>
+          </Tooltip>
+
+          <Tooltip title="Candlestick Analysis">
+            <IconButton
+              onClick={() => handleOpenModal(<Candles />)}
+              sx={{ color: "black" }}
+            >
+              <CandlestickChartIcon fontSize="medium" />
             </IconButton>
           </Tooltip>
 
@@ -187,12 +166,7 @@ const Analyze = () => {
                 setSelectedDate(null);
                 fetchData(null);
               }}
-              sx={{
-                color: "black",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 0.1)",
-                },
-              }}
+              sx={{ color: "black" }}
             >
               <RefreshIcon fontSize="medium" />
             </IconButton>
@@ -205,12 +179,8 @@ const Analyze = () => {
         columns={columns}
         pageSize={10}
         rowsPerPageOptions={[10, 25, 50]}
-        onRowsScrollEnd={handleScrollEnd}
         checkboxSelection
         sx={{
-          ".MuiTablePagination-root": { color: "black" },
-          ".MuiTablePagination-toolbar": { color: "black" },
-          ".MuiTablePagination-selectIcon": { color: "black" },
           "& .MuiDataGrid-cell": { color: "black" },
         }}
       />
@@ -222,11 +192,13 @@ const Analyze = () => {
       )}
 
       <Dialog open={openChartModal} onClose={handleCloseChartModal}>
-        <DialogContent>
-          <PriceChart />
-        </DialogContent>
+        <DialogContent>{modalContent}</DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseChartModal} color="primary" variant="contained">
+          <Button
+            onClick={handleCloseChartModal}
+            color="primary"
+            variant="contained"
+          >
             Close
           </Button>
         </DialogActions>

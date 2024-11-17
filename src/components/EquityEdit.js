@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 import axios from "axios";
 import {
@@ -20,7 +20,11 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
     handleSubmit,
     formState: { errors, isDirty, isValid },
     setValue,
+    watch,
   } = useForm({ mode: "onChange" });
+
+  // Store initial values in a state to track changes
+  const [initialValues, setInitialValues] = useState(null);
 
   useEffect(() => {
     if (initialData) {
@@ -36,42 +40,32 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
       setValue("openPrice", initialData["open Price"]);
       setValue("closePrice", initialData["close Price"]);
       setValue("pfCreditRating", initialData["pf Credit Rating"]);
+
+      // Store the initial values to compare with later
+      const initialFormValues = {
+        securityName: initialData["security Name"],
+        description: initialData["security Description"],
+        pricingCurrency: initialData["price Currency"],
+        totalSharesOutstanding: initialData["shares Outstanding"],
+        openPrice: initialData["open Price"],
+        closePrice: initialData["close Price"],
+        dividendDeclaredDate: format(new Date(initialData["declared Date"]), "yyyy-MM-dd"),
+        pfCreditRating: initialData["pf Credit Rating"],
+      };
+
+      console.log("Initial values set:", initialFormValues); // Debugging log
+      setInitialValues(initialFormValues);
     }
   }, [initialData, setValue]);
 
-  // const handleFormSubmit = async (data) => {
-  //   const sid = initialData?.sid;
-  //   if (!sid) {
-  //     return;
-  //   }
-  //   const payload = {
-  //     description: data.description,
-  //     sharesOutstanding: parseInt(data.totalSharesOutstanding, 10),
-  //     priceCurrency: data.pricingCurrency,
-  //     openPrice: parseFloat(data.openPrice),
-  //     closePrice: parseFloat(data.closePrice),
-  //     dividendDeclaredDate: new Date(data.dividendDeclaredDate).toISOString(),
-  //     pfCreditRating: data.pfCreditRating,
-  //   };
+  // Logging watch data
+  const formValues = watch();
+  console.log("Current form values:", formValues); // Debugging log
 
-  //   const apiUrl = `https://localhost:7109/api/EquityCsv/updateEquity${sid}`;
+  const isFormUnchanged =
+    initialValues && JSON.stringify(formValues) === JSON.stringify(initialValues);
 
-  //   try {
-  //     const response = await axios.put(apiUrl, payload, {
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-
-  //     if (response.status === 200 || response.status === 204) {
-  //       alert("Equity updated successfully!");
-  //       onClose();
-  //     }
-  //   } catch (error) {
-  //     console.error("Error updating data:", error);
-  //     alert("Failed to update equity. Please try again.");
-  //   }
-  // };
+  console.log("Is form unchanged?", isFormUnchanged); // Debugging log
 
   const handleFormSubmit = async (data) => {
     const sid = initialData?.sid;
@@ -103,7 +97,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
 
         // Call the parent component's update function
         if (onUpdate) {
-          onUpdate(); 
+          onUpdate();
         }
 
         onClose();
@@ -310,7 +304,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
             type="submit"
             variant="contained"
             color="primary"
-            disabled={!isDirty || !isValid}
+            disabled={isFormUnchanged || !isDirty || !isValid}
           >
             Update
           </Button>
