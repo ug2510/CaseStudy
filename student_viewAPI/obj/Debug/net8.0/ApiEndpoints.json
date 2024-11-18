@@ -27,22 +27,6 @@
   },
   {
     "ContainingType": "Security_viewAPI.Controllers.SecurityController",
-    "Method": "GetSecuritiesPaged",
-    "RelativePath": "api/Security/getSecurities/{pageNum}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "pageNum",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
     "Method": "GetSecuritiesbyName",
     "RelativePath": "api/Security/getSecuritiesbyName/{ticker}",
     "HttpMethod": "GET",
@@ -53,6 +37,22 @@
         "Name": "ticker",
         "Type": "System.String",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
+    "Method": "GetSecuritiesPaged",
+    "RelativePath": "api/Security/getSecuritiesByPage",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNum",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
