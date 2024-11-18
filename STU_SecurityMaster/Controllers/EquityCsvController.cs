@@ -17,9 +17,10 @@ namespace STU_SecurityMaster.Controllers
         private readonly IConfiguration _configuration;
         private readonly ILogger<Equity_csv_ops> _logger;
 
-        public EquityCsvController(ILogger<Equity_csv_ops> logger)
+        public EquityCsvController(ILogger<Equity_csv_ops> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
             // Ensure the upload directory exists
             if (!Directory.Exists(_uploadDirectory))
             {
@@ -30,7 +31,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getEquityDetailsBySID/{sid}")]
         public IActionResult GetEquityDetailsBySID(int sid)
         {
-            Equity_csv_ops eps = new Equity_csv_ops(_logger);
+            Equity_csv_ops eps = new Equity_csv_ops(_logger,_configuration);
             var equityData = eps.FetchEquityDataFromDbbyID(sid);
             if (equityData is DataTable dt && dt.Rows.Count > 0)
             {
@@ -46,7 +47,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getEquityData")]
         public async Task<IActionResult> GetEquityData()
         {
-            Equity_csv_ops eps = new Equity_csv_ops(_logger);
+            Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
             var data=eps.FetchEquityDataFromDb();
             return Ok(data);
         }
@@ -56,7 +57,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger);
+                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
                 var statusCount = eps.CountActiveSecurities();
                 return Ok(statusCount);
             }
@@ -71,7 +72,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger);
+                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
                 eps.UpdateEquityData(sid,equity);
                 return Ok(equity);
             }
@@ -94,7 +95,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger);
+                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
                 eps.SoftDeleteEquity(sid);
                 return Ok("Deleted Successfully");
             }
@@ -136,15 +137,15 @@ namespace STU_SecurityMaster.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
-                Equity_csv_ops eps = new Equity_csv_ops(_logger);
+                Equity_csv_ops eps = new Equity_csv_ops(_logger,_configuration);
                 string result = eps.FetchDataFromCSV(filePath);
                 // Return the file path to the frontend
-                //return Ok(new { filePath = filePath });
+             
                 return Ok(result);
             }
             catch (Exception ex)
             {
-                // Handle errors
+          
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error uploading file: {ex.Message}");
             }
         }

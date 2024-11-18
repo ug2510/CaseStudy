@@ -1,0 +1,488 @@
+2024-11-18 10:07:52.402 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:07:52.422 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:07:52.447 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:07:52.448 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:07:52.448 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:07:52.982 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 10:07:53.302 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 321.2055ms
+2024-11-18 10:07:53.331 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 10:07:53.331 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 10:07:53.338 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.8393ms
+2024-11-18 10:07:53.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 35.8392ms
+2024-11-18 10:07:53.445 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 10:07:53.516 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.8439ms
+2024-11-18 10:48:01.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 10:48:01.125 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:48:01.145 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:48:01.743 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 10:48:01.781 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 10:48:01.897 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 747.4106ms
+2024-11-18 10:48:01.899 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:48:01.900 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 783.0479ms
+2024-11-18 10:49:20.351 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:49:20.375 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:49:20.404 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:49:20.406 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:49:20.407 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:49:20.516 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 10:49:20.649 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 132.8118ms
+2024-11-18 10:49:20.668 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 10:49:20.679 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 10:49:20.685 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 5.2978ms
+2024-11-18 10:49:20.691 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.6994ms
+2024-11-18 10:49:20.856 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 10:49:20.908 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.3109ms
+2024-11-18 10:49:28.380 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 10:49:28.389 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:49:28.410 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:49:28.700 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 10:49:28.741 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 10:49:28.809 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 394.1631ms
+2024-11-18 10:49:28.812 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:49:28.813 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 433.0103ms
+2024-11-18 10:50:04.058 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/2 - null null
+2024-11-18 10:50:04.064 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:50:04.071 +05:30 [INF] Route matched with {action = "GetEquityDetailsBySID", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:50:04.127 +05:30 [INF] Equity Data with SID 2 was fetched
+2024-11-18 10:50:04.168 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster) in 95.1923ms
+2024-11-18 10:50:04.170 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:50:04.173 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+   at System.Data.DataRowExtensions.UnboxT`1.NonNullableField(Object value)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.<>c.<FetchEquityDataFromDbbyID>b__4_0(DataRow row) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.FetchEquityDataFromDbbyID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Controllers\EquityCsvController.cs:line 35
+   at lambda_method13(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 10:50:04.207 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/2 - 500 null text/plain; charset=utf-8 148.7325ms
+2024-11-18 10:54:44.311 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:54:44.331 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:54:44.356 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:54:44.358 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:54:44.358 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:54:44.439 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 10:54:44.549 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 110.7299ms
+2024-11-18 10:54:44.562 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 10:54:44.565 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 10:54:44.569 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.0053ms
+2024-11-18 10:54:44.582 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.8205ms
+2024-11-18 10:54:44.669 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 10:54:44.719 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.0979ms
+2024-11-18 10:54:52.072 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/1 - null null
+2024-11-18 10:54:52.089 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:54:52.115 +05:30 [INF] Route matched with {action = "GetEquityDetailsBySID", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:54:52.463 +05:30 [INF] Equity Data with SID 1 was fetched
+2024-11-18 10:54:52.472 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster) in 352.5816ms
+2024-11-18 10:54:52.475 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:54:52.478 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.FormatException: The input string 'EQ0010080100001000' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Int32.Parse(String s)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.<>c.<FetchEquityDataFromDbbyID>b__4_0(DataRow row) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.FetchEquityDataFromDbbyID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Controllers\EquityCsvController.cs:line 35
+   at lambda_method3(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 10:54:52.510 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/1 - 500 null text/plain; charset=utf-8 437.8068ms
+2024-11-18 10:55:57.584 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:55:57.602 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:55:57.627 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:55:57.629 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:55:57.629 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:56:23.549 +05:30 [INF] Application is shutting down...
+2024-11-18 10:56:30.972 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:56:30.991 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:56:31.014 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:56:31.015 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:56:31.015 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:56:31.886 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 10:56:32.044 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 158.7341ms
+2024-11-18 10:56:32.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 10:56:32.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 10:56:32.071 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.5636ms
+2024-11-18 10:56:32.097 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.8758ms
+2024-11-18 10:56:32.168 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 10:56:32.238 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 69.9281ms
+2024-11-18 10:56:36.750 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 10:56:36.764 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:56:36.774 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:56:37.033 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 10:56:37.055 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 10:56:37.097 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 318.2099ms
+2024-11-18 10:56:37.108 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 10:56:37.112 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 361.58ms
+2024-11-18 10:56:58.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/1 - null null
+2024-11-18 10:56:58.311 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:56:58.317 +05:30 [INF] Route matched with {action = "GetEquityDetailsBySID", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 10:56:58.366 +05:30 [INF] Equity Data with SID 1 was fetched
+2024-11-18 10:56:58.369 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster) in 51.0388ms
+2024-11-18 10:56:58.370 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID (STU_SecurityMaster)'
+2024-11-18 10:56:58.373 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentException: Column 'Is Active Security' does not belong to table Table.
+   at System.Data.DataRow.GetDataColumn(String columnName)
+   at System.Data.DataRow.get_Item(String columnName)
+   at System.Data.DataRowExtensions.Field[T](DataRow row, String columnName)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.<>c.<FetchEquityDataFromDbbyID>b__4_0(DataRow row) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at System.Linq.Enumerable.SelectEnumerableIterator`2.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at STU_SecurityMaster.Equ_csv.Equity_csv_ops.FetchEquityDataFromDbbyID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Equ_csv\Equity_csv_ops.cs:line 151
+   at STU_SecurityMaster.Controllers.EquityCsvController.GetEquityDetailsBySID(Int32 sid) in C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster\Controllers\EquityCsvController.cs:line 35
+   at lambda_method13(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-11-18 10:56:58.397 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/1 - 500 null text/plain; charset=utf-8 93.8837ms
+2024-11-18 10:59:32.603 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 10:59:32.623 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 10:59:32.647 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 10:59:32.648 +05:30 [INF] Hosting environment: Development
+2024-11-18 10:59:32.650 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 10:59:32.899 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 10:59:33.017 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 118.6994ms
+2024-11-18 10:59:33.035 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 10:59:33.035 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 10:59:33.042 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 7.1146ms
+2024-11-18 10:59:33.060 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.5925ms
+2024-11-18 10:59:33.119 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 10:59:33.173 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 53.2498ms
+2024-11-18 11:02:50.072 +05:30 [INF] Application is shutting down...
+2024-11-18 13:25:14.382 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 13:25:14.402 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 13:25:14.427 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 13:25:14.428 +05:30 [INF] Hosting environment: Development
+2024-11-18 13:25:14.429 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 13:25:14.487 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 13:25:14.616 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 129.1694ms
+2024-11-18 13:25:14.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 13:25:14.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 13:25:14.636 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 3.7678ms
+2024-11-18 13:25:14.655 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 22.6673ms
+2024-11-18 13:25:14.849 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 13:25:14.915 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 65.9505ms
+2024-11-18 13:25:37.998 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/11 - null null
+2024-11-18 13:25:38.006 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-18 13:25:38.025 +05:30 [INF] Route matched with {action = "GetBondDetailsBySID", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBondDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 13:25:38.372 +05:30 [INF] Bond Data with SID 11 was fetched
+2024-11-18 13:25:38.411 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 13:25:38.474 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster) in 444.7786ms
+2024-11-18 13:25:38.476 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-18 13:25:38.478 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/11 - 200 1930 application/json; charset=utf-8 479.7272ms
+2024-11-18 13:26:22.931 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 13:26:22.937 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 13:26:22.943 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 13:26:22.991 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 13:26:22.995 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 13:26:23.001 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 56.5377ms
+2024-11-18 13:26:23.003 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 13:26:23.004 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 72.7993ms
+2024-11-18 14:00:34.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:34.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 14:00:34.304 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:34.313 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.313 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.316 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.313 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.317 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.319 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.316 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:00:34.319 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.322 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.511 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:34.514 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.534 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 212.7738ms
+2024-11-18 14:00:34.536 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.536 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:34.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 232.9684ms
+2024-11-18 14:00:34.539 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.542 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.543 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.558 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 14:00:34.559 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 14:00:34.562 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 236.8367ms
+2024-11-18 14:00:34.563 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:00:34.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 259.4794ms
+2024-11-18 14:00:34.585 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:34.586 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.588 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 43.4991ms
+2024-11-18 14:00:34.589 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.589 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:34.590 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 53.9767ms
+2024-11-18 14:00:34.592 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.595 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.597 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.624 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:34.625 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.627 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 303.4897ms
+2024-11-18 14:00:34.628 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.630 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 325.4702ms
+2024-11-18 14:00:34.630 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:34.632 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:34.633 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.635 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.636 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 37.1274ms
+2024-11-18 14:00:34.636 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.637 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:34.637 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.638 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.640 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:34.641 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 51.4829ms
+2024-11-18 14:00:34.643 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.646 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:34.670 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:34.671 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.672 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 29.9099ms
+2024-11-18 14:00:34.673 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.674 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 42.543ms
+2024-11-18 14:00:34.675 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:34.677 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:34.679 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 31.0657ms
+2024-11-18 14:00:34.680 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:34.681 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 43.8939ms
+2024-11-18 14:00:37.267 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:37.266 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/getBondsData - null null
+2024-11-18 14:00:37.270 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:37.272 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:37.272 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:37.273 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondsData (STU_SecurityMaster)'
+2024-11-18 14:00:37.274 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:37.279 +05:30 [INF] Route matched with {action = "GetBondsData", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBondsData() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:37.308 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:37.309 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:37.311 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 33.8617ms
+2024-11-18 14:00:37.312 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:37.313 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 46.8026ms
+2024-11-18 14:00:37.318 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:37.320 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:37.321 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:37.322 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:37.323 +05:30 [INF] All Bonds were Fetched
+2024-11-18 14:00:37.325 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 14:00:37.327 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetBondsData (STU_SecurityMaster) in 46.8444ms
+2024-11-18 14:00:37.328 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondsData (STU_SecurityMaster)'
+2024-11-18 14:00:37.329 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/getBondsData - 200 20640 application/json; charset=utf-8 62.4356ms
+2024-11-18 14:00:37.352 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:37.353 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:37.354 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 30.7724ms
+2024-11-18 14:00:37.356 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:37.357 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 38.8297ms
+2024-11-18 14:00:44.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:44.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:44.423 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 14:00:44.427 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.429 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.431 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.432 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.432 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.433 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:00:44.435 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.435 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.436 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.470 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:44.473 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.473 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:44.474 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 35.5696ms
+2024-11-18 14:00:44.475 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.476 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.477 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 35.8377ms
+2024-11-18 14:00:44.478 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 54.5095ms
+2024-11-18 14:00:44.479 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:44.481 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-18 14:00:44.483 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 59.7524ms
+2024-11-18 14:00:44.486 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.487 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.490 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.491 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.491 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.492 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.522 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:44.522 +05:30 [INF] Active Securities Counts was feteched
+2024-11-18 14:00:44.522 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.523 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.524 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 30.4134ms
+2024-11-18 14:00:44.525 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 29.7411ms
+2024-11-18 14:00:44.525 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:44.526 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.528 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 48.2319ms
+2024-11-18 14:00:44.528 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.526 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.531 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.532 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 50.7412ms
+2024-11-18 14:00:44.533 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.568 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:44.570 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.571 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 34.8491ms
+2024-11-18 14:00:44.572 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.572 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-18 14:00:44.573 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 47.4316ms
+2024-11-18 14:00:44.574 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:00:44.577 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.578 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:00:44.599 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 14:00:44.600 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 14:00:44.603 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 159.4408ms
+2024-11-18 14:00:44.604 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:00:44.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 181.2306ms
+2024-11-18 14:00:44.606 +05:30 [INF] Active Equities count was Fetched
+2024-11-18 14:00:44.608 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-18 14:00:44.609 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 29.6928ms
+2024-11-18 14:00:44.610 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-18 14:00:44.611 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 35 application/json; charset=utf-8 38.5708ms
+2024-11-18 14:09:05.766 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-18 14:09:05.770 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:09:05.771 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-18 14:09:05.935 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-18 14:09:05.937 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-18 14:09:05.939 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 166.7802ms
+2024-11-18 14:09:05.940 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-18 14:09:05.941 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 15204 application/json; charset=utf-8 175.1485ms
+2024-11-18 14:15:52.475 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryPZoQfDQKKBdpE2HE 1712
+2024-11-18 14:15:52.478 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:15:52.479 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:15:52.487 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:15:55.238 +05:30 [ERR] Procedure or function 'InsertBondsCsvData' expects parameter '@SecurityDescription', which was not supplied.
+The statement has been terminated.
+2024-11-18 14:15:55.242 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 14:15:55.243 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 2755.0227ms
+2024-11-18 14:15:55.244 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:15:55.246 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 2770.7466ms
+2024-11-18 14:20:45.755 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryOu8AnkZ9I34TgLzj 1712
+2024-11-18 14:20:45.758 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:20:45.759 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:20:45.760 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:20:46.478 +05:30 [ERR] Violation of UNIQUE KEY constraint 'Security_BBGUID_UK'. Cannot insert duplicate key in object 'dbo.Security'. The duplicate key value is (<NULL>).
+2024-11-18 14:20:46.479 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 14:20:46.481 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 718.9151ms
+2024-11-18 14:20:46.482 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:20:46.483 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 727.4998ms
+2024-11-18 14:24:35.731 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryHB4hyqzTmtLBaAoN 1712
+2024-11-18 14:24:35.735 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:24:35.735 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:24:35.736 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:24:36.031 +05:30 [INF] Bond Data Transferred from CSV to SQL SERVER
+2024-11-18 14:24:36.033 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 14:24:36.034 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 295.7249ms
+2024-11-18 14:24:36.036 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:24:36.036 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 305.6286ms
+2024-11-18 14:59:24.373 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 14:59:24.385 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 11.3718ms
+2024-11-18 14:59:24.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 14:59:24.403 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 14:59:24.408 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.7026ms
+2024-11-18 14:59:24.417 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.7709ms
+2024-11-18 14:59:24.500 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 14:59:24.516 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.9221ms
+2024-11-18 14:59:34.938 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryj7WRi6Xw2WZx7LLr 1712
+2024-11-18 14:59:34.940 +05:30 [INF] CORS policy execution successful.
+2024-11-18 14:59:34.942 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:59:34.943 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 14:59:35.645 +05:30 [INF] Bond Data Transferred from CSV to SQL SERVER
+2024-11-18 14:59:35.646 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 14:59:35.648 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 702.7139ms
+2024-11-18 14:59:35.649 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 14:59:35.650 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 712.4233ms
+2024-11-18 15:04:43.419 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7109/api/BondCsv/uploadBonds - null null
+2024-11-18 15:04:43.422 +05:30 [INF] CORS policy execution successful.
+2024-11-18 15:04:43.423 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7109/api/BondCsv/uploadBonds - 204 null null 4.5825ms
+2024-11-18 15:04:43.426 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryABysBukLH4BHOUrd 1712
+2024-11-18 15:04:43.428 +05:30 [INF] CORS policy execution successful.
+2024-11-18 15:04:43.429 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 15:04:43.430 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 15:04:43.758 +05:30 [INF] Bond Data Transferred from CSV to SQL SERVER
+2024-11-18 15:04:43.760 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 15:04:43.761 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 329.416ms
+2024-11-18 15:04:43.762 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 15:04:43.763 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 337.1639ms
+2024-11-18 15:21:40.704 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - multipart/form-data; boundary=----WebKitFormBoundaryqGu6yQXs1lYBL4q4 1719
+2024-11-18 15:21:40.708 +05:30 [INF] CORS policy execution successful.
+2024-11-18 15:21:40.708 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 15:21:40.710 +05:30 [INF] Route matched with {action = "UploadCSVFile", controller = "BondCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UploadCSVFile(Microsoft.AspNetCore.Http.IFormFile) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-18 15:21:41.144 +05:30 [INF] Bond Data Transferred from CSV to SQL SERVER
+2024-11-18 15:21:41.146 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-11-18 15:21:41.147 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster) in 436.2568ms
+2024-11-18 15:21:41.149 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.UploadCSVFile (STU_SecurityMaster)'
+2024-11-18 15:21:41.150 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7109/api/BondCsv/uploadBonds - 200 null text/plain; charset=utf-8 445.8203ms
+2024-11-18 16:51:20.236 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 16:51:20.257 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 16:51:20.286 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 16:51:20.288 +05:30 [INF] Hosting environment: Development
+2024-11-18 16:51:20.289 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 16:51:20.320 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 16:51:20.438 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 118.3105ms
+2024-11-18 16:51:20.469 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 16:51:20.469 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 16:51:20.476 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.7652ms
+2024-11-18 16:51:20.492 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.139ms
+2024-11-18 16:51:20.679 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 16:51:20.736 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.8559ms
+2024-11-18 16:51:32.888 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-18 16:51:32.908 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-18 16:51:32.932 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 16:51:32.934 +05:30 [INF] Hosting environment: Development
+2024-11-18 16:51:32.935 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-18 16:51:33.325 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-18 16:51:33.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 115.8914ms
+2024-11-18 16:51:33.460 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-18 16:51:33.463 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 16:51:33.468 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.8011ms
+2024-11-18 16:51:33.482 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.3941ms
+2024-11-18 16:51:33.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-18 16:51:33.635 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.0292ms
+2024-11-18 17:02:58.097 +05:30 [INF] Application is shutting down...

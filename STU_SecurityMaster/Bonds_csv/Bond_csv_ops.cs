@@ -7,31 +7,32 @@ using STU_SecurityMaster.Bonds_csv;
 using System.Data;
 using Model;
 using STU_SecurityMaster.Equ_csv;
+using System.Configuration;
 
 namespace STU_SecurityMaster.Bonds_csv
 {
     public class Bond_csv_ops : IBond
     {
         private readonly ILogger<Bond_csv_ops> _logger;
+        private readonly string _connectionString;
 
-        public Bond_csv_ops(ILogger<Bond_csv_ops> logger)
+
+        public Bond_csv_ops(ILogger<Bond_csv_ops> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _connectionString = configuration.GetConnectionString("IVPConn");
         }
 
-        public Bond_csv_ops()
-        {
-        }
+       
 
         public dynamic FetchBondsDataFromDb()
         {
             SqlConnection conn;
             SqlCommand cmd;
             SqlDataAdapter da;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
             try
             {
-                conn = new SqlConnection(connectionString);
+                conn = new SqlConnection(_connectionString);
                 cmd = new SqlCommand("GetAllBondsData", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 da = new SqlDataAdapter(cmd);
@@ -53,11 +54,10 @@ namespace STU_SecurityMaster.Bonds_csv
             SqlConnection conn;
             SqlCommand cmd;
             SqlDataAdapter da;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
         
             try
             {
-                conn = new SqlConnection(connectionString);
+                conn = new SqlConnection(_connectionString);
                 cmd = new SqlCommand("GetBondDetailsBySID", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
         
@@ -83,28 +83,25 @@ namespace STU_SecurityMaster.Bonds_csv
         public string FetchDataFromCSV(string path)
         {
 
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
-            string dateFormat = "MMM-dd-yyyy"; // The format you mentioned, e.g., "Feb-09-2011"
+            string dateFormat = "MMM-dd-yyyy"; 
 
-            // Create a DateTime variable to hold the parsed date
             DateTime parsedDate;
-            // Read CSV file using ChoCSVReader
+         
             try
             {
                 using (var reader = new ChoCSVReader(path).WithFirstLineHeader())
                 {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
                     {
                         conn.Open();
 
-                        // Iterate through each record in the CSV file
                         foreach (dynamic item in reader)
                         {
                             using (SqlCommand cmd = new SqlCommand("InsertBondsCsvData", conn))
                             {
                                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                                // Add parameters for each column in the stored procedure
+                                
                                 cmd.Parameters.AddWithValue("@SecurityDescription", item["Security Description"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@SecurityName", item["Security Name"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@AssetType", item["Asset Type"] ?? DBNull.Value);
@@ -116,7 +113,7 @@ namespace STU_SecurityMaster.Bonds_csv
                                 cmd.Parameters.AddWithValue("@BBGUniqueID", item["BBG Unique ID"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@CUSIP", item["CUSIP"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@SEDOL", item["SEDOL"] ?? DBNull.Value);
-                                //cmd.Parameters.AddWithValue("@FirstCouponDate",
+                                
                                 cmd.Parameters.AddWithValue("@FirstCouponDate",DateTime.TryParseExact(item["First Coupon Date"]?.ToString(), dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) ? (object)parsedDate : DBNull.Value);
                                 cmd.Parameters.AddWithValue("@Cap", item["Cap"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@Floor", item["Floor"] ?? DBNull.Value);
@@ -133,19 +130,14 @@ namespace STU_SecurityMaster.Bonds_csv
                                         DateTime.TryParseExact(item["Last Reset Date"]?.ToString(), dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) ? (object)parsedDate : DBNull.Value); 
                                 cmd.Parameters.AddWithValue("@Maturity",
                                         DateTime.TryParseExact(item["Maturity"]?.ToString(), dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) ? (object)parsedDate : DBNull.Value);
-                                //cmd.Parameters.AddWithValue("@CallNotificationMaxDays", item["Call Notification Max Days"] ?? DBNull.Value);
-                                //int callNotificationMaxDays;
-                                //cmd.Parameters.AddWithValue("@CallNotificationMaxDays",
-                                //    int.TryParse(item["Call Notification Max Days"]?.ToString() ?? "", out callNotificationMaxDays) ? (object)callNotificationMaxDays : DBNull.Value);
-                                // Handle 'Call Notification Max Days' (INT)
-                                // Handle 'Call Notification Max Days' (INT)
+                               
                                 int callNotificationMaxDaysInt;
                                 var callNotificationMaxDaysValue = item["Call Notification Max Days"]?.ToString();
 
                                 if (callNotificationMaxDaysValue != null  )
                                 {
                                     double a = double.Parse(callNotificationMaxDaysValue);
-                                    // Convert the double to an integer (removing the decimal part)
+                                    
                                     callNotificationMaxDaysInt = (int)a;
                                     cmd.Parameters.AddWithValue("@CallNotificationMaxDays", callNotificationMaxDaysInt);
                                 }
@@ -153,16 +145,13 @@ namespace STU_SecurityMaster.Bonds_csv
                                 {
                                     cmd.Parameters.AddWithValue("@CallNotificationMaxDays", DBNull.Value);
                                 }
-
-
-                                //cmd.Parameters.AddWithValue("@PutNotificationMaxDays", item["Put Notification Max Days"] ?? DBNull.Value);
                                 int putNotificationMaxDaysInt;
                                 var putNotificationMaxDaysValue = item["Put Notification Max Days"]?.ToString();
 
                                 if (putNotificationMaxDaysValue != null)
                                 {
                                     double b = double.Parse(putNotificationMaxDaysValue);
-                                    // Convert the double to an integer (removing the decimal part)
+                                    
                                     putNotificationMaxDaysInt = (int)b;
                                     cmd.Parameters.AddWithValue("@PutNotificationMaxDays", putNotificationMaxDaysInt);
                                 }
@@ -172,7 +161,6 @@ namespace STU_SecurityMaster.Bonds_csv
                                 }
                                 cmd.Parameters.AddWithValue("@PenultimateCouponDate",
                                         DateTime.TryParseExact(item["Penultimate Coupon Date"]?.ToString(), dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) ? (object)parsedDate : DBNull.Value); cmd.Parameters.AddWithValue("@ResetFrequency", item["Reset Frequency"] ?? DBNull.Value);
-                                //cmd.Parameters.AddWithValue("@HasPosition", item["Has Position"] ?? DBNull.Value);
                                 bool hasPosition;
                                 cmd.Parameters.AddWithValue("@HasPosition",
                                     bool.TryParse(item["Has Position"]?.ToString() ?? "false", out hasPosition) ? (object)hasPosition : DBNull.Value);
@@ -214,12 +202,12 @@ namespace STU_SecurityMaster.Bonds_csv
                                        DateTime.TryParseExact(item["Call Date"]?.ToString(), dateFormat, CultureInfo.InvariantCulture, DateTimeStyles.None, out parsedDate) ? (object)parsedDate : DBNull.Value); 
                                 cmd.Parameters.AddWithValue("@CallPrice", item["Call Price"] ?? DBNull.Value);
 
-                                // Execute the command
+                                
                                 cmd.ExecuteNonQuery();
                             }
 
 
-                            // Execute the stored procedure
+                          
                           
                         }
                     }
@@ -234,29 +222,16 @@ namespace STU_SecurityMaster.Bonds_csv
 
             return "Success";
 
-            //string _connectionString = "Server = 192.168.0.13\\\\\\\\sqlexpress,49753 ;DataBase = STU_SecurityMaster ; User Id = sa;Password =sa@12345678;TrustServerCertificate = True";
-
-
-
-            //using (var reader = new ChoCSVReader("C:\\Users\\spbhuva\\Downloads\\Data for securities.xlsx - Equities.csv").WithFirstLineHeader())
-            //{
-            //    foreach (dynamic item in reader)
-            //    {
-            //        Console.WriteLine(item["Security Name"]);
-            //    }
-
-            //}
-            //return "success";
+           
         }
         public object CountActiveSecurities()
         {
             int activeCount = 0;
             int inActiveCount = 0;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("BondsStatusCount", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -285,11 +260,10 @@ namespace STU_SecurityMaster.Bonds_csv
         }
         public void SoftDeleteBond(int sid)
         {
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("SoftDeleteSecurity", conn))
                 {
                     conn.Open();
@@ -318,11 +292,10 @@ namespace STU_SecurityMaster.Bonds_csv
 
         public void UpdateBondData(int sid, BondWithUpdateProps bond)
         {
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("UpdateBond", conn))
                 {
                     conn.Open();

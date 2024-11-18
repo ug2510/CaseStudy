@@ -5,8 +5,9 @@ namespace STU_SecurityMaster
 {
     public class Equity_csv
     {
+        public int SecurityId { get; set; }
         [Column("Bloomberg Unique Id")]
-        public int BBGUniqueId { get; set; }
+        public string BBGUniqueId { get; set; }
         [Column("Security Name")]
         public string SecurityName { get; set; }
         [Column("Security Description")]
@@ -30,9 +31,9 @@ namespace STU_SecurityMaster
         [Column("Is ADR Flag")]
         public bool? IsADRFlag { get; set; }
         [Column("ADR Underlying Ticker")]
-        public string ADRUnderlyingTicker { get; set; }
+        public string? ADRUnderlyingTicker { get; set; }
         [Column("ADR Underlying Currency")]
-        public string ADRUnderlyingCurrency { get; set; }
+        public string? ADRUnderlyingCurrency { get; set; }
         [Column("Shares Per ADR")]
         public decimal? SharesPerADR { get; set; }
         [Column("IPO Date")]
@@ -67,15 +68,15 @@ namespace STU_SecurityMaster
         [Column("PF Liquidity Profile")]
         public string PFLiquidityProfile { get; set; }
         [Column("PF Maturity")]
-        public string PFMaturity { get; set; }
+        public string? PFMaturity { get; set; }
         [Column("PF NAIC Code")]
-        public string PFNAICCode { get; set; }
+        public string? PFNAICCode { get; set; }
         [Column("PF Region")]
-        public string PFRegion { get; set; }
+        public string? PFRegion { get; set; }
         [Column("PF Region")]
-        public string PFSector { get; set; }
+        public string? PFSector { get; set; }
         [Column("PF Sector")]
-        public string PFSubAssetClass { get; set; }
+        public string? PFSubAssetClass { get; set; }
         [Column("PF SubAsset Class")]
         public string CountryOfIssuance { get; set; }
         [Column("Issue Country")]
@@ -118,7 +119,7 @@ namespace STU_SecurityMaster
         public DateTime? DividendPayDate { get; set; }
         [Column("Dividend Amount")]
         public decimal? DividendAmount { get; set; }
-        public string Frequency { get; set; }
+        public string? Frequency { get; set; }
         [Column("Dividend Type")]
         public string DividendType { get; set; }
     }

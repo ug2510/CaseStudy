@@ -7,43 +7,43 @@ using System.Data;
 using System.Data.Common;
 using Model;
 using STU_SecurityMaster.Bonds_csv;
+using System.Configuration;
 
 namespace STU_SecurityMaster.Equ_csv
 {
     public class Equity_csv_ops : IEquity
     {
         private readonly ILogger<Equity_csv_ops> _logger;
-        public Equity_csv_ops(ILogger<Equity_csv_ops> logger)
+        private readonly string _connectionString;
+        public Equity_csv_ops(ILogger<Equity_csv_ops> logger, IConfiguration configuration)
             {
             _logger = logger;
-            }
-
-        public Equity_csv_ops()
-        {
+            _connectionString = configuration.GetConnectionString("IVPConn");
         }
+
+      
 
         public string FetchDataFromCSV(string path)
         {
 
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
-            // Read CSV file using ChoCSVReader
+           
             try
             {
                 using (var reader = new ChoCSVReader(path).WithFirstLineHeader())
                 {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    using (SqlConnection conn = new SqlConnection(_connectionString))
                     {
                         conn.Open();
 
-                        // Iterate through each record in the CSV file
+                     
                         foreach (dynamic item in reader)
                         {
                             using (SqlCommand cmd = new SqlCommand("InsertEquityCsvData", conn))
                             {
                                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                                // Add parameters for each column from CSV to the stored procedure
+                               
                                 cmd.Parameters.AddWithValue("@SecurityName", item["Security Name"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@SecurityDescription", item["Security Description"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@HasPosition", item["Has Position"] ?? DBNull.Value);
@@ -107,7 +107,7 @@ namespace STU_SecurityMaster.Equ_csv
                                 cmd.Parameters.AddWithValue("@Frequency", item["Frequency"] ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@DividendType", item["Dividend Type"] ?? DBNull.Value);
 
-                                // Execute the stored procedure
+                               
                                 cmd.ExecuteNonQuery();
                             }
                         }
@@ -123,19 +123,7 @@ namespace STU_SecurityMaster.Equ_csv
 
             return "Success";
 
-            //string _connectionString = "Server = 192.168.0.13\\\\\\\\sqlexpress,49753 ;DataBase = STU_SecurityMaster ; User Id = sa;Password =sa@12345678;TrustServerCertificate = True";
-
-
-
-            //using (var reader = new ChoCSVReader("C:\\Users\\spbhuva\\Downloads\\Data for securities.xlsx - Equities.csv").WithFirstLineHeader())
-            //{
-            //    foreach (dynamic item in reader)
-            //    {
-            //        Console.WriteLine(item["Security Name"]);
-            //    }
-
-            //}
-            //return "success";
+            
         }
 
         public dynamic FetchEquityDataFromDbbyID(int sid)
@@ -143,11 +131,10 @@ namespace STU_SecurityMaster.Equ_csv
             SqlConnection conn;
             SqlCommand cmd;
             SqlDataAdapter da;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                conn = new SqlConnection(connectionString);
+                conn = new SqlConnection(_connectionString);
                 cmd = new SqlCommand("GetEquityDataBySID", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -175,27 +162,16 @@ namespace STU_SecurityMaster.Equ_csv
             SqlConnection conn;
             SqlCommand cmd;
             SqlDataAdapter da;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
             try
             {
-                conn = new SqlConnection(connectionString);
+                conn = new SqlConnection(_connectionString);
                 cmd = new SqlCommand("GetAllEquityData", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 da = new SqlDataAdapter(cmd);
                 DataSet ds = new DataSet();
                 da.Fill(ds);
                 DataTable dt = ds.Tables[0];
-                //foreach (DataColumn col in dt.Columns)
-                //{
-                //    Console.Write($" {col.ColumnName} ");
-                //}
-                //Console.WriteLine();
-                //foreach (DataRow dr in dt.Rows)
-                //{
-                //    Console.WriteLine($"{dr[0]} - {dr[1]} - {dr[2]} - {dr[3]} - {dr[4]} - {dr[5]}");
-
-                //}
-
+     
                 _logger.LogInformation("ALl Equity Data Was Fetched");
                 return dt;
             }
@@ -210,11 +186,10 @@ namespace STU_SecurityMaster.Equ_csv
         {
             int activeCount = 0;
             int inActiveCount = 0;
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("EquitiesStatusCount", conn))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -244,11 +219,10 @@ namespace STU_SecurityMaster.Equ_csv
 
         public void UpdateEquityData(int sid,EquityWithUpdateProps equity)
         {
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("UpdateSecurity", conn))
                 {
                     conn.Open();
@@ -285,11 +259,10 @@ namespace STU_SecurityMaster.Equ_csv
 
         public void SoftDeleteEquity(int sid)
         {
-            string connectionString = "Server=192.168.0.13\\sqlexpress,49753;Database=STU_SecurityMaster;User Id=sa;Password=sa@12345678;TrustServerCertificate=True";
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(_connectionString))
                 using (SqlCommand cmd = new SqlCommand("SoftDeleteSecurity", conn))
                 {
                     conn.Open();
