@@ -1,141 +1,179 @@
-import React from 'react';
-import { Card, CardContent, Typography, Grid, CardActionArea, Box } from '@mui/material';
-import { useNavigate, useLocation } from 'react-router-dom';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import UploadIcon from '@mui/icons-material/Upload';
-import img1 from '../assets/view.png';
-import img2 from '../assets/csv.png';
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  Typography,
+  Grid,
+  CardActionArea,
+  Box,
+} from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import img1 from "../assets/view.png";
+import img2 from "../assets/csv.png";
 
 function HomePage() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [activeCard, setActiveCard] = useState(null); // State to track active card
+
+  const handleCardClick = (route, card) => {
+    setActiveCard(card);
+    setTimeout(() => {
+      navigate(route);
+    }, 300); // Delay for transition effect
+  };
 
   return (
-    <Box
-      sx={{
-        padding: 4,
-        textAlign: 'center',
-        minHeight: '100vh', // Ensures full height of the viewport
-        width: '100%', // Ensures full width of the viewport
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <div style={{ padding: "20px", textAlign: "center" }}>
       <Typography
         variant="h4"
         gutterBottom
         sx={{
-          marginTop: 6,
-          fontWeight: 600,
-          color: '#333',
+          marginTop: "-45px",
+          fontWeight: "light",
+          fontFamily: "Roboto, sans-serif",
+          background: "linear-gradient(to right, #42a5f5, #478ed1)",
+          WebkitBackgroundClip: "text",
+          textShadow: "1px 1px 2px rgba(0, 0, 0, 0.3)",
+          padding: "10px 0",
         }}
       >
         Welcome to Security Master App
       </Typography>
+
       {location.state && location.state.successMessage && (
-        <Typography variant="h6" color="success.main" sx={{ marginTop: 2 }}>
+        <Typography variant="h6" color="success.main" gutterBottom>
           {location.state.successMessage}
         </Typography>
       )}
-
-      <Grid container spacing={6} justifyContent="center" sx={{ marginTop: 4 }}>
-        {/* Master View Card */}
-        <Grid item xs={12} sm={6} md={4}>
+      <hr />
+      <Grid
+        container
+        spacing={6}
+        justifyContent="flex-start"
+        sx={{ marginTop: 2, marginLeft: -4 }}
+      >
+        <Grid item xs={12} sm={6} md={6}>
           <CardActionArea
-            onClick={() => navigate('/sec-view')}
+            onClick={() => handleCardClick("/sec-view", "master")}
             sx={{
-              '&:hover .MuiCard-root': {
-                transform: 'scale(1.05)',
-                boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.2)',
-              },
+              transition: "transform 0.3s ease-in-out",
+              transform: activeCard === "master" ? "scale(1.1)" : "scale(1)",
             }}
           >
             <Card
-              className="MuiCard-root"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                width: 340,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "space-between",
+                height: 300,
+                width: 250,
                 padding: 2,
-                borderRadius: 3,
-                border: '1px solid #ddd', // Subtle border
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                position: "relative",
+                textAlign: "center",
+                background: "linear-gradient(to right, #f6f6f6, #e3e3e3)",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+                border: "1px solid transparent",
+                borderRadius: "16px",
+                "&:hover": {
+                  background: "linear-gradient(to right, #e3f2fd, #bbdefb)",
+                  borderColor: "#64b5f6",
+                },
               }}
             >
               <Box
                 component="img"
                 src={img1}
                 alt="Master View"
-                sx={{
-                  width: 90,
-                  height: 90,
-                  marginRight: 2,
-                  borderRadius: '12px',
+                sx={{ width: 80, height: 80, marginBottom: 2, marginTop: 4 }}
+              />
+              <hr
+                style={{
+                  width: "80%",
+                  borderTop: "1px solid #d3d3d3",
+                  marginBottom: "12px",
                 }}
               />
               <CardContent>
-                <ArrowForwardIcon
-                  fontSize="large"
-                  sx={{ color: 'primary.main', marginBottom: 1 }}
-                />
-                <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                <Typography variant="h6" sx={{ marginBottom: 1 }}>
                   Master View
                 </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  View detailed information about securities in a structured
+                  manner.
+                </Typography>
               </CardContent>
+              <ArrowForwardIcon
+                fontSize="medium"
+                color="primary"
+                sx={{ position: "absolute", bottom: 16, right: 16 }}
+              />
             </Card>
           </CardActionArea>
         </Grid>
 
-        {/* Uploader Card */}
-        <Grid item xs={12} sm={6} md={4}>
+        <Grid item xs={12} sm={6} md={6}>
           <CardActionArea
-            onClick={() => navigate('/sec-upload')}
+            onClick={() => handleCardClick("/sec-upload", "upload")}
             sx={{
-              '&:hover .MuiCard-root': {
-                transform: 'scale(1.05)',
-                boxShadow: '0px 6px 16px rgba(0, 0, 0, 0.2)',
-              },
+              transition: "transform 0.3s ease-in-out",
+              transform: activeCard === "upload" ? "scale(1.1)" : "scale(1)",
             }}
           >
             <Card
-              className="MuiCard-root"
               sx={{
-                display: 'flex',
-                alignItems: 'center',
-                width: 340,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "space-between",
+                height: 300,
+                width: 250,
                 padding: 2,
-                borderRadius: 3,
-                border: '1px solid #ddd', // Subtle border
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                position: "relative",
+                textAlign: "center",
+                background: "linear-gradient(to right, #f6f6f6, #e3e3e3)",
+                boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+                border: "1px solid transparent",
+                borderRadius: "16px",
+                "&:hover": {
+                  background: "linear-gradient(to right, #e3f2fd, #bbdefb)",
+                  borderColor: "#64b5f6",
+                },
               }}
             >
               <Box
                 component="img"
                 src={img2}
                 alt="Uploader"
-                sx={{
-                  width: 90,
-                  height: 90,
-                  marginRight: 2,
-                  borderRadius: '12px',
+                sx={{ width: 80, height: 80, marginBottom: 2, marginTop: 4 }}
+              />
+              <hr
+                style={{
+                  width: "80%",
+                  borderTop: "1px solid #d3d3d3",
+                  marginBottom: "12px",
                 }}
               />
               <CardContent>
-                <UploadIcon
-                  fontSize="large"
-                  sx={{ color: 'primary.main', marginBottom: 1 }}
-                />
-                <Typography variant="h6" sx={{ fontWeight: 500 }}>
+                <Typography variant="h6" sx={{ marginBottom: 1 }}>
                   Uploader
                 </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Upload securities data quickly and efficiently.
+                </Typography>
               </CardContent>
+              <ArrowForwardIcon
+                fontSize="medium"
+                color="primary"
+                sx={{ position: "absolute", bottom: 16, right: 16 }}
+              />
             </Card>
           </CardActionArea>
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 }
 

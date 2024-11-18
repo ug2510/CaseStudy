@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import DetailsCard from "./DetailCard";
-import { Grid, Box } from "@mui/material";
-import "./Details.css"; // Optional for extra styles
+import { Grid, Box, Button } from "@mui/material";
+import "./Details.css"; 
 
 function Details() {
   const { id } = useParams();
   const [security, setSecurity] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchSecurityDetails = async () => {
@@ -47,15 +48,15 @@ function Details() {
   };
 
   const financialInfo = {
-    "Open Price": security["open Price"]?.toLocaleString(),
-    "Close Price": security["close Price"]?.toLocaleString(),
-    "Last Price": security["last Price"]?.toLocaleString(),
+    "Open Price": `$${security["open Price"]?.toLocaleString()}`,
+    "Close Price": `$${security["close Price"]?.toLocaleString()}`,
+    "Last Price": `$${security["last Price"]?.toLocaleString()}`,
     "PE Ratio": security["pe Ratio"],
     "Volume": security.volume?.toLocaleString(),
     "Dividend Declared Date": new Date(
       security["declared Date"]
     ).toLocaleDateString(),
-    "Dividend Amount": security.amount,
+    "Dividend Amount": `$${security.amount}`,
     "Dividend Type": security["dividend Type"],
   };
 
@@ -72,9 +73,17 @@ function Details() {
 
   return (
     <Box sx={{ padding: "20px" }}>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", marginBottom: "20px" }}>
+        <Button
+          variant="outlined"
+          onClick={() => navigate(-1)} 
+        >
+          Back
+        </Button>
+      </Box>
+
       <h2 style={{ textAlign: "center", marginBottom: "20px" }}>Security Details</h2>
       <Grid container spacing={3}>
-        {/* Top Row - Two Tables */}
         <Grid item xs={12} md={6}>
           <DetailsCard title="Basic Information" data={basicInfo} />
         </Grid>
@@ -82,7 +91,6 @@ function Details() {
           <DetailsCard title="Financial & Trading Information" data={financialInfo} />
         </Grid>
 
-        {/* Bottom Row - Third Table */}
         <Grid item xs={12}>
           <DetailsCard title="Industry & Geographic Details" data={industryInfo} />
         </Grid>

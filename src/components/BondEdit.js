@@ -110,7 +110,7 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 {...field}
                 label="Security Name"
                 variant="outlined"
-                disabled // This makes the field immutable (non-editable)
+                disabled 
                 fullWidth
               />
             )}
