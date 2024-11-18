@@ -84,6 +84,34 @@ namespace Security_viewAPI.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified date.");
     }
 }
+[HttpGet("CountRecords")]
+public async Task<IActionResult> CountRecords()
+{
+    try
+    {
+        int count = 0;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM vw_SP500_Overview", connection))
+            {
+                await connection.OpenAsync();
+
+                // Execute the query and retrieve the count
+                count = (int)await command.ExecuteScalarAsync(); // ExecuteScalar returns the first column of the first row
+            }
+        }
+
+        // Return the count as the response
+        return Ok(count);
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError($"An error occurred while fetching the record count: {ex.Message}");
+        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching the record count.");
+    }
+
+}
+
 [HttpGet("getAllDetailsByTicker/{ticker}")]
 public async Task<IActionResult> getAllDetailsByTicker(string ticker)
 {
