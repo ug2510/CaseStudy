@@ -47,13 +47,18 @@ const Analyze = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
   const [openChartModal, setOpenChartModal] = useState(false);
-  const [modalContent, setModalContent] = useState(null); 
+  const [modalContent, setModalContent] = useState(null);
+  const [rowCount,setRowCount] = useState(0);
+  const [paginationModel, setPaginationModel] = React.useState({
+    page: 0,
+    pageSize: 100,
+  });
 
   const fetchData = async (date) => {
     try {
       const url = date
         ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(date).format("YYYY-MM-DD")}`
-        : "https://localhost:7134/api/Security/getSecurities";
+        : `https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=${paginationModel.page+1}&PageSize=${paginationModel.pageSize}`;
 
       const response = await fetch(url);
       if (!response.ok) {
@@ -90,9 +95,24 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
     }
   };
 
+  const fetchRowCount=async ()=>{
+    try{
+      const response = await fetch(`https://localhost:7134/api/Security/CountRecords`);
+      if (!response.ok) {
+        throw new Error("Failed to fetch data");
+      }
+
+      const result = await response.json();
+      setRowCount(result)
+    }
+    catch(error){
+      console.log(error);
+    }
+  };
   useEffect(() => {
+    fetchRowCount();
     fetchData(selectedDate);
-  }, [selectedDate]);
+  }, [selectedDate,paginationModel]);
 
   const handleOpenModal = (content) => {
     setModalContent(content);
@@ -177,8 +197,12 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
 
       <DataGrid
         rows={filteredData}
+        paginationModel={paginationModel}
+        paginationMode="server"
+        onPaginationModelChange={setPaginationModel}
+        rowCount={rowCount}
         columns={columns}
-        pageSize={10}
+        // pageSize={10}
         rowsPerPageOptions={[10, 25, 50]}
         checkboxSelection
         sx={{
