@@ -96,11 +96,11 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
         borderRadius: 2,
         boxShadow: 3,
         width: "80%",
-        maxWidth: 1200, 
+        maxWidth: 1200,
         mx: "auto",
       }}
     >
-      <form onSubmit={handleSubmit(handleFormSubmit)} sx={{maxWidth: "100%"}}>
+      <form onSubmit={handleSubmit(handleFormSubmit)} sx={{ maxWidth: "100%" }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Controller
             name="Security Name"
@@ -110,7 +110,7 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 {...field}
                 label="Security Name"
                 variant="outlined"
-                disabled 
+                disabled
                 fullWidth
               />
             )}
@@ -254,7 +254,7 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
             rules={{
               required: "Ask Price is required",
               pattern: {
-                value: /^\d+(\.\d{1,2})?$/,
+                value: /^\d{1,6}(\.\d{1,6})?$/,
                 message: "Invalid price format",
               },
             }}
@@ -279,7 +279,7 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
             rules={{
               required: "Bid Price is required",
               pattern: {
-                value: /^\d+(\.\d{1,2})?$/,
+                value: /^\d{1,6}(\.\d{1,6})?$/,
                 message: "Invalid price format",
               },
             }}

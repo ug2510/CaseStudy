@@ -1,19 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import HomePage from './components/HomePage';
-import MasterView from './components/MasterView';
-import Uploader from './components/Uploader';
+import HomePage from "./components/HomePage";
+import MasterView from "./components/MasterView";
+import Uploader from "./components/Uploader";
 import Navbar from "./components/Navbar";
 import Analyze from "./components/Analyze";
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Details from "./components/Details";
 import Details_Bond from "./components/Details_Bond";
 
 function App() {
   return (
     <div className="App">
-      
       <header className="App-header">
         <Navbar />
         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -27,7 +26,6 @@ function App() {
           </Routes>
         </LocalizationProvider>
       </header>
-
     </div>
   );
 }

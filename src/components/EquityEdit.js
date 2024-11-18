@@ -49,7 +49,10 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
         totalSharesOutstanding: initialData["shares Outstanding"],
         openPrice: initialData["open Price"],
         closePrice: initialData["close Price"],
-        dividendDeclaredDate: format(new Date(initialData["declared Date"]), "yyyy-MM-dd"),
+        dividendDeclaredDate: format(
+          new Date(initialData["declared Date"]),
+          "yyyy-MM-dd"
+        ),
         pfCreditRating: initialData["pf Credit Rating"],
       };
 
@@ -63,7 +66,8 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
   console.log("Current form values:", formValues); // Debugging log
 
   const isFormUnchanged =
-    initialValues && JSON.stringify(formValues) === JSON.stringify(initialValues);
+    initialValues &&
+    JSON.stringify(formValues) === JSON.stringify(initialValues);
 
   console.log("Is form unchanged?", isFormUnchanged); // Debugging log
 
@@ -191,7 +195,10 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
             control={control}
             rules={{
               required: "Total Shares Outstanding is required",
-              pattern: { value: /^\d+$/, message: "Must be a valid number" },
+              pattern: {
+                value: /^\d{1,9}$/, // Ensure it's exactly 9 digits
+                message: "Total Shares Outstanding must be exactly 9 digits",
+              },
             }}
             render={({ field }) => (
               <TextField
@@ -212,8 +219,8 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
             rules={{
               required: "Open Price is required",
               pattern: {
-                value: /^\d+(\.\d{1,2})?$/,
-                message: "Invalid price format",
+                value: /^\d{1,6}(\.\d{1,6})?$/, // Allow up to 10 digits before decimal and 2 decimal places
+                message: "Out of range Value",
               },
             }}
             render={({ field }) => (
@@ -235,8 +242,8 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
             rules={{
               required: "Close Price is required",
               pattern: {
-                value: /^\d+(\.\d{1,2})?$/,
-                message: "Invalid price format",
+                value: /^\d{1,6}(\.\d{1,6})?$/, // Same pattern as openPrice
+                message: "Out of range Value",
               },
             }}
             render={({ field }) => (
