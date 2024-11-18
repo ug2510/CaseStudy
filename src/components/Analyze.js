@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import Candles from "./Candles"; // Import the Candles component
-import PriceChart from "./PriceChart"; // Import the PriceChart component
+import Candles from "./Candles"; 
+import PriceChart from "./PriceChart"; 
 import {
   Box,
   Typography,
@@ -47,7 +47,7 @@ const Analyze = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
   const [openChartModal, setOpenChartModal] = useState(false);
-  const [modalContent, setModalContent] = useState(null); // Track modal content
+  const [modalContent, setModalContent] = useState(null); 
 
   const fetchData = async (date) => {
     try {
@@ -71,12 +71,13 @@ const Analyze = () => {
         gicsSubIndustry: item.gicsSubIndustry,
         headquarterLocation: item.headquartersLocation,
         founded: item.founded,
-        open: `$${item.openPrice}`,
-        close: `$${item.closePrice}`,
-        dtdChange: `${item.dtdChangePercentage}%`,
-        mtdChange: `${item.mtdChangePercentage}%`,
-        qtdChange: `${item.qtdChangePercentage}%`,
-        ytdChange: `${item.ytdChangePercentage}%`,
+        open: item.openPrice ? `$${item.openPrice.toFixed(2)}` : "$0.00",
+close: item.closePrice ? `$${item.closePrice.toFixed(2)}` : "$0.00",
+dtdChange: item.dtdChangePercentage ? `${item.dtdChangePercentage.toFixed(2)}%` : "0.00%",
+mtdChange: item.mtdChangePercentage ? `${item.mtdChangePercentage.toFixed(2)}%` : "0.00%",
+qtdChange: item.qtdChangePercentage ? `${item.qtdChangePercentage.toFixed(2)}%` : "0.00%",
+ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` : "0.00%",
+
       }));
 
       setFilteredData(formattedData);
