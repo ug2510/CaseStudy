@@ -149,5 +149,20 @@ namespace STU_SecurityMaster.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error uploading file: {ex.Message}");
             }
         }
+        [HttpGet("EquitySector")]
+        public IActionResult FetchSectorData()
+        {
+            try
+            {
+                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
+                var sector = eps.FetchEquitySector();
+                return Ok(sector);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving Equity sectors: {ex.Message}");
+            }
+
         }
+    }
 }

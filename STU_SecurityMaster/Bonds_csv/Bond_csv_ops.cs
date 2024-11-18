@@ -23,9 +23,34 @@ namespace STU_SecurityMaster.Bonds_csv
             _connectionString = configuration.GetConnectionString("IVPConn");
         }
 
-       
+        public dynamic FetchBondSector()
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            try
+            {
+                conn = new SqlConnection(_connectionString);
+                cmd = new SqlCommand("BondSectors", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                DataTable dt = ds.Tables[0];
 
-        public dynamic FetchBondsDataFromDb()
+                _logger.LogInformation("Bonds Sector data Was Fetched");
+                return dt;
+
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message);
+                return sqlerror.Message;
+            }
+        }
+
+            public dynamic FetchBondsDataFromDb()
         {
             SqlConnection conn;
             SqlCommand cmd;

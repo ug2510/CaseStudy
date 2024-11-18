@@ -22,12 +22,9 @@ namespace STU_SecurityMaster.Equ_csv
         }
 
       
-
+       
         public string FetchDataFromCSV(string path)
         {
-
-
-           
             try
             {
                 using (var reader = new ChoCSVReader(path).WithFirstLineHeader())
@@ -156,6 +153,34 @@ namespace STU_SecurityMaster.Equ_csv
                 _logger.LogError(sqlerror.Message);
                 return sqlerror.Message;
             }
+        }
+        public dynamic FetchEquitySector()
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            SqlDataAdapter da;
+            try
+            {
+                conn = new SqlConnection(_connectionString);
+                cmd = new SqlCommand("EquitySectors", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                da = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                DataTable dt = ds.Tables[0];
+
+                _logger.LogInformation("Equity Sector data Was Fetched");
+                return dt;
+
+            }
+            catch (SqlException sqlerror)
+            {
+                Console.WriteLine("Cannot get Equity details " + sqlerror.Message);
+                _logger.LogError(sqlerror.Message);
+                return sqlerror.Message;
+            }
+        
+
         }
         public dynamic FetchEquityDataFromDb()
         {

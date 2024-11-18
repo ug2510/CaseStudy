@@ -7,24 +7,28 @@
       "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\bonds_csv\\bond_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\bonds_csv\\ibond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\bonds_csv\\ibond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\controllers\\bondcsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\bondcsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\equ_csv\\equity_csv_ops.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\controllers\\equitycsvcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|solutionrelative:model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\bonds_csv\\ibond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|solutionrelative:stu_securitymaster\\bonds_csv\\ibond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -44,10 +48,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EC8FD062-2867-4196-9D60-2477DD062A05}|Model\\Model.csproj|solutionrelative:model\\equity_csv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EF37079-5426-40C5-ACB6-86943D2EFD26}|STU_SecurityMaster\\STU_SecurityMaster.csproj|c:\\users\\spbhuva\\source\\repos\\stu_securitymaster\\stu_securitymaster\\stu_securitymaster.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -89,7 +89,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -109,39 +109,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BondCsvController.cs",
-              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "RelativeToolTip": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
-              "ViewState": "AgIAAIAAAADWnJmZmdkswE4AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T15:59:24.661Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "EquityCsvController.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
               "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Controllers\\EquityCsvController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAA/P///38qwKIAAABiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T14:28:07.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Program.cs",
-              "RelativeDocumentMoniker": "STU_SecurityMaster\\Program.cs",
-              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Program.cs",
-              "RelativeToolTip": "STU_SecurityMaster\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T13:32:35.841Z",
+              "WhenOpened": "2024-11-12T14:28:07.345Z",
               "EditorCaption": ""
             },
             {
@@ -152,26 +128,27 @@
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Bonds_csv\\Bond_csv_ops.cs",
               "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Bonds_csv\\Bond_csv_ops.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Bonds_csv\\Bond_csv_ops.cs",
-              "ViewState": "AgIAAAgAAAAANDMzMzPbvxMAAABWAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAADAMjMzM/MwwDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T15:43:35.677Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Equity_csv_ops.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
               "RelativeToolTip": "STU_SecurityMaster\\Equ_csv\\Equity_csv_ops.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAK4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAcwLQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T13:51:53.935Z"
+              "WhenOpened": "2024-11-12T13:51:53.935Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "IBond.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Bonds_csv\\IBond.cs",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\Bonds_csv\\IBond.cs",
@@ -183,7 +160,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "Equity_csv.cs",
+              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\Equity_csv.cs",
+              "RelativeDocumentMoniker": "Model\\Equity_csv.cs",
+              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\Equity_csv.cs",
+              "RelativeToolTip": "Model\\Equity_csv.cs",
+              "ViewState": "AgIAADIAAACAAAAAAAAAwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:17:05.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BondCsvController.cs",
+              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
+              "RelativeDocumentMoniker": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
+              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Controllers\\BondCsvController.cs",
+              "RelativeToolTip": "STU_SecurityMaster\\Controllers\\BondCsvController.cs",
+              "ViewState": "AgIAAI4AAABAMzMzMzMVwKIAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:59:24.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Program.cs",
+              "RelativeDocumentMoniker": "STU_SecurityMaster\\Program.cs",
+              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\Program.cs",
+              "RelativeToolTip": "STU_SecurityMaster\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:32:35.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\appsettings.json",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\appsettings.json",
@@ -195,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "logs.IVP_API_log-20241116.txt",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\STU_SecurityMaster\\logs.IVP_API_log-20241116.txt",
               "RelativeDocumentMoniker": "STU_SecurityMaster\\logs.IVP_API_log-20241116.txt",
@@ -207,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "EquityWIthUpdateProps.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\EquityWIthUpdateProps.cs",
               "RelativeDocumentMoniker": "Model\\EquityWIthUpdateProps.cs",
@@ -219,7 +234,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "BondWithUpdateProps.cs",
               "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\BondWithUpdateProps.cs",
               "RelativeDocumentMoniker": "Model\\BondWithUpdateProps.cs",
@@ -228,18 +243,6 @@
               "ViewState": "AgIAAAsAAAAAzczMzEwfwBIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-16T16:01:48.033Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Equity_csv.cs",
-              "DocumentMoniker": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\Equity_csv.cs",
-              "RelativeDocumentMoniker": "Model\\Equity_csv.cs",
-              "ToolTip": "C:\\Users\\spbhuva\\source\\repos\\STU_SecurityMaster\\Model\\Equity_csv.cs",
-              "RelativeToolTip": "Model\\Equity_csv.cs",
-              "ViewState": "AgIAADEAAAAQAAAAAAAzwEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T09:17:05.242Z"
             },
             {
               "$type": "Document",
@@ -255,7 +258,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Microsoft.Common.CurrentVersion.targets",
               "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
