@@ -1,11 +1,24 @@
 import React, { useState } from "react";
 import ApexCharts from "react-apexcharts";
 import axios from "axios";
-import { Box, TextField, Button, CircularProgress, Typography } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  CircularProgress,
+  Typography,
+} from "@mui/material";
 
 const PriceChart = () => {
   const [tickerName, setTickerName] = useState("");
-  const [chartData, setChartData] = useState({ dates: [], closePrices: [] });
+  const [chartData, setChartData] = useState({
+    dates: [],
+    openPrices: [],
+    highPrices: [],
+    lowPrices: [],
+    closePrices: [],
+    volume: [],
+  });
   const [loading, setLoading] = useState(false);
   const [showChart, setShowChart] = useState(false);
 
@@ -21,17 +34,35 @@ const PriceChart = () => {
 
     try {
       const response = await axios.get(
-        `https://localhost:7134/api/Security/getSecuritiesbyName/${tickerName}`
+        `https://localhost:7134/api/Security/getAllDetailsByTicker/${tickerName}`
       );
       const data = response.data;
       if (data && data.length > 0) {
-        const dates = data.map((item) => item.asOfDate.substring(0, 10));
-        const closePrices = data.map((item) => item.closePrice);
+        const dates = data.map((item) => item.date.substring(0, 10));
+        const openPrices = data.map((item) => item.open);
+        const highPrices = data.map((item) => item.high);
+        const lowPrices = data.map((item) => item.low);
+        const closePrices = data.map((item) => item.close);
+        const volume = data.map((item) => item.volume);
 
-        setChartData({ dates, closePrices });
+        setChartData({
+          dates,
+          openPrices,
+          highPrices,
+          lowPrices,
+          closePrices,
+          volume,
+        });
         setShowChart(true);
       } else {
-        setChartData({ dates: [], closePrices: [] });
+        setChartData({
+          dates: [],
+          openPrices: [],
+          highPrices: [],
+          lowPrices: [],
+          closePrices: [],
+          volume: [],
+        });
       }
     } catch (error) {
       console.error("Error fetching data: ", error);
@@ -43,7 +74,7 @@ const PriceChart = () => {
 
   const chartOptions = {
     chart: {
-      type: "line",
+      type: "candlestick",
       height: "400",
       toolbar: {
         show: true,
@@ -58,7 +89,7 @@ const PriceChart = () => {
       },
     },
     title: {
-      text: "Stock Price",
+      text: "Stock Price Candlestick Chart",
       align: "left",
       style: {
         fontSize: "22px",
@@ -73,7 +104,7 @@ const PriceChart = () => {
     },
     yaxis: {
       title: {
-        text: "Closing Price",
+        text: "Price",
       },
     },
     tooltip: {
@@ -84,19 +115,20 @@ const PriceChart = () => {
     grid: {
       borderColor: "#ccc",
     },
-    stroke: {
-      curve: "smooth",
-    },
-    fill: {
-      type: "solid",
-      opacity: 0.3,
-    },
   };
 
   const chartSeries = [
     {
-      name: "Close Price",
-      data: chartData.closePrices || [],
+      name: "Price",
+      data: chartData.openPrices.map((open, index) => ({
+        x: chartData.dates[index],
+        y: [
+          open,
+          chartData.highPrices[index],
+          chartData.lowPrices[index],
+          chartData.closePrices[index],
+        ],
+      })),
     },
   ];
 
@@ -163,7 +195,7 @@ const PriceChart = () => {
           <ApexCharts
             options={chartOptions}
             series={chartSeries}
-            type="line"
+            type="candlestick"
             height="400"
             width="100%"
           />
