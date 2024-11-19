@@ -16,11 +16,14 @@ namespace STU_SecurityMaster.Controllers
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
         private readonly IConfiguration _configuration;
         private readonly ILogger<Equity_csv_ops> _logger;
+        private readonly IEquity _equity;
 
-        public EquityCsvController(ILogger<Equity_csv_ops> logger, IConfiguration configuration)
+        public EquityCsvController(ILogger<Equity_csv_ops> logger, IConfiguration configuration,IEquity equity)
         {
             _logger = logger;
             _configuration = configuration;
+            _equity = equity;
+
             // Ensure the upload directory exists
             if (!Directory.Exists(_uploadDirectory))
             {
@@ -31,8 +34,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getEquityDetailsBySID/{sid}")]
         public IActionResult GetEquityDetailsBySID(int sid)
         {
-            Equity_csv_ops eps = new Equity_csv_ops(_logger,_configuration);
-            var equityData = eps.FetchEquityDataFromDbbyID(sid);
+            var equityData = _equity.FetchEquityDataFromDbbyID(sid);
             if (equityData is DataTable dt && dt.Rows.Count > 0)
             {
                 // Convert the DataTable to JSON or the required format
@@ -47,8 +49,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getEquityData")]
         public async Task<IActionResult> GetEquityData()
         {
-            Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
-            var data=eps.FetchEquityDataFromDb();
+            var data= _equity.FetchEquityDataFromDb();
             return Ok(data);
         }
 
@@ -57,8 +58,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
-                var statusCount = eps.CountActiveSecurities();
+                var statusCount = _equity.CountActiveSecurities();
                 return Ok(statusCount);
             }
             catch (Exception ex)
@@ -72,8 +72,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
-                eps.UpdateEquityData(sid,equity);
+                _equity.UpdateEquityData(sid,equity);
                 return Ok(equity);
             }
             catch (DbUpdateException dbex)
@@ -95,8 +94,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Equity_csv_ops eps = new Equity_csv_ops(_logger, _configuration);
-                eps.SoftDeleteEquity(sid);
+                _equity.SoftDeleteEquity(sid);
                 return Ok("Deleted Successfully");
             }
             catch (DbUpdateException dbex)
@@ -137,8 +135,7 @@ namespace STU_SecurityMaster.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
-                Equity_csv_ops eps = new Equity_csv_ops(_logger,_configuration);
-                string result = eps.FetchDataFromCSV(filePath);
+                string result = _equity.FetchDataFromCSV(filePath);
                 // Return the file path to the frontend
              
                 return Ok(result);
@@ -149,5 +146,19 @@ namespace STU_SecurityMaster.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error uploading file: {ex.Message}");
             }
         }
+        [HttpGet("EquitySector")]
+        public IActionResult FetchSectorData()
+        {
+            try
+            {
+                var sector = _equity.FetchEquitySector();
+                return Ok(sector);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving Equity sectors: {ex.Message}");
+            }
+
         }
+    }
 }

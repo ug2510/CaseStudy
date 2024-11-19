@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+510a9c172ca9bd461c71761a13047632fb325139")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5fa84e065325fee99c42209ae9e81f5558cc96b")]
 [assembly: System.Reflection.AssemblyProductAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyTitleAttribute("STU_SecurityMaster")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

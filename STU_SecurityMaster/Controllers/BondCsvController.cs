@@ -125,6 +125,7 @@ namespace STU_SecurityMaster.Controllers
             }
         }
         
+
         [HttpDelete("SoftDeleteBond{sid}")]
         public IActionResult SoftDeleteBond([FromRoute] int sid)
         {
@@ -146,6 +147,22 @@ namespace STU_SecurityMaster.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error updating security: {ex.Message}");
             }
+        }
+
+        [HttpGet("BondSector")]
+        public IActionResult FetchSectorData()
+        {
+            try
+            {
+                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
+                var sector = eps.FetchBondSector();
+                return Ok(sector);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, $"Error retrieving Bond sectors: {ex.Message}");
+            }
+
         }
     }
 }
