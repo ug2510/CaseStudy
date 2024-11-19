@@ -1,12 +1,28 @@
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { Box, Typography, Button, Stack, Paper, IconButton, Modal, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress } from "@mui/material";import DownloadIcon from "@mui/icons-material/Download";
+import {
+  Box,
+  Typography,
+  Button,
+  Stack,
+  Paper,
+  IconButton,
+  Modal,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  LinearProgress,
+} from "@mui/material";
+import DownloadIcon from "@mui/icons-material/Download";
 import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import Papa from 'papaparse'; 
-import bondTemplateUrl from '../assets/Data_Security_for_Bonds.csv';
-import equityTemplateUrl from '../assets/Data_Security_for_Equity.csv';
+import Papa from "papaparse";
+import bondTemplateUrl from "../assets/Data_Security_for_Bonds.csv";
+import equityTemplateUrl from "../assets/Data_Security_for_Equity.csv";
 
 function Uploader() {
   const [selectedTemplate, setSelectedTemplate] = useState(null);
@@ -18,32 +34,45 @@ function Uploader() {
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
-  const onDrop = useCallback((acceptedFiles) => {
-    if (acceptedFiles.length > 0) {
-      const file = acceptedFiles[0];
-
-      // File type validation
-      if (file.type !== "text/csv") {
-        alert("Please upload a valid CSV file.");
+  const onDrop = useCallback(
+    (acceptedFiles) => {
+      if (!selectedTemplate) {
+        alert(
+          "Please select a template type (Equity or Bond) before uploading a file."
+        );
         return;
       }
 
-      setFileUploaded(file);
-      setUploadedFileName(file.name);
+      if (acceptedFiles.length > 0) {
+        const file = acceptedFiles[0];
 
-      // Parse CSV for preview
-      Papa.parse(file, {
-        header: true,
-        complete: (result) => {
-          setPreviewData(result.data.slice(0, 5)); // Show the first 5 rows as a preview
-          setOpenPreview(true);
-        },
-        error: (error) => console.error("CSV Parsing Error:", error),
-      });
-    }
-  }, []);
+        // File type validation
+        if (file.type !== "text/csv") {
+          alert("Please upload a valid CSV file.");
+          return;
+        }
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop }); // Remove noClick to allow prompt on first click
+        setFileUploaded(file);
+        setUploadedFileName(file.name);
+
+        // Parse CSV for preview
+        Papa.parse(file, {
+          header: true,
+          complete: (result) => {
+            setPreviewData(result.data.slice(0, 5)); // Show the first 5 rows as a preview
+            setOpenPreview(true);
+          },
+          error: (error) => console.error("CSV Parsing Error:", error),
+        });
+      }
+    },
+    [selectedTemplate]
+  );
+
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    disabled: !selectedTemplate, // Disable dropzone if no template is selected
+  });
 
   const handleCancelUpload = () => {
     setFileUploaded(null);
@@ -53,25 +82,34 @@ function Uploader() {
   };
 
   const handleSubmit = async () => {
+    if (!selectedTemplate) {
+      alert("Please select a template type before submitting.");
+      return;
+    }
+
     if (fileUploaded) {
       const formData = new FormData();
       formData.append("file", fileUploaded);
       const apiEndpoint =
         selectedTemplate === "equity"
           ? "https://localhost:7109/api/EquityCsv/uploadEquity"
-          : "https://localhost:7109/api/BondCsv/uploadBonds"; 
+          : "https://localhost:7109/api/BondCsv/uploadBonds";
 
       try {
         const response = await axios.post(apiEndpoint, formData, {
           headers: { "Content-Type": "multipart/form-data" },
           onUploadProgress: (progressEvent) => {
-            const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+            const percentCompleted = Math.round(
+              (progressEvent.loaded * 100) / progressEvent.total
+            );
             setProgress(percentCompleted);
           },
         });
 
         if (response.status === 200) {
-          setMessage("CSV uploaded successfully! Check details by hitting on Master View.");
+          setMessage(
+            "CSV uploaded successfully! Check details by hitting on Master View."
+          );
           navigate("/", { state: { successMessage: message } });
         }
       } catch (error) {
@@ -110,7 +148,7 @@ function Uploader() {
         </Button>
       </Stack>
 
-      {selectedTemplate === "equity" && (
+      {/* {selectedTemplate === "equity" && (
         <Button
           variant="contained"
           color="primary"
@@ -134,9 +172,57 @@ function Uploader() {
         >
           Download Bond Template
         </Button>
+      )} */}
+
+      {selectedTemplate === "equity" && (
+        <>
+          <Button
+            variant="contained"
+            color="primary"
+            href={equityTemplateUrl}
+            download="equity-template.csv"
+            startIcon={<DownloadIcon />}
+            sx={{ mb: 2 }}
+          >
+            Download Equity Template
+          </Button>
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            You can either download the template or directly upload from your
+            local device storage.
+          </Typography>
+        </>
       )}
 
-      <Box {...getRootProps()} p={4} border="1px dashed grey" mt={2} mb={2}>
+      {selectedTemplate === "bond" && (
+        <>
+          <Button
+            variant="contained"
+            color="primary"
+            href={bondTemplateUrl}
+            download="bond-template.csv"
+            startIcon={<DownloadIcon />}
+            sx={{ mb: 2 }}
+          >
+            Download Bond Template
+          </Button>
+          <Typography variant="body2" sx={{ mt: 1 }}>
+            You can either download the template or directly upload from your
+            local device storage.
+          </Typography>
+        </>
+      )}
+
+      <Box
+        {...getRootProps()}
+        p={4}
+        border="1px dashed grey"
+        mt={2}
+        mb={2}
+        sx={{
+          opacity: selectedTemplate ? 1 : 0.5,
+          cursor: selectedTemplate ? "pointer" : "not-allowed",
+        }}
+      >
         <input {...getInputProps()} />
         {uploadedFileName ? (
           <Paper
@@ -156,12 +242,14 @@ function Uploader() {
             </IconButton>
           </Paper>
         ) : (
-          <Typography variant="h6">Drag and drop files here, or click to select files</Typography>
+          <Typography variant="h6">
+            Drag and drop files here, or click to select files
+          </Typography>
         )}
       </Box>
 
       {progress > 0 && (
-        <Box sx={{ width: '100%', mt: 2 }}>
+        <Box sx={{ width: "100%", mt: 2 }}>
           <LinearProgress variant="determinate" value={progress} />
           <Typography variant="caption">{`Uploading: ${progress}%`}</Typography>
         </Box>
@@ -171,53 +259,11 @@ function Uploader() {
         variant="contained"
         color="secondary"
         onClick={handleSubmit}
-        disabled={!fileUploaded}
+        disabled={!fileUploaded || !selectedTemplate}
         sx={{ mt: 2 }}
       >
         Submit
       </Button>
-
-      <Modal open={openPreview} onClose={() => setOpenPreview(false)}>
-        <Box sx={{ width: 500, margin: 'auto', mt: 5, padding: 3, bgcolor: 'background.paper', borderRadius: 1 }}>
-          <Typography variant="h6" gutterBottom>
-            File Preview
-          </Typography>
-          <TableContainer component={Paper} sx={{ maxHeight: 300 }}>
-            <Table size="small" stickyHeader aria-label="file preview">
-              <TableHead>
-                <TableRow>
-                  {Object.keys(previewData[0] || {}).map((key) => (
-                    <TableCell key={key} sx={{ fontWeight: 'bold', backgroundColor: '#f5f5f5' }}>
-                      {key}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {previewData.map((row, index) => (
-                  <TableRow key={index} sx={{ '&:nth-of-type(odd)': { backgroundColor: '#fafafa' } }}>
-                    {Object.values(row).map((value, idx) => (
-                      <TableCell key={idx}>{value || '-'}</TableCell>
-                    ))}
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
-          <Button onClick={() => setOpenPreview(false)} sx={{ mt: 2 }}>
-            Close Preview
-          </Button>
-        </Box>
-      </Modal>
-
-      <Modal open={!!message} onClose={() => setMessage('')}>
-        <Box sx={{ width: 300, height: 200, margin: 'auto', mt: 5, padding: 2, bgcolor: 'background.paper', borderRadius: 1, textAlign: 'center' }}>
-          <Typography variant="body1">{message}</Typography>
-          <Button onClick={() => setMessage('')} sx={{ mt: 2 }}>
-            Close
-          </Button>
-        </Box>
-      </Modal>
     </Box>
   );
 }

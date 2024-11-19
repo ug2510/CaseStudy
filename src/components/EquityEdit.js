@@ -10,6 +10,7 @@ import {
   Select,
   FormHelperText,
   Box,
+  InputAdornment,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import pfCreditRatingsData from "../assets/utility-state-serve.json";
@@ -23,7 +24,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
     watch,
   } = useForm({ mode: "onChange" });
 
-  // Store initial values in a state to track changes
   const [initialValues, setInitialValues] = useState(null);
 
   useEffect(() => {
@@ -41,7 +41,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
       setValue("closePrice", initialData["close Price"]);
       setValue("pfCreditRating", initialData["pf Credit Rating"]);
 
-      // Store the initial values to compare with later
       const initialFormValues = {
         securityName: initialData["security Name"],
         description: initialData["security Description"],
@@ -56,20 +55,31 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
         pfCreditRating: initialData["pf Credit Rating"],
       };
 
-      console.log("Initial values set:", initialFormValues); // Debugging log
+      console.log("Initial values set:", initialFormValues);
       setInitialValues(initialFormValues);
     }
   }, [initialData, setValue]);
 
-  // Logging watch data
   const formValues = watch();
-  console.log("Current form values:", formValues); // Debugging log
+  const selectedCurrency = formValues?.pricingCurrency || "USD";
+
+  // Map of currency symbols
+  const currencySymbols = {
+    USD: "$",
+    EUR: "€",
+    GBP: "£",
+    KRW: "₩",
+    // Add more currency symbols as needed
+  };
+
+  const currencySymbol = currencySymbols[selectedCurrency] || "";
 
   const isFormUnchanged =
     initialValues &&
     JSON.stringify(formValues) === JSON.stringify(initialValues);
 
-  console.log("Is form unchanged?", isFormUnchanged); // Debugging log
+  console.log("Current form values:", formValues);
+  console.log("Is form unchanged?", isFormUnchanged);
 
   const handleFormSubmit = async (data) => {
     const sid = initialData?.sid;
@@ -99,7 +109,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
       if (response.status === 200 || response.status === 204) {
         alert("Equity updated successfully!");
 
-        // Call the parent component's update function
         if (onUpdate) {
           onUpdate();
         }
@@ -209,6 +218,13 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
                 error={!!errors.totalSharesOutstanding}
                 helperText={errors?.totalSharesOutstanding?.message}
                 type="number"
+                InputProps={{
+                  startAdornment: currencySymbol && (
+                    <InputAdornment position="start">
+                      {currencySymbol}
+                    </InputAdornment>
+                  ),
+                }}
                 sx={{ mb: 2 }}
               />
             )}
@@ -232,6 +248,13 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
                 error={!!errors.openPrice}
                 helperText={errors?.openPrice?.message}
                 type="number"
+                InputProps={{
+                  startAdornment: currencySymbol && (
+                    <InputAdornment position="start">
+                      {currencySymbol}
+                    </InputAdornment>
+                  ),
+                }}
                 sx={{ mb: 2 }}
               />
             )}
@@ -255,6 +278,13 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
                 error={!!errors.closePrice}
                 helperText={errors?.closePrice?.message}
                 type="number"
+                InputProps={{
+                  startAdornment: currencySymbol && (
+                    <InputAdornment position="start">
+                      {currencySymbol}
+                    </InputAdornment>
+                  ),
+                }}
                 sx={{ mb: 2 }}
               />
             )}

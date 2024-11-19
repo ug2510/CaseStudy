@@ -1,0 +1,77 @@
+[
+    {
+        "name": "United States Dollar",
+        "code": "USD",
+        "symbol": "$"
+    },
+    {
+        "name": "Euro",
+        "code": "EUR",
+        "symbol": "€"
+    },
+    {
+        "name": "British Pound",
+        "code": "GBP",
+        "symbol": "£"
+    },
+    {
+        "name": "Japanese Yen",
+        "code": "JPY",
+        "symbol": "¥"
+    },
+    {
+        "name": "Indian Rupee",
+        "code": "INR",
+        "symbol": "₹"
+    },
+    {
+        "name": "Australian Dollar",
+        "code": "AUD",
+        "symbol": "A$"
+    },
+    {
+        "name": "Canadian Dollar",
+        "code": "CAD",
+        "symbol": "C$"
+    },
+    {
+        "name": "Swiss Franc",
+        "code": "CHF",
+        "symbol": "CHF"
+    },
+    {
+        "name": "Chinese Yuan",
+        "code": "CNY",
+        "symbol": "¥"
+    },
+    {
+        "name": "South Korean Won",
+        "code": "KRW",
+        "symbol": "₩"
+    },
+    {
+        "name": "Russian Ruble",
+        "code": "RUB",
+        "symbol": "₽"
+    },
+    {
+        "name": "Brazilian Real",
+        "code": "BRL",
+        "symbol": "R$"
+    },
+    {
+        "name": "South African Rand",
+        "code": "ZAR",
+        "symbol": "R"
+    },
+    {
+        "name": "Mexican Peso",
+        "code": "MXN",
+        "symbol": "$"
+    },
+    {
+        "name": "New Zealand Dollar",
+        "code": "NZD",
+        "symbol": "NZ$"
+    }
+]

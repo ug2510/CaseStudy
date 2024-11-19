@@ -8,11 +8,17 @@ import {
   Box,
   Button,
   Divider,
+  Dialog,
+  DialogContent,
+  DialogActions,
 } from "@mui/material";
+import { Tooltip } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import SearchIcon from "@mui/icons-material/Search";
+import PieChartIcon from "@mui/icons-material/PieChart";
 import { styled, alpha } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import PieChart from "./PieChart"; 
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -58,6 +64,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isPieChartModalOpen, setPieChartModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleSearchIconClick = () => {
@@ -76,70 +83,106 @@ function Navbar() {
     }
   };
 
-  const handleNavigateToPlaceholder = () => {
-    navigate("/placeholder");
+  const handleOpenPieChartModal = () => {
+    setPieChartModalOpen(true);
+  };
+
+  const handleClosePieChartModal = () => {
+    setPieChartModalOpen(false);
   };
 
   return (
-    <AppBar position="fixed">
-      <Toolbar>
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="home"
-          onClick={() => navigate("/")}
-        >
-          <HomeIcon />
-        </IconButton>
-
-        <Typography
-          variant="h6"
-          component="div"
-          sx={{
-            position: "relative",
-            left: "50%",
-            transform: "translateX(-50%)",
-          }}
-        >
-          Security Master App
-        </Typography>
-
-        <Button color="inherit" onClick={handleNavigateToPlaceholder} sx={{marginLeft:"795px"}}>
-          Price Analysis
-        </Button>
-
-        <Divider
-          orientation="vertical"
-          flexItem
-          sx={{ mx: 2, bgcolor: "white" }}
-        />
-
-        <Box
-          component="form"
-          onSubmit={handleSearchSubmit}
-          sx={{ display: "flex" }}
-        >
-          <IconButton color="inherit" onClick={handleSearchIconClick}>
-            <SearchIcon />
+    <>
+      <AppBar position="fixed">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="home"
+            onClick={() => navigate("/")}
+          >
+            <HomeIcon />
           </IconButton>
 
-          {searchOpen && (
-            <Search>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase
-                placeholder="Search…"
-                value={searchQuery}
-                onChange={handleSearchChange}
-                inputProps={{ "aria-label": "search" }}
-                autoFocus
-              />
-            </Search>
-          )}
-        </Box>
-      </Toolbar>
-    </AppBar>
+          <Tooltip title="View Active Bonds and Equities" placement="top">
+            <IconButton color="inherit" onClick={handleOpenPieChartModal}>
+              <PieChartIcon />
+            </IconButton>
+          </Tooltip>
+
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              position: "relative",
+              left: "50%",
+              transform: "translateX(-50%)",
+            }}
+          >
+            Security Master App
+          </Typography>
+
+          <Button
+            color="inherit"
+            onClick={() => navigate("/placeholder")}
+            sx={{ marginLeft: "auto" }}
+          >
+            Price Analysis
+          </Button>
+
+          <Divider
+            orientation="vertical"
+            flexItem
+            sx={{ mx: 2, bgcolor: "white" }}
+          />
+
+          <Box
+            component="form"
+            onSubmit={handleSearchSubmit}
+            sx={{ display: "flex" }}
+          >
+            <IconButton color="inherit" onClick={handleSearchIconClick}>
+              <SearchIcon />
+            </IconButton>
+
+            {searchOpen && (
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  inputProps={{ "aria-label": "search" }}
+                  autoFocus
+                />
+              </Search>
+            )}
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      <Dialog
+        open={isPieChartModalOpen}
+        onClose={handleClosePieChartModal}
+        maxWidth="md"
+        fullWidth
+      >
+        <DialogContent>
+          <PieChart />
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleClosePieChartModal}
+            color="primary"
+            variant="contained"
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 }
 

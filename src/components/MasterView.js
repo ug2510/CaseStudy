@@ -4,6 +4,8 @@ import Tile from './Tile';
 import SecurityTable from './SecurityTable';
 import SecurityMasterService from '../services/SecurityMasterService';
 import { styled } from '@mui/material/styles';
+import PieChart from './PieChart';
+import BondSectorPieChart from './BondSectorPieChart';
 
 function MasterView() {
   const [securities, setSecurities] = useState([]);
@@ -58,7 +60,6 @@ function MasterView() {
     <div style={{ padding: '20px', marginTop: '-190px' }}>
       <br />
       <br />
-      
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
       <br />
      
