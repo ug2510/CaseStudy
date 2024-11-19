@@ -509,3 +509,240 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Data.DataRow' doe
 2024-11-19 15:04:40.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
 2024-11-19 15:04:40.293 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.6232ms
 2024-11-19 15:04:52.492 +05:30 [INF] Application is shutting down...
+2024-11-19 15:11:51.586 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 15:11:51.605 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 15:11:51.629 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 15:11:51.631 +05:30 [INF] Hosting environment: Development
+2024-11-19 15:11:51.631 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 15:11:52.214 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 15:11:52.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 154.3046ms
+2024-11-19 15:11:52.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 15:11:52.388 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 15:11:52.395 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.6557ms
+2024-11-19 15:11:52.427 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 38.3426ms
+2024-11-19 15:11:52.490 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 15:11:52.560 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.1562ms
+2024-11-19 15:12:01.203 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/1 - null null
+2024-11-19 15:12:01.209 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-19 15:12:01.221 +05:30 [INF] Route matched with {action = "GetBondDetailsBySID", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBondDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-19 15:12:01.526 +05:30 [INF] Bond Data with SID 1 was fetched
+2024-11-19 15:12:01.530 +05:30 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-11-19 15:12:01.533 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster) in 308.4373ms
+2024-11-19 15:12:01.534 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-19 15:12:01.535 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/1 - 404 null text/plain; charset=utf-8 332.3956ms
+2024-11-19 15:12:10.452 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/15 - null null
+2024-11-19 15:12:10.456 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-19 15:12:10.457 +05:30 [INF] Route matched with {action = "GetBondDetailsBySID", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetBondDetailsBySID(Int32) on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-19 15:12:10.504 +05:30 [INF] Bond Data with SID 15 was fetched
+2024-11-19 15:12:10.522 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-19 15:12:10.555 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster) in 95.5846ms
+2024-11-19 15:12:10.557 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetBondDetailsBySID (STU_SecurityMaster)'
+2024-11-19 15:12:10.558 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/getBondDetailsBySID/15 - 200 1905 application/json; charset=utf-8 105.7081ms
+2024-11-19 15:24:40.880 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 15:24:40.899 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 15:24:40.923 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 15:24:40.924 +05:30 [INF] Hosting environment: Development
+2024-11-19 15:24:40.924 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 15:24:41.178 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 15:24:41.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 115.2089ms
+2024-11-19 15:24:41.325 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 15:24:41.330 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 15:24:41.334 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.0895ms
+2024-11-19 15:24:41.345 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 20.0188ms
+2024-11-19 15:24:41.432 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 15:24:41.483 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.0742ms
+2024-11-19 15:24:42.258 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 15:24:42.267 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 9.3477ms
+2024-11-19 15:24:42.283 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 15:24:42.283 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 15:24:42.285 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 2.3247ms
+2024-11-19 15:24:42.297 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.6058ms
+2024-11-19 15:24:42.328 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 15:24:42.334 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.6251ms
+2024-11-19 15:24:49.316 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/BondSector - null null
+2024-11-19 15:24:49.324 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.FetchSectorData (STU_SecurityMaster)'
+2024-11-19 15:24:49.343 +05:30 [INF] Route matched with {action = "FetchSectorData", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult FetchSectorData() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-19 15:24:49.636 +05:30 [INF] Bonds Sector data Was Fetched
+2024-11-19 15:24:49.677 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-19 15:24:49.736 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.FetchSectorData (STU_SecurityMaster) in 387.999ms
+2024-11-19 15:24:49.738 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.FetchSectorData (STU_SecurityMaster)'
+2024-11-19 15:24:49.739 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/BondSector - 200 414 application/json; charset=utf-8 423.64ms
+2024-11-19 15:40:19.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-19 15:40:19.797 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-19 15:40:19.799 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - null null
+2024-11-19 15:40:19.808 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:19.808 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:19.811 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:19.811 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:19.811 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:19.814 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-19 15:40:19.815 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-19 15:40:19.815 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-19 15:40:19.820 +05:30 [INF] Route matched with {action = "GetEquityData", controller = "EquityCsv"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetEquityData() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-19 15:40:19.961 +05:30 [INF] Active Equities count was Fetched
+2024-11-19 15:40:19.965 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:19.987 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 169.6835ms
+2024-11-19 15:40:19.989 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:19.989 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-19 15:40:19.990 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 36 application/json; charset=utf-8 192.15ms
+2024-11-19 15:40:19.992 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:19.995 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:19.998 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-19 15:40:20.004 +05:30 [INF] ALl Equity Data Was Fetched
+2024-11-19 15:40:20.007 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Data.DataTable'.
+2024-11-19 15:40:20.019 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster) in 196.5957ms
+2024-11-19 15:40:20.021 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityData (STU_SecurityMaster)'
+2024-11-19 15:40:20.022 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/getEquityData - 200 16933 application/json; charset=utf-8 223.3222ms
+2024-11-19 15:40:20.030 +05:30 [INF] Active Equities count was Fetched
+2024-11-19 15:40:20.031 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:20.033 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 33.0191ms
+2024-11-19 15:40:20.034 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.034 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-19 15:40:20.035 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 36 application/json; charset=utf-8 46.2679ms
+2024-11-19 15:40:20.037 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:20.040 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.041 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-19 15:40:20.073 +05:30 [INF] Active Securities Counts was feteched
+2024-11-19 15:40:20.074 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:20.075 +05:30 [INF] Active Equities count was Fetched
+2024-11-19 15:40:20.076 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 257.5143ms
+2024-11-19 15:40:20.076 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:20.077 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.078 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 35.3918ms
+2024-11-19 15:40:20.079 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 281.6196ms
+2024-11-19 15:40:20.079 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - null null
+2024-11-19 15:40:20.080 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.081 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - null null
+2024-11-19 15:40:20.084 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:20.085 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 36 application/json; charset=utf-8 50.5722ms
+2024-11-19 15:40:20.087 +05:30 [INF] CORS policy execution successful.
+2024-11-19 15:40:20.087 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.094 +05:30 [INF] Executing endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.095 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "BondCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.BondCsvController (STU_SecurityMaster).
+2024-11-19 15:40:20.094 +05:30 [INF] Route matched with {action = "GetEquityStatusCount", controller = "EquityCsv"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetEquityStatusCount() on controller STU_SecurityMaster.Controllers.EquityCsvController (STU_SecurityMaster).
+2024-11-19 15:40:20.125 +05:30 [INF] Active Securities Counts was feteched
+2024-11-19 15:40:20.126 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:20.127 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster) in 30.7172ms
+2024-11-19 15:40:20.128 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.BondCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.129 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/BondCsv/bondStatusCount - 200 36 application/json; charset=utf-8 48.0533ms
+2024-11-19 15:40:20.125 +05:30 [INF] Active Equities count was Fetched
+2024-11-19 15:40:20.131 +05:30 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`2[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-11-19 15:40:20.133 +05:30 [INF] Executed action STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster) in 33.8794ms
+2024-11-19 15:40:20.133 +05:30 [INF] Executed endpoint 'STU_SecurityMaster.Controllers.EquityCsvController.GetEquityStatusCount (STU_SecurityMaster)'
+2024-11-19 15:40:20.134 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/api/EquityCsv/equityStatusCount - 200 36 application/json; charset=utf-8 54.7282ms
+2024-11-19 16:23:37.657 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 16:23:37.677 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 16:23:37.701 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 16:23:37.702 +05:30 [INF] Hosting environment: Development
+2024-11-19 16:23:37.703 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 16:23:38.009 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:23:38.129 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 120.5831ms
+2024-11-19 16:23:38.165 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:23:38.171 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:23:38.177 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.5908ms
+2024-11-19 16:23:38.190 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 25.0295ms
+2024-11-19 16:23:38.276 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:23:38.336 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 60.1421ms
+2024-11-19 16:23:40.522 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:23:40.528 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 6.748ms
+2024-11-19 16:23:40.580 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:23:40.586 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:23:40.590 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.651ms
+2024-11-19 16:23:40.593 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.5448ms
+2024-11-19 16:23:40.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:23:40.699 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.4519ms
+2024-11-19 16:23:51.835 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:23:51.840 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 5.5069ms
+2024-11-19 16:23:51.859 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:23:51.859 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:23:51.864 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.6274ms
+2024-11-19 16:23:51.872 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 12.5001ms
+2024-11-19 16:23:51.890 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:23:51.901 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.4132ms
+2024-11-19 16:23:55.361 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:23:55.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 6.5016ms
+2024-11-19 16:23:55.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:23:55.386 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:23:55.391 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 4.6338ms
+2024-11-19 16:23:55.397 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 10.6549ms
+2024-11-19 16:23:55.412 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:23:55.421 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 8.8179ms
+2024-11-19 16:29:15.749 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 16:29:15.768 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 16:29:15.792 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 16:29:15.793 +05:30 [INF] Hosting environment: Development
+2024-11-19 16:29:15.794 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 16:29:15.877 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:29:15.985 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 109.3264ms
+2024-11-19 16:29:16.003 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:29:16.003 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:29:16.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 5.0864ms
+2024-11-19 16:29:16.021 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.9089ms
+2024-11-19 16:29:16.094 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:29:16.137 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.6338ms
+2024-11-19 16:29:21.498 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:29:21.505 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 7.2429ms
+2024-11-19 16:29:21.525 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:29:21.525 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:29:21.527 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 2.8148ms
+2024-11-19 16:29:21.539 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 14.3075ms
+2024-11-19 16:29:21.569 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:29:21.574 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.5344ms
+2024-11-19 16:29:23.312 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:29:23.319 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 7.0862ms
+2024-11-19 16:29:23.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:29:23.335 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:29:23.338 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 2.9697ms
+2024-11-19 16:29:23.368 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.7966ms
+2024-11-19 16:29:23.381 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:29:23.392 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.7791ms
+2024-11-19 16:35:39.357 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 16:35:39.375 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 16:35:39.398 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 16:35:39.399 +05:30 [INF] Hosting environment: Development
+2024-11-19 16:35:39.400 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 16:35:39.876 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:35:39.993 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 116.9284ms
+2024-11-19 16:35:40.020 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:35:40.024 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:35:40.030 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 5.27ms
+2024-11-19 16:35:40.039 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.7026ms
+2024-11-19 16:35:40.115 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:35:40.161 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 46.0723ms
+2024-11-19 16:36:07.270 +05:30 [INF] Now listening on: https://localhost:7109
+2024-11-19 16:36:07.289 +05:30 [INF] Now listening on: http://localhost:5190
+2024-11-19 16:36:07.316 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-19 16:36:07.318 +05:30 [INF] Hosting environment: Development
+2024-11-19 16:36:07.318 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\CaseStudyProj\CaseStudy\STU_SecurityMaster
+2024-11-19 16:36:07.452 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:36:07.572 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 120.7687ms
+2024-11-19 16:36:07.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:36:07.595 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:36:07.603 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 8.0364ms
+2024-11-19 16:36:07.620 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.5577ms
+2024-11-19 16:36:07.721 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:36:07.765 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 43.1104ms
+2024-11-19 16:36:09.982 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:36:09.988 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 6.1124ms
+2024-11-19 16:36:10.044 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:36:10.047 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:36:10.050 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 2.5678ms
+2024-11-19 16:36:10.056 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 11.9624ms
+2024-11-19 16:36:10.115 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:36:10.120 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 4.6034ms
+2024-11-19 16:36:22.002 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:36:22.008 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 5.6159ms
+2024-11-19 16:36:22.030 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:36:22.030 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:36:22.036 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 5.1186ms
+2024-11-19 16:36:22.048 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.1706ms
+2024-11-19 16:36:22.112 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:36:22.122 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.8321ms
+2024-11-19 16:36:28.293 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/index.html - null null
+2024-11-19 16:36:28.299 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/index.html - 200 null text/html;charset=utf-8 5.9632ms
+2024-11-19 16:36:28.311 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-19 16:36:28.311 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/_vs/browserLink - null null
+2024-11-19 16:36:28.313 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 2.5104ms
+2024-11-19 16:36:28.325 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/_vs/browserLink - 200 null text/javascript; charset=UTF-8 13.8015ms
+2024-11-19 16:36:28.350 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - null null
+2024-11-19 16:36:28.361 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7109/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 10.4471ms

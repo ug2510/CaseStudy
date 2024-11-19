@@ -18,9 +18,9 @@ namespace SecMaster_xUnitTests
         //private readonly EquityWithUpdateProps equityWithUpdateProps;
         //private readonly List<Equity_csv> equities;
         private readonly Mock<IEquity> _mockEquity;
-        private readonly EquityCsvController _controller;
-        private readonly Equity_csv_ops _equity;
-        private readonly ILogger<Equity_csv_ops> _loggerFactory;
+        private readonly EquityController _controller;
+        private readonly Equity _equity;
+        private readonly ILogger<Equity> _loggerFactory;
         private readonly List<Equity_csv> _expectedEquities;
         private readonly EquityWithUpdateProps _toUpdateEquity;
         public EquityTests()
@@ -30,9 +30,9 @@ namespace SecMaster_xUnitTests
             var mockConfiguration = new Mock<IConfiguration>();
             mockConfiguration.Setup(a => a.GetSection(It.Is<string>(s => s == "ConnectionStrings"))).Returns(mockConfSection.Object);
 
-            _loggerFactory = new NullLogger<Equity_csv_ops>();
+            _loggerFactory = new NullLogger<Equity>();
             _mockEquity = new Mock<IEquity>();
-            _controller = new EquityCsvController(_loggerFactory, mockConfiguration.Object, _mockEquity.Object);
+            _controller = new EquityController(_loggerFactory, mockConfiguration.Object, _mockEquity.Object);
 
             _expectedEquities = new List<Equity_csv>
             {

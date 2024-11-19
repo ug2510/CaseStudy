@@ -11,13 +11,13 @@ using System.Configuration;
 
 namespace STU_SecurityMaster.Bonds_csv
 {
-    public class Bond_csv_ops : IBond
+    public class Bond : IBond
     {
-        private readonly ILogger<Bond_csv_ops> _logger;
+        private readonly ILogger<Bond> _logger;
         private readonly string _connectionString;
 
 
-        public Bond_csv_ops(ILogger<Bond_csv_ops> logger, IConfiguration configuration)
+        public Bond(ILogger<Bond> logger, IConfiguration configuration)
         {
             _logger = logger;
             _connectionString = configuration.GetConnectionString("IVPConn");

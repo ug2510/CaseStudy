@@ -11,18 +11,16 @@ using System.Configuration;
 
 namespace STU_SecurityMaster.Equ_csv
 {
-    public class Equity_csv_ops : IEquity
+    public class Equity : IEquity
     {
-        private readonly ILogger<Equity_csv_ops> _logger;
+        private readonly ILogger<Equity> _logger;
         private readonly string _connectionString;
-        public Equity_csv_ops(ILogger<Equity_csv_ops> logger, IConfiguration configuration)
+        public Equity(ILogger<Equity> logger, IConfiguration configuration)
             {
             _logger = logger;
             _connectionString = configuration.GetConnectionString("IVPConn");
         }
 
-      
-       
         public string FetchDataFromCSV(string path)
         {
             try

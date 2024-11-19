@@ -30,8 +30,8 @@ namespace STU_SecurityMaster
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddTransient<IEquity, Equity_csv_ops>();
-            builder.Services.AddTransient<IBond, Bond_csv_ops>();
+            builder.Services.AddTransient<IEquity, Equity>();
+            builder.Services.AddTransient<IBond, Bond>();
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",

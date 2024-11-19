@@ -10,5 +10,7 @@ namespace STU_SecurityMaster.Bonds_csv
         public dynamic FetchBondsDataFromDb();
         public void UpdateBondData(int sid, BondWithUpdateProps bond);
         public void SoftDeleteBond(int sid);
+        public object CountActiveSecurities();
+        public dynamic FetchBondSector();
     }
 }

@@ -11,14 +11,14 @@ namespace STU_SecurityMaster.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EquityCsvController:ControllerBase
+    public class EquityController:ControllerBase
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
         private readonly IConfiguration _configuration;
-        private readonly ILogger<Equity_csv_ops> _logger;
+        private readonly ILogger<Equity> _logger;
         private readonly IEquity _equity;
 
-        public EquityCsvController(ILogger<Equity_csv_ops> logger, IConfiguration configuration,IEquity equity)
+        public EquityController(ILogger<Equity> logger, IConfiguration configuration,IEquity equity)
         {
             _logger = logger;
             _configuration = configuration;

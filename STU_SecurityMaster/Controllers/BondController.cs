@@ -11,17 +11,18 @@ namespace STU_SecurityMaster.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BondCsvController : ControllerBase
+    public class BondController : ControllerBase
     {
         private readonly string _uploadDirectory = Path.Combine(Directory.GetCurrentDirectory(), "UploadedFiles");
-        private readonly ILogger<Bond_csv_ops> _logger;
+        private readonly ILogger<Bond> _logger;
         private readonly IConfiguration _configuration;
+        private readonly IBond _bond;
 
-
-        public BondCsvController(ILogger<Bond_csv_ops> logger, IConfiguration configuration)
+        public BondController(ILogger<Bond> logger, IConfiguration configuration,IBond bond)
         {
             _logger = logger;
             _configuration = configuration;
+            _bond = bond;
            
             if (!Directory.Exists(_uploadDirectory))
             {
@@ -31,16 +32,15 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getBondDetailsBySID/{sid}")]
         public IActionResult GetBondDetailsBySID(int sid)
         {
-            Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
-            var equityData = eps.FetchBondDataFromDbbyID(sid);
-            if (equityData is DataTable dt && dt.Rows.Count > 0)
+            var bondData = _bond.FetchBondDataFromDbbyID(sid);
+            if (bondData is DataTable dt && dt.Rows.Count > 0)
             {
               
-                return Ok(equityData);
+                return Ok(bondData);
             }
             else
             {
-                return NotFound($"No equity data found for SID: {sid}");
+                return NotFound($"No bond data found for SID: {sid}");
             }
         }
         [HttpPost("uploadBonds")]
@@ -68,8 +68,7 @@ namespace STU_SecurityMaster.Controllers
                 {
                     await file.CopyToAsync(stream);
                 }
-                Bond_csv_ops bond = new Bond_csv_ops(_logger, _configuration);
-                string result = bond.FetchDataFromCSV(filePath);
+                string result = _bond.FetchDataFromCSV(filePath);
                 // Return the file path to the frontend
                
                 return Ok(result);
@@ -83,8 +82,7 @@ namespace STU_SecurityMaster.Controllers
         [HttpGet("getBondsData")]
         public async Task<IActionResult> GetBondsData()
         {
-            Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
-            var data = eps.FetchBondsDataFromDb();
+            var data = _bond.FetchBondsDataFromDb();
             return Ok(data);
         }
         [HttpGet("bondStatusCount")]
@@ -92,8 +90,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
-                var statusCount = eps.CountActiveSecurities();
+                var statusCount = _bond.CountActiveSecurities();
                 return Ok(statusCount);
             }
             catch (Exception ex)
@@ -102,12 +99,11 @@ namespace STU_SecurityMaster.Controllers
             }
         }
         [HttpPut("updateBond{sid}")]
-        public IActionResult UpdateEquity([FromRoute] int sid, [FromBody] BondWithUpdateProps bond)
+        public IActionResult UpdateBody([FromRoute] int sid, [FromBody] BondWithUpdateProps bond)
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
-                eps.UpdateBondData(sid, bond);
+                _bond.UpdateBondData(sid, bond);
                 return Ok(bond);
             }
             catch (DbUpdateException dbex)
@@ -131,8 +127,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger,_configuration);
-                eps.SoftDeleteBond(sid);
+                _bond.SoftDeleteBond(sid);
                 return Ok("Deleted Successfully");
             }
             catch (DbUpdateException dbex)
@@ -154,8 +149,7 @@ namespace STU_SecurityMaster.Controllers
         {
             try
             {
-                Bond_csv_ops eps = new Bond_csv_ops(_logger, _configuration);
-                var sector = eps.FetchBondSector();
+                var sector = _bond.FetchBondSector();
                 return Ok(sector);
             }
             catch (Exception ex)
