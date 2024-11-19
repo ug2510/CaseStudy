@@ -9,7 +9,7 @@ const EquitySectorPieChart = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        "https://localhost:7109/api/EquityCsv/EquitySector"
+        "https://localhost:7109/api/equity/EquitySector"
       );
       const data = await response.json();
 

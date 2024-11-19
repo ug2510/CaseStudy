@@ -62,8 +62,8 @@ function SecurityTable() {
   const fetchData = (isEquity) => {
     setIsLoading(true);
     const url = isEquity
-      ? "https://localhost:7109/api/EquityCsv/getEquityData"
-      : "https://localhost:7109/api/BondCsv/getBondsData";
+      ? "https://localhost:7109/api/equity/getEquityData"
+      : "https://localhost:7109/api/bond/getBondsData";
 
     fetch(url)
       .then((response) => {
@@ -133,7 +133,7 @@ function SecurityTable() {
       return;
     }
 
-    const apiUrl = `https://localhost:7109/api/EquityCsv/SoftDeleteEquity${sid}`;
+    const apiUrl = `https://localhost:7109/api/equity/SoftDeleteEquity${sid}`;
 
     try {
       const response = await axios.delete(apiUrl, {
@@ -164,7 +164,7 @@ function SecurityTable() {
       return;
     }
 
-    const apiUrl = `https://localhost:7109/api/BondCsv/SoftDeleteBond${sid}`;
+    const apiUrl = `https://localhost:7109/api/bond/SoftDeleteBond${sid}`;
 
     try {
       const response = await axios.delete(apiUrl, {

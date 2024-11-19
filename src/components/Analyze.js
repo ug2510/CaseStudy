@@ -154,7 +154,7 @@ const Analyze = () => {
 
       const formattedData = filteredResult.map((item, index) => ({
         id: index + 1,
-        asOfDate: item.asOfDate,
+        asOfDate: item.asOfDate.substring(0,10),
         ticker: item.ticker,
         security: item.securityName,
         gicsSector: item.gicsSector,
@@ -214,7 +214,7 @@ const Analyze = () => {
 
       const formattedData = result.map((item, index) => ({
         id: index + 1,
-        asOfDate: item.asOfDate,
+        asOfDate: item.asOfDate.substring(0,10),
         ticker: item.ticker,
         security: item.securityName,
         gicsSector: item.gicsSector,

@@ -9,7 +9,7 @@ const BondSectorPieChart = () => {
     try {
         
       const response = await fetch(
-        "https://localhost:7109/api/BondCsv/BondSector"
+        "https://localhost:7109/api/bond/BondSector"
       );
       const data = await response.json();
 

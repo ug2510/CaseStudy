@@ -15,7 +15,7 @@ function Details() {
       try {
         console.log(`Fetching details for SID: ${id}`);
         const response = await fetch(
-          `https://localhost:7109/api/EquityCsv/getEquityDetailsBySID/${id}`
+          `https://localhost:7109/api/equity/getEquityDetailsBySID/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch security details");

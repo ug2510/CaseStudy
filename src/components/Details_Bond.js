@@ -15,7 +15,7 @@ function Details() {
       try {
         console.log(`Fetching details for SID: ${id}`);
         const response = await fetch(
-          `https://localhost:7109/api/BondCsv/getBondDetailsBySID/${id}`
+          `https://localhost:7109/api/bond/getBondDetailsBySID/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch security details");

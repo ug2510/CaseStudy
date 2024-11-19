@@ -9,11 +9,14 @@ import {
   FormHelperText,
   InputAdornment,
   Box,
+  IconButton,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import pfCreditRatingsData from "../assets/utility-state-serve.json";
 import { format } from "date-fns";
 import axios from "axios";
+import CloseIcon from "@mui/icons-material/Close"; // Import Close icon
+
 const BondEdit = ({ initialData, onClose, onUpdate }) => {
   const {
     control,
@@ -76,7 +79,7 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
       if (response.status === 200 || response.status === 204) {
         alert("Equity updated successfully!");
         if (onUpdate) {
-          onUpdate(); 
+          onUpdate();
         }
         onClose();
       }
@@ -99,8 +102,22 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
         width: "80%",
         maxWidth: 1200,
         mx: "auto",
+        position: "relative", // Add position relative to position the close button
       }}
     >
+      {/* Close Button */}
+      <IconButton
+        onClick={onClose}
+        sx={{
+          position: "absolute",
+          top: 8,
+          right: 8,
+          zIndex: 1, // Ensure it's above other content
+        }}
+      >
+        <CloseIcon />
+      </IconButton>
+
       <form onSubmit={handleSubmit(handleFormSubmit)} sx={{ maxWidth: "100%" }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
           <Controller
@@ -269,7 +286,9 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 helperText={errors?.askPrice?.message}
                 type="number"
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  startAdornment: (
+                    <InputAdornment position="start">$</InputAdornment>
+                  ),
                   style: textFieldStyles,
                 }}
               />
@@ -297,7 +316,9 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 helperText={errors?.bidPrice?.message}
                 type="number"
                 InputProps={{
-                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  startAdornment: (
+                    <InputAdornment position="start">$</InputAdornment>
+                  ),
                   style: textFieldStyles,
                 }}
               />

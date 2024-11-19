@@ -11,9 +11,11 @@ import {
   FormHelperText,
   Box,
   InputAdornment,
+  IconButton,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
 import pfCreditRatingsData from "../assets/utility-state-serve.json";
+import CloseIcon from "@mui/icons-material/Close"; // Import CloseIcon
 
 const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
   const {
@@ -55,7 +57,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
         pfCreditRating: initialData["pf Credit Rating"],
       };
 
-      console.log("Initial values set:", initialFormValues);
       setInitialValues(initialFormValues);
     }
   }, [initialData, setValue]);
@@ -78,9 +79,6 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
     initialValues &&
     JSON.stringify(formValues) === JSON.stringify(initialValues);
 
-  console.log("Current form values:", formValues);
-  console.log("Is form unchanged?", isFormUnchanged);
-
   const handleFormSubmit = async (data) => {
     const sid = initialData?.sid;
     if (!sid) {
@@ -97,7 +95,7 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
       pfCreditRating: data.pfCreditRating,
     };
 
-    const apiUrl = `https://localhost:7109/api/EquityCsv/updateEquity${sid}`;
+    const apiUrl = `https://localhost:7109/api/Equity/updateEquity${sid}`;
 
     try {
       const response = await axios.put(apiUrl, payload, {
@@ -136,8 +134,22 @@ const EquityEdit = ({ initialData, onClose, currencies = [], onUpdate }) => {
         width: "80%",
         maxWidth: 1200,
         mx: "auto",
+        position: "relative", // Add position relative to position the close button
       }}
     >
+      {/* Close Button */}
+      <IconButton
+        onClick={onClose}
+        sx={{
+          position: "absolute",
+          top: 8,
+          right: 8,
+          zIndex: 1, // Ensure it's above other content
+        }}
+      >
+        <CloseIcon />
+      </IconButton>
+
       <form onSubmit={handleSubmit(handleFormSubmit)} sx={{ maxWidth: "100%" }}>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
           <Controller

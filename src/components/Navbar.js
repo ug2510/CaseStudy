@@ -141,9 +141,9 @@ function Navbar() {
             onSubmit={handleSearchSubmit}
             sx={{ display: "flex" }}
           >
-            <IconButton color="inherit" onClick={handleSearchIconClick}>
+            {/* <IconButton color="inherit" onClick={handleSearchIconClick}>
               <SearchIcon />
-            </IconButton>
+            </IconButton> */}
 
             {searchOpen && (
               <Search>

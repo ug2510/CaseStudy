@@ -12,25 +12,25 @@ function Tile({ isEquityData, onUpdateCounts }) {
     try {
       if (isEquityData) {
         const activeResponse = await fetch(
-          "https://localhost:7109/api/EquityCsv/equityStatusCount"
+          "https://localhost:7109/api/equity/equityStatusCount"
         );
         const activeData = await activeResponse.json();
         setActiveEquityCount(activeData.activeCount);
 
         const inactiveResponse = await fetch(
-          "https://localhost:7109/api/EquityCsv/equityStatusCount"
+          "https://localhost:7109/api/equity/equityStatusCount"
         );
         const inactiveData = await inactiveResponse.json();
         setInactiveEquityCount(inactiveData.inActiveCount);
       } else {
         const activeResponse = await fetch(
-          "https://localhost:7109/api/BondCsv/bondStatusCount"
+          "https://localhost:7109/api/bond/bondStatusCount"
         );
         const activeData = await activeResponse.json();
         setActiveBondCount(activeData.activeCount);
 
         const inactiveResponse = await fetch(
-          "https://localhost:7109/api/BondCsv/bondStatusCount"
+          "https://localhost:7109/api/bond/bondStatusCount"
         );
         const inactiveData = await inactiveResponse.json();
         setInactiveBondCount(inactiveData.inActiveCount);

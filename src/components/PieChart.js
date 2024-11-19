@@ -10,7 +10,7 @@ const PieChart = () => {
     setLoading(true);
     try {
       const activeEquityResponse = await fetch(
-        "https://localhost:7109/api/EquityCsv/equityStatusCount"
+        "https://localhost:7109/api/equity/equityStatusCount"
       );
       const activeEquityData = await activeEquityResponse.json();
       if (activeEquityData && activeEquityData.activeCount !== undefined) {
@@ -27,7 +27,7 @@ const PieChart = () => {
     setLoading(true);
     try {
       const activeBondResponse = await fetch(
-        "https://localhost:7109/api/BondCsv/bondStatusCount"
+        "https://localhost:7109/api/bond/bondStatusCount"
       );
       const activeBondData = await activeBondResponse.json();
       if (activeBondData && activeBondData.activeCount !== undefined) {

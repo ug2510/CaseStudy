@@ -92,8 +92,8 @@ function Uploader() {
       formData.append("file", fileUploaded);
       const apiEndpoint =
         selectedTemplate === "equity"
-          ? "https://localhost:7109/api/EquityCsv/uploadEquity"
-          : "https://localhost:7109/api/BondCsv/uploadBonds";
+          ? "https://localhost:7109/api/equity/uploadEquity"
+          : "https://localhost:7109/api/bond/uploadBonds";
 
       try {
         const response = await axios.post(apiEndpoint, formData, {
