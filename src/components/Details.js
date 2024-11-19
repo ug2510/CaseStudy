@@ -8,7 +8,7 @@ function Details() {
   const { id } = useParams();
   const [security, setSecurity] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchSecurityDetails = async () => {
@@ -36,6 +36,17 @@ function Details() {
   if (isLoading) return <div>Loading...</div>;
   if (!security) return <div>No data found for this security.</div>;
 
+  // Currency symbol mapping
+  const currencySymbols = {
+    USD: "$",
+    GBP: "£",
+    EUR: "€",
+    KRW: "₩",
+    // Add more currencies as needed
+  };
+
+  const currencySymbol = currencySymbols[security["trading Currency"]] || ""; // Default to empty string if currency not mapped
+
   const basicInfo = {
     "Security Name": security["security Name"],
     "Description": security["security Description"],
@@ -48,15 +59,15 @@ function Details() {
   };
 
   const financialInfo = {
-    "Open Price": `$${security["open Price"]?.toLocaleString()}`,
-    "Close Price": `$${security["close Price"]?.toLocaleString()}`,
-    "Last Price": `$${security["last Price"]?.toLocaleString()}`,
+    "Open Price": `${currencySymbol}${security["open Price"]?.toLocaleString()}`,
+    "Close Price": `${currencySymbol}${security["close Price"]?.toLocaleString()}`,
+    "Last Price": `${currencySymbol}${security["last Price"]?.toLocaleString()}`,
     "PE Ratio": security["pe Ratio"],
     "Volume": security.volume?.toLocaleString(),
     "Dividend Declared Date": new Date(
       security["declared Date"]
     ).toLocaleDateString(),
-    "Dividend Amount": `$${security.amount}`,
+    "Dividend Amount": `${currencySymbol}${security.amount}`,
     "Dividend Type": security["dividend Type"],
   };
 
@@ -76,7 +87,7 @@ function Details() {
       <Box sx={{ display: "flex", justifyContent: "flex-end", marginBottom: "20px" }}>
         <Button
           variant="outlined"
-          onClick={() => navigate(-1)} 
+          onClick={() => navigate(-1)}
         >
           Back
         </Button>
@@ -100,3 +111,4 @@ function Details() {
 }
 
 export default Details;
+
