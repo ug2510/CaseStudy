@@ -1,13 +1,15 @@
-
 import React, { useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import Candles from "./Candles"; 
-import PriceChart from "./PriceChart"; 
+import Candles from "./Candles";
+import PriceChart from "./PriceChart";
+import FileDownloadIcon from "@mui/icons-material/FileDownload";
+
 import {
   Box,
   Typography,
   CircularProgress,
   TextField,
+  InputAdornment,
   IconButton,
   Tooltip,
   Dialog,
@@ -123,17 +125,85 @@ const Analyze = () => {
   const [filteredData, setFilteredData] = useState([]);
   const [openChartModal, setOpenChartModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
-  const [rowCount,setRowCount] = useState(0);
+  const [rowCount, setRowCount] = useState(0);
+  const [tickerFilter, setTickerFilter] = useState("");
   const [paginationModel, setPaginationModel] = React.useState({
     page: 0,
     pageSize: 100,
   });
 
+  const fetchDataByTicker = async (ticker) => {
+    setLoading(true);
+    setError(null);
+    console.log("Ticker:", ticker);
+    try {
+      const response = await fetch(
+        `https://localhost:7134/api/Security/getSecurities`
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch data for the given ticker");
+      }
+
+      const result = await response.json();
+
+      // Filter data based on the ticker value
+      const filteredResult = result.filter(
+        (item) =>
+          item.ticker && item.ticker.toLowerCase() === ticker.toLowerCase()
+      );
+
+      const formattedData = filteredResult.map((item, index) => ({
+        id: index + 1,
+        asOfDate: item.asOfDate,
+        ticker: item.ticker,
+        security: item.securityName,
+        gicsSector: item.gicsSector,
+        gicsSubIndustry: item.gicsSubIndustry,
+        headquarterLocation: item.headquartersLocation,
+        founded: item.founded,
+        open: item.openPrice ? `$${item.openPrice.toFixed(2)}` : "$0.00",
+        close: item.closePrice ? `$${item.closePrice.toFixed(2)}` : "$0.00",
+        dtdChange: item.dtdChangePercentage
+          ? `${item.dtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        mtdChange: item.mtdChangePercentage
+          ? `${item.mtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        qtdChange: item.qtdChangePercentage
+          ? `${item.qtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        ytdChange: item.ytdChangePercentage
+          ? `${item.ytdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+      }));
+
+      setData(formattedData); // Update the main data state
+      setFilteredData(formattedData); // Update the filteredData state for the table
+      console.log("Filtered Data:", formattedData); // Debugging: logs the filtered and formatted data
+    } catch (err) {
+      setError(err.message);
+      setData([]);
+      setFilteredData([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSearch = () => {
+    if (tickerFilter.trim() !== "") {
+      fetchDataByTicker(tickerFilter.trim());
+    }
+  };
+
   const fetchData = async (date) => {
     try {
       const url = date
-        ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(date).format("YYYY-MM-DD")}`
-        : `https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=${paginationModel.page+1}&PageSize=${paginationModel.pageSize}`;
+        ? `https://localhost:7134/api/Security/getOverviewByDate?date=${dayjs(
+            date
+          ).format("YYYY-MM-DD")}`
+        : `https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=${
+            paginationModel.page + 1
+          }&PageSize=${paginationModel.pageSize}`;
 
       const response = await fetch(url);
       if (!response.ok) {
@@ -152,12 +222,19 @@ const Analyze = () => {
         headquarterLocation: item.headquartersLocation,
         founded: item.founded,
         open: item.openPrice ? `$${item.openPrice.toFixed(2)}` : "$0.00",
-close: item.closePrice ? `$${item.closePrice.toFixed(2)}` : "$0.00",
-dtdChange: item.dtdChangePercentage ? `${item.dtdChangePercentage.toFixed(2)}%` : "0.00%",
-mtdChange: item.mtdChangePercentage ? `${item.mtdChangePercentage.toFixed(2)}%` : "0.00%",
-qtdChange: item.qtdChangePercentage ? `${item.qtdChangePercentage.toFixed(2)}%` : "0.00%",
-ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` : "0.00%",
-
+        close: item.closePrice ? `$${item.closePrice.toFixed(2)}` : "$0.00",
+        dtdChange: item.dtdChangePercentage
+          ? `${item.dtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        mtdChange: item.mtdChangePercentage
+          ? `${item.mtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        qtdChange: item.qtdChangePercentage
+          ? `${item.qtdChangePercentage.toFixed(2)}%`
+          : "0.00%",
+        ytdChange: item.ytdChangePercentage
+          ? `${item.ytdChangePercentage.toFixed(2)}%`
+          : "0.00%",
       }));
 
       setFilteredData(formattedData);
@@ -169,25 +246,44 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
       setLoading(false);
     }
   };
+  const exportToCSV = () => {
+    // Create CSV rows
+    const csvRows = [
+      columns.map((col) => col.headerName).join(","), // Header row
+      ...filteredData.map(
+        (row) => columns.map((col) => row[col.field] || "").join(",") // Data rows
+      ),
+    ];
+    const csvContent = `data:text/csv;charset=utf-8,${csvRows.join("\n")}`;
+    const encodedUri = encodeURI(csvContent);
 
-  const fetchRowCount=async ()=>{
-    try{
-      const response = await fetch(`https://localhost:7134/api/Security/CountRecords`);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "security_data.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const fetchRowCount = async () => {
+    try {
+      const response = await fetch(
+        `https://localhost:7134/api/Security/CountRecords`
+      );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
 
       const result = await response.json();
-      setRowCount(result)
-    }
-    catch(error){
+      setRowCount(result);
+    } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
     fetchRowCount();
     fetchData(selectedDate);
-  }, [selectedDate,paginationModel]);
+  }, [selectedDate, paginationModel]);
 
   const handleOpenModal = (content) => {
     setModalContent(content);
@@ -230,12 +326,61 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
           marginBottom: 2,
         }}
       >
-        <DatePicker
+        {/* <DatePicker
           label="Select Date"
           value={selectedDate}
           onChange={(date) => setSelectedDate(date)}
           renderInput={(params) => <TextField {...params} />}
-        />
+        /> */}
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+    <DatePicker
+      label="Select Date"
+      value={selectedDate}
+      onChange={(date) => setSelectedDate(date)}
+      renderInput={(params) => <TextField {...params} />}
+    />
+    <TextField
+  label="Search by Ticker"
+  value={tickerFilter}
+  onChange={(e) => setTickerFilter(e.target.value)}
+  variant="outlined"
+  size="medium"
+  InputProps={{
+    endAdornment: (
+      <InputAdornment position="end">
+        <Button
+          variant="contained"
+          color="primary"
+          size="medium"
+          onClick={handleSearch}
+          disabled={!tickerFilter.trim()}
+          sx={{
+            textTransform: "none",
+            fontWeight: "bold",
+            padding: "8px 16px",
+            backgroundColor: "#007BFF",
+            "&:hover": {
+              backgroundColor: "#0056b3",
+            },
+            boxShadow: "none", // Removes any uplift effect
+          }}
+        >
+          Search
+        </Button>
+      </InputAdornment>
+    ),
+  }}
+  sx={{
+    width: 250, 
+    "& .MuiOutlinedInput-root": {
+      height: "56px", 
+    },
+    "& .MuiInputAdornment-root": {
+      marginRight: "-8px", // Adjust for alignment
+    },
+  }}
+/>
+  </Box>
 
         <Box sx={{ display: "flex", alignItems: "left", gap: 2 }}>
           <Tooltip title="Chart Analysis">
@@ -255,6 +400,11 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
               <CandlestickChartIcon fontSize="medium" />
             </IconButton>
           </Tooltip>
+          <Tooltip title="Export as CSV">
+            <IconButton onClick={exportToCSV} sx={{ color: "black" }}>
+              <FileDownloadIcon fontSize="medium" />
+            </IconButton>
+          </Tooltip>
 
           <Tooltip title="Reset Data">
             <IconButton
@@ -269,49 +419,51 @@ ytdChange: item.ytdChangePercentage ? `${item.ytdChangePercentage.toFixed(2)}%` 
           </Tooltip>
         </Box>
       </Box>
-
-      <DataGrid
-        rows={filteredData}
-        paginationModel={paginationModel}
-        paginationMode="server"
-        onPaginationModelChange={setPaginationModel}
-        rowCount={rowCount}
-        columns={columns}
-        // pageSize={10}
-        rowsPerPageOptions={[10, 25, 50]}
-        sx={{
-          "& .MuiDataGrid-cell": { color: "black" },
-          "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: "#ecffff",
-            fontSize: "1rem",
-            fontWeight: "bold",
-            color: "#000",
-            borderBottom: "1px solid black",
-          },
-          "& .MuiDataGrid-columnHeaderTitle": {
-            textOverflow: "clip",
-            whiteSpace: "break-spaces",
-            lineHeight: 1.5,
-          },
-          "& .MuiDataGrid-columnSeparator": {
-            visibility: "visible",
-            cursor: "col-resize",
-            color: "#000",
-          },
-          "& .MuiDataGrid-row": {
-            backgroundColor: "#f0f8ff", 
-          },
-          "& .MuiDataGrid-row:nth-of-type(odd)": {
-            backgroundColor: "#ecffff", 
-          },
-          "& .MuiDataGrid-row:hover": {
-            backgroundColor: "#f7f8f9",
-          },
-          border: "1px solid black",
-          borderRadius: "8px",
-        }}
-      
-      />
+      <Box>
+        <DataGrid
+          rows={filteredData}
+          paginationModel={paginationModel}
+          paginationMode="server"
+          onPaginationModelChange={setPaginationModel}
+          rowCount={rowCount}
+          columns={columns}
+          // pageSize={10}
+          rowsPerPageOptions={[10, 25, 50]}
+          sx={{
+            "& .MuiDataGrid-cell": { color: "black" },
+            "& .MuiDataGrid-columnHeaders": {
+              backgroundColor: "#ecffff",
+              fontSize: "1rem",
+              fontWeight: "bold",
+              color: "#000",
+              borderBottom: "1px solid black",
+            },
+            "& .MuiDataGrid-columnHeaderTitle": {
+              textOverflow: "clip",
+              whiteSpace: "break-spaces",
+              lineHeight: 1.5,
+            },
+            "& .MuiDataGrid-columnSeparator": {
+              visibility: "visible",
+              cursor: "col-resize",
+              color: "#000",
+            },
+            "& .MuiDataGrid-row": {
+              backgroundColor: "#f0f8ff",
+            },
+            "& .MuiDataGrid-row:nth-of-type(odd)": {
+              backgroundColor: "#ecffff",
+            },
+            "& .MuiDataGrid-row:hover": {
+              backgroundColor: "#f7f8f9",
+            },
+            border: "1px solid black",
+            borderRadius: "8px",
+          }}
+        />
+        
+        
+      </Box>
 
       {loading && (
         <Box sx={{ display: "flex", justifyContent: "center", mt: 2 }}>
