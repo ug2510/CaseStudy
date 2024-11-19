@@ -1,0 +1,901 @@
+2024-11-17 10:53:14.445 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 10:53:14.481 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 10:53:14.607 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 10:53:14.608 +05:30 [INF] Hosting environment: Development
+2024-11-17 10:53:14.610 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 10:53:14.997 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 10:53:15.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 323.662ms
+2024-11-17 10:53:15.372 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 10:53:15.376 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 10:53:15.389 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 16.2992ms
+2024-11-17 10:53:15.443 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 67.3397ms
+2024-11-17 10:53:15.472 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 10:53:15.612 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 140.3641ms
+2024-11-17 10:53:21.125 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 10:53:21.139 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 10:53:21.153 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 10:53:21.632 +05:30 [INF] All data was feteched
+2024-11-17 10:53:21.640 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 10:53:21.720 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 561.9969ms
+2024-11-17 10:53:21.722 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 10:53:21.724 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 598.7953ms
+2024-11-17 10:53:47.911 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 10:53:47.931 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 10:53:47.989 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 10:53:47.991 +05:30 [INF] Hosting environment: Development
+2024-11-17 10:53:47.991 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 10:53:48.467 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 10:53:48.639 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 177.2019ms
+2024-11-17 10:53:48.652 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 10:53:48.656 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 10:53:48.665 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 13.4092ms
+2024-11-17 10:53:48.703 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.7113ms
+2024-11-17 10:53:48.731 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 10:53:48.805 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.6738ms
+2024-11-17 11:31:57.344 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 11:31:57.378 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 11:31:57.452 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 11:31:57.454 +05:30 [INF] Hosting environment: Development
+2024-11-17 11:31:57.454 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 11:31:58.195 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:31:58.457 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 267.2725ms
+2024-11-17 11:31:58.477 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:31:58.486 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 9.4856ms
+2024-11-17 11:31:58.499 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:31:58.542 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 43.2283ms
+2024-11-17 11:31:58.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:31:58.697 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.338ms
+2024-11-17 11:32:04.327 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:32:04.334 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:32:04.354 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:04.830 +05:30 [INF] All data was feteched
+2024-11-17 11:32:04.835 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:04.872 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 508.3417ms
+2024-11-17 11:32:04.874 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:32:04.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 549.6517ms
+2024-11-17 11:32:33.391 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:32:33.416 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 26.2014ms
+2024-11-17 11:32:39.519 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:32:39.520 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:32:39.524 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 3.3986ms
+2024-11-17 11:32:39.537 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.6207ms
+2024-11-17 11:32:39.600 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:32:39.607 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.0982ms
+2024-11-17 11:32:39.615 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/favicon-32x32.png - null null
+2024-11-17 11:32:39.628 +05:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-11-17 11:32:39.630 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/favicon-32x32.png - 200 628 image/png 15.3345ms
+2024-11-17 11:32:45.869 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesbyName/A - null null
+2024-11-17 11:32:45.874 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI)'
+2024-11-17 11:32:45.881 +05:30 [INF] Route matched with {action = "GetSecuritiesbyName", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesbyName(System.String) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:45.943 +05:30 [INF] Data of Ticker :A was fetched.
+2024-11-17 11:32:45.944 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:45.949 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI) in 66.1825ms
+2024-11-17 11:32:45.950 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesbyName (Security_viewAPI)'
+2024-11-17 11:32:45.951 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesbyName/A - 200 null application/json; charset=utf-8 82.1289ms
+2024-11-17 11:32:55.425 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities/1 - null null
+2024-11-17 11:32:55.441 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-17 11:32:55.444 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:32:55.540 +05:30 [INF] 
+2024-11-17 11:32:55.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:32:55.543 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 96.7456ms
+2024-11-17 11:32:55.544 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-17 11:32:55.545 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities/1 - 200 null application/json; charset=utf-8 120.0603ms
+2024-11-17 11:33:11.995 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:33:11.998 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:33:11.999 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:33:12.047 +05:30 [INF] All data was feteched
+2024-11-17 11:33:12.048 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:33:12.055 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 55.1645ms
+2024-11-17 11:33:12.057 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:33:12.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 63.2849ms
+2024-11-17 11:37:45.077 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-17 11:37:45.105 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-17 11:37:45.180 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-17 11:37:45.185 +05:30 [INF] Hosting environment: Development
+2024-11-17 11:37:45.186 +05:30 [INF] Content root path: C:\Users\spbhuva\Desktop\part2\student_viewAPI
+2024-11-17 11:37:45.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-17 11:37:46.033 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 347.0355ms
+2024-11-17 11:37:46.048 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-17 11:37:46.058 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 10.2112ms
+2024-11-17 11:37:46.066 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-17 11:37:46.113 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.1518ms
+2024-11-17 11:37:46.182 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-17 11:37:46.309 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 127.5127ms
+2024-11-17 11:37:57.109 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecurities - null null
+2024-11-17 11:37:57.117 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:37:57.135 +05:30 [INF] Route matched with {action = "GetSecurities", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecurities() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-17 11:37:57.597 +05:30 [INF] All data was feteched
+2024-11-17 11:37:57.602 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-17 11:37:57.630 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI) in 491.5983ms
+2024-11-17 11:37:57.632 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecurities (Security_viewAPI)'
+2024-11-17 11:37:57.633 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecurities - 200 null application/json; charset=utf-8 524.0041ms
+2024-11-18 21:03:09.666 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-18 21:03:09.693 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-18 21:03:09.752 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:03:09.753 +05:30 [INF] Hosting environment: Development
+2024-11-18 21:03:09.754 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\student_viewAPI
+2024-11-18 21:03:10.175 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-18 21:03:10.352 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 178.6101ms
+2024-11-18 21:03:10.372 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:03:10.372 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-18 21:03:10.378 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 6.4135ms
+2024-11-18 21:03:10.418 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.9858ms
+2024-11-18 21:03:10.521 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-18 21:03:10.591 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.3978ms
+2024-11-18 21:11:32.693 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:11:32.703 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:11:32.732 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:11:33.164 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:11:33.172 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 434.6133ms
+2024-11-18 21:11:33.174 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:11:33.175 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 481.7075ms
+2024-11-18 21:13:52.605 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:13:52.605 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:13:52.612 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:13:52.612 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:13:52.613 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:13:52.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 404 0 null 8.7216ms
+2024-11-18 21:13:52.614 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:13:52.617 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7134/api/Security/getSecuritiesByPage, Response status code: 404
+2024-11-18 21:13:52.660 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:13:52.661 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 43.0007ms
+2024-11-18 21:13:52.663 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:13:52.664 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 58.6553ms
+2024-11-18 21:13:55.865 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:13:55.866 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:13:55.872 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:13:55.874 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:13:55.875 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:13:55.875 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 404 0 null 8.9447ms
+2024-11-18 21:13:55.876 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:13:55.878 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7134/api/Security/getSecuritiesByPage, Response status code: 404
+2024-11-18 21:13:55.919 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:13:55.922 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 42.0201ms
+2024-11-18 21:13:55.923 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:13:55.924 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 59.0317ms
+2024-11-18 21:14:44.193 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-18 21:14:44.213 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-18 21:14:44.258 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:14:44.260 +05:30 [INF] Hosting environment: Development
+2024-11-18 21:14:44.260 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\student_viewAPI
+2024-11-18 21:14:44.464 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-18 21:14:44.580 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 116.8219ms
+2024-11-18 21:14:44.594 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-18 21:14:44.600 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:14:44.605 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 4.528ms
+2024-11-18 21:14:44.614 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 19.9828ms
+2024-11-18 21:14:44.710 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-18 21:14:44.773 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 62.8019ms
+2024-11-18 21:15:23.413 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:15:23.421 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:23.445 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:23.885 +05:30 [INF] 
+2024-11-18 21:15:23.893 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:23.916 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 465.6309ms
+2024-11-18 21:15:23.918 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:23.919 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 506.7094ms
+2024-11-18 21:15:29.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:15:29.802 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:29.810 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:29.810 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:29.812 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:29.812 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:29.813 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:29.818 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:29.881 +05:30 [INF] 
+2024-11-18 21:15:29.882 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:29.886 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 70.5926ms
+2024-11-18 21:15:29.887 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:29.888 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 85.7908ms
+2024-11-18 21:15:29.962 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:29.967 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 147.4297ms
+2024-11-18 21:15:29.970 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:29.973 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 170.0976ms
+2024-11-18 21:15:53.443 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:53.445 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:15:53.447 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:53.448 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:53.449 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:53.449 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:53.450 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:53.451 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:53.495 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:53.497 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 44.7995ms
+2024-11-18 21:15:53.499 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:53.500 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 56.6561ms
+2024-11-18 21:15:53.538 +05:30 [INF] 
+2024-11-18 21:15:53.539 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:53.542 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 87.8762ms
+2024-11-18 21:15:53.543 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:53.544 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 98.839ms
+2024-11-18 21:15:54.886 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:54.887 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:15:54.890 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:54.892 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:54.892 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:54.893 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:54.894 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:54.894 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:54.934 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:54.936 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.2216ms
+2024-11-18 21:15:54.937 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:54.939 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.3192ms
+2024-11-18 21:15:54.975 +05:30 [INF] 
+2024-11-18 21:15:54.976 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:54.979 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 82.2354ms
+2024-11-18 21:15:54.980 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:54.982 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 94.224ms
+2024-11-18 21:15:56.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:56.534 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:15:56.539 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:56.541 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:56.541 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:56.542 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:56.543 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:56.543 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:56.583 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:56.585 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.483ms
+2024-11-18 21:15:56.586 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:56.587 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.9699ms
+2024-11-18 21:15:56.621 +05:30 [INF] 
+2024-11-18 21:15:56.622 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:56.625 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 78.9027ms
+2024-11-18 21:15:56.626 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:56.627 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 93.0046ms
+2024-11-18 21:15:57.496 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:57.498 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:57.499 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:57.500 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:57.502 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - null null
+2024-11-18 21:15:57.505 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:57.506 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:57.507 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:57.540 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:57.542 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.7471ms
+2024-11-18 21:15:57.545 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:57.546 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 50.6904ms
+2024-11-18 21:15:57.588 +05:30 [INF] 
+2024-11-18 21:15:57.589 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:57.591 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 83.4405ms
+2024-11-18 21:15:57.595 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:57.596 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - 200 null application/json; charset=utf-8 93.674ms
+2024-11-18 21:15:58.726 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:15:58.727 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4 - null null
+2024-11-18 21:15:58.729 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:58.731 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:15:58.732 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:58.732 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:58.733 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:58.734 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:15:58.777 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:15:58.779 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 43.6331ms
+2024-11-18 21:15:58.781 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:15:58.782 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 56.4741ms
+2024-11-18 21:15:58.842 +05:30 [INF] 
+2024-11-18 21:15:58.844 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:15:58.848 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 111.495ms
+2024-11-18 21:15:58.850 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:15:58.851 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4 - 200 null application/json; charset=utf-8 124.1397ms
+2024-11-18 21:16:00.956 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:00.957 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - null null
+2024-11-18 21:16:00.960 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:00.962 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:00.963 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:00.963 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:00.964 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:00.965 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:01.005 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:01.008 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 42.1685ms
+2024-11-18 21:16:01.010 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:01.010 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 54.0246ms
+2024-11-18 21:16:01.050 +05:30 [INF] 
+2024-11-18 21:16:01.052 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:01.054 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 86.4951ms
+2024-11-18 21:16:01.055 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:01.056 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - 200 null application/json; charset=utf-8 98.8155ms
+2024-11-18 21:16:01.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:01.810 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:16:01.813 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:01.814 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:01.815 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:01.815 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:01.816 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:01.818 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:01.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:01.860 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.8787ms
+2024-11-18 21:16:01.861 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:01.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.993ms
+2024-11-18 21:16:01.899 +05:30 [INF] 
+2024-11-18 21:16:01.900 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:01.902 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 81.6091ms
+2024-11-18 21:16:01.904 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:01.904 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 94.3467ms
+2024-11-18 21:16:02.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:02.788 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:16:02.790 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:02.794 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:02.798 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:02.798 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:02.796 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:02.800 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:02.839 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:02.841 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 39.3475ms
+2024-11-18 21:16:02.842 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:02.843 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 57.1233ms
+2024-11-18 21:16:02.865 +05:30 [INF] 
+2024-11-18 21:16:02.866 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:02.868 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 67.9915ms
+2024-11-18 21:16:02.869 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:02.870 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 81.8202ms
+2024-11-18 21:16:04.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:04.793 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - null null
+2024-11-18 21:16:04.798 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:04.800 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:04.800 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:04.801 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:04.802 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:04.802 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:04.843 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:04.845 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.337ms
+2024-11-18 21:16:04.846 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:04.847 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 54.0602ms
+2024-11-18 21:16:04.859 +05:30 [INF] 
+2024-11-18 21:16:04.860 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:04.861 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 55.5824ms
+2024-11-18 21:16:04.862 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:04.863 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - 200 null application/json; charset=utf-8 69.1761ms
+2024-11-18 21:16:06.764 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:06.766 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:16:06.767 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:06.769 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:06.769 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:06.770 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:06.771 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:06.772 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:06.820 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:06.822 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 49.1764ms
+2024-11-18 21:16:06.824 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:06.824 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 60.6603ms
+2024-11-18 21:16:06.840 +05:30 [INF] 
+2024-11-18 21:16:06.841 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:06.844 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 69.2176ms
+2024-11-18 21:16:06.845 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:06.846 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 80.1172ms
+2024-11-18 21:16:20.796 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:16:20.800 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - null null
+2024-11-18 21:16:20.805 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:20.807 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:16:20.808 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:20.809 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:20.810 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:20.812 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:16:20.853 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:16:20.855 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.5405ms
+2024-11-18 21:16:20.857 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:16:20.858 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 61.9956ms
+2024-11-18 21:16:20.871 +05:30 [INF] 
+2024-11-18 21:16:20.872 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:16:20.873 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 58.0194ms
+2024-11-18 21:16:20.876 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:16:20.877 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - 200 null application/json; charset=utf-8 77.0821ms
+2024-11-18 21:17:17.898 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:17.901 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:17.901 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:17.902 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:17.947 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - null null
+2024-11-18 21:17:17.956 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:17.988 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:17.989 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 86.15ms
+2024-11-18 21:17:17.990 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:17.991 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:17.992 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 94.0882ms
+2024-11-18 21:17:17.991 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:18.047 +05:30 [INF] 
+2024-11-18 21:17:18.048 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:18.050 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 54.3317ms
+2024-11-18 21:17:18.053 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:18.053 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=0 - 200 null application/json; charset=utf-8 106.3995ms
+2024-11-18 21:17:28.807 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:28.810 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:28.811 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:17:28.811 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:28.813 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:28.815 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:28.815 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:28.818 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:28.855 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:28.857 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.5515ms
+2024-11-18 21:17:28.858 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:28.859 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.057ms
+2024-11-18 21:17:28.898 +05:30 [INF] 
+2024-11-18 21:17:28.899 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:28.901 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 81.6134ms
+2024-11-18 21:17:28.902 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:28.903 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 92.0255ms
+2024-11-18 21:17:32.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:32.583 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:17:32.587 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:32.589 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:32.589 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:32.590 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:32.591 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:32.592 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:32.637 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:32.641 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 45.8988ms
+2024-11-18 21:17:32.643 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:32.645 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 61.9802ms
+2024-11-18 21:17:32.672 +05:30 [INF] 
+2024-11-18 21:17:32.673 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:32.675 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 78.1252ms
+2024-11-18 21:17:32.676 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:32.677 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 93.6043ms
+2024-11-18 21:17:37.278 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:37.281 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:17:37.282 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:37.283 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:37.284 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:37.284 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:37.285 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:37.286 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:37.344 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:37.346 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 58.6154ms
+2024-11-18 21:17:37.348 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:37.349 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 71.0464ms
+2024-11-18 21:17:37.398 +05:30 [INF] 
+2024-11-18 21:17:37.399 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:37.401 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 111.7006ms
+2024-11-18 21:17:37.402 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:37.403 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 122.3886ms
+2024-11-18 21:17:41.910 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:41.912 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:17:41.913 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:41.916 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:41.916 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:41.917 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:41.917 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:41.918 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:41.959 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:41.960 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.7993ms
+2024-11-18 21:17:41.961 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:41.962 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.5669ms
+2024-11-18 21:17:41.994 +05:30 [INF] 
+2024-11-18 21:17:41.995 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:41.997 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 76.124ms
+2024-11-18 21:17:41.998 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:41.999 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 86.6201ms
+2024-11-18 21:17:44.786 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:17:44.789 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:44.789 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:17:44.790 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:44.792 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:17:44.792 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:44.793 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:44.795 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:17:44.879 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:17:44.880 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 86.3457ms
+2024-11-18 21:17:44.881 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:17:44.882 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 96.2105ms
+2024-11-18 21:17:44.923 +05:30 [INF] 
+2024-11-18 21:17:44.924 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:17:44.926 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 128.7422ms
+2024-11-18 21:17:44.927 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:17:44.927 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 138.2041ms
+2024-11-18 21:18:25.200 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:25.200 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:18:25.203 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:25.205 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:25.206 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:25.207 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:25.208 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:25.208 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:25.248 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:25.251 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.6603ms
+2024-11-18 21:18:25.253 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:25.254 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 53.9218ms
+2024-11-18 21:18:25.288 +05:30 [INF] 
+2024-11-18 21:18:25.289 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:25.291 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 80.2155ms
+2024-11-18 21:18:25.292 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:25.293 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 93.5813ms
+2024-11-18 21:18:30.584 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:30.587 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:18:30.588 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:30.590 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:30.591 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:30.591 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:30.592 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:30.593 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:30.634 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:30.635 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.073ms
+2024-11-18 21:18:30.637 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:30.638 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 53.0681ms
+2024-11-18 21:18:30.672 +05:30 [INF] 
+2024-11-18 21:18:30.673 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:30.675 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 79.1129ms
+2024-11-18 21:18:30.676 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:30.677 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 89.4979ms
+2024-11-18 21:18:31.715 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:31.717 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:31.718 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:31.719 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:31.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - null null
+2024-11-18 21:18:31.726 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:31.727 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:31.728 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:31.760 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:31.762 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.042ms
+2024-11-18 21:18:31.763 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:31.765 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 50.023ms
+2024-11-18 21:18:31.816 +05:30 [INF] 
+2024-11-18 21:18:31.817 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:31.820 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 89.3409ms
+2024-11-18 21:18:31.821 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:31.822 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3 - 200 null application/json; charset=utf-8 98.5714ms
+2024-11-18 21:18:32.916 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:32.918 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - null null
+2024-11-18 21:18:32.920 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:32.922 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:32.923 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:32.923 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:32.924 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:32.925 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:32.964 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:32.965 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 38.8646ms
+2024-11-18 21:18:32.966 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:32.967 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 50.7916ms
+2024-11-18 21:18:33.021 +05:30 [INF] 
+2024-11-18 21:18:33.023 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:33.024 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 96.9287ms
+2024-11-18 21:18:33.026 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:33.027 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2 - 200 null application/json; charset=utf-8 108.7512ms
+2024-11-18 21:18:33.722 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:33.723 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:18:33.727 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:33.729 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:33.729 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:33.730 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:33.731 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:33.732 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:33.773 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:33.775 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.744ms
+2024-11-18 21:18:33.776 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:33.777 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 54.9566ms
+2024-11-18 21:18:33.816 +05:30 [INF] 
+2024-11-18 21:18:33.818 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:33.819 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 85.1527ms
+2024-11-18 21:18:33.820 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:33.821 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 98.2167ms
+2024-11-18 21:18:40.236 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:18:40.237 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - null null
+2024-11-18 21:18:40.238 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:40.240 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:18:40.241 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:40.242 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:40.243 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:40.244 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:18:40.285 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:18:40.287 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.0422ms
+2024-11-18 21:18:40.288 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:18:40.289 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.7599ms
+2024-11-18 21:18:40.311 +05:30 [INF] 
+2024-11-18 21:18:40.312 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:18:40.315 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 67.2236ms
+2024-11-18 21:18:40.316 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:18:40.317 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1 - 200 null application/json; charset=utf-8 80.0019ms
+2024-11-18 21:22:07.677 +05:30 [INF] Now listening on: https://localhost:7134
+2024-11-18 21:22:07.699 +05:30 [INF] Now listening on: http://localhost:5025
+2024-11-18 21:22:07.753 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-18 21:22:07.755 +05:30 [INF] Hosting environment: Development
+2024-11-18 21:22:07.756 +05:30 [INF] Content root path: C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\student_viewAPI
+2024-11-18 21:22:07.877 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-18 21:22:08.020 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 143.2005ms
+2024-11-18 21:22:08.091 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-18 21:22:08.095 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:22:08.101 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 5.8361ms
+2024-11-18 21:22:08.109 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 18.8273ms
+2024-11-18 21:22:08.315 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-18 21:22:08.367 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.6459ms
+2024-11-18 21:22:10.480 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/index.html - null null
+2024-11-18 21:22:10.488 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/index.html - 200 null text/html;charset=utf-8 7.8252ms
+2024-11-18 21:22:10.501 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - null null
+2024-11-18 21:22:10.501 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/_vs/browserLink - null null
+2024-11-18 21:22:10.504 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_framework/aspnetcore-browser-refresh.js - 200 13768 application/javascript; charset=utf-8 2.8192ms
+2024-11-18 21:22:10.523 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.8846ms
+2024-11-18 21:22:10.556 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - null null
+2024-11-18 21:22:10.564 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 7.315ms
+2024-11-18 21:22:19.436 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&pageSize=25 - null null
+2024-11-18 21:22:19.443 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:19.467 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:22:19.886 +05:30 [INF] 
+2024-11-18 21:22:19.894 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:22:19.918 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 446.1154ms
+2024-11-18 21:22:19.919 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:19.921 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&pageSize=25 - 200 null application/json; charset=utf-8 484.7855ms
+2024-11-18 21:22:53.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize - null null
+2024-11-18 21:22:53.852 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:22:53.860 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:22:53.860 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:22:53.861 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:53.861 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:22:53.862 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:22:53.867 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-11-18 21:22:53.867 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:22:53.883 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 18.0511ms
+2024-11-18 21:22:53.884 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:53.885 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize - 400 null application/problem+json; charset=utf-8 33.5884ms
+2024-11-18 21:22:53.927 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:22:53.931 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 61.6142ms
+2024-11-18 21:22:53.932 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:22:53.934 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 81.905ms
+2024-11-18 21:22:55.821 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize={} - null null
+2024-11-18 21:22:55.826 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:22:55.826 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:22:55.827 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:55.829 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:22:55.829 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:22:55.830 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:22:55.832 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:22:55.834 +05:30 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-11-18 21:22:55.836 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 4.2992ms
+2024-11-18 21:22:55.837 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:22:55.838 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize={} - 400 null application/problem+json; charset=utf-8 16.2278ms
+2024-11-18 21:22:55.872 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:22:55.874 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 39.8535ms
+2024-11-18 21:22:55.875 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:22:55.876 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 49.939ms
+2024-11-18 21:23:01.823 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:01.823 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - null null
+2024-11-18 21:23:01.830 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:01.831 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:01.832 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:01.833 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:01.834 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:01.835 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:01.876 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:01.878 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 42.01ms
+2024-11-18 21:23:01.879 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:01.880 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 57.6065ms
+2024-11-18 21:23:02.065 +05:30 [INF] 
+2024-11-18 21:23:02.067 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:02.071 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 233.6657ms
+2024-11-18 21:23:02.072 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:02.074 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - 200 null application/json; charset=utf-8 251.0585ms
+2024-11-18 21:23:05.126 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - null null
+2024-11-18 21:23:05.126 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:05.131 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:05.133 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:05.133 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:05.134 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:05.135 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:05.136 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:05.178 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:05.179 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 39.7576ms
+2024-11-18 21:23:05.182 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:05.183 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 56.4911ms
+2024-11-18 21:23:05.203 +05:30 [INF] 
+2024-11-18 21:23:05.204 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:05.207 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 69.2388ms
+2024-11-18 21:23:05.208 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:05.209 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - 200 null application/json; charset=utf-8 82.9354ms
+2024-11-18 21:23:08.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - null null
+2024-11-18 21:23:08.777 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:08.780 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:08.781 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:08.782 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:08.783 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:08.783 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:08.784 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:08.837 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:08.839 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 51.6132ms
+2024-11-18 21:23:08.840 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:08.842 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 64.3049ms
+2024-11-18 21:23:08.865 +05:30 [INF] 
+2024-11-18 21:23:08.866 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:08.868 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 82.647ms
+2024-11-18 21:23:08.870 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:08.871 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - 200 null application/json; charset=utf-8 93.9284ms
+2024-11-18 21:23:12.872 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - null null
+2024-11-18 21:23:12.873 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:12.874 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:12.876 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:12.876 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:12.877 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:12.878 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:12.885 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:12.927 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:12.928 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 39.1017ms
+2024-11-18 21:23:12.929 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:12.930 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 56.7027ms
+2024-11-18 21:23:12.945 +05:30 [INF] 
+2024-11-18 21:23:12.946 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:12.950 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 63.1763ms
+2024-11-18 21:23:12.951 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:12.952 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - 200 null application/json; charset=utf-8 79.9477ms
+2024-11-18 21:23:14.151 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:14.151 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3&PageSize=25 - null null
+2024-11-18 21:23:14.154 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:14.157 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:14.157 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:14.158 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:14.159 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:14.160 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:14.201 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:14.203 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.9487ms
+2024-11-18 21:23:14.204 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:14.205 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 53.2195ms
+2024-11-18 21:23:14.236 +05:30 [INF] 
+2024-11-18 21:23:14.237 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:14.239 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 75.7046ms
+2024-11-18 21:23:14.240 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:14.241 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=3&PageSize=25 - 200 null application/json; charset=utf-8 89.6173ms
+2024-11-18 21:23:15.360 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:15.360 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4&PageSize=25 - null null
+2024-11-18 21:23:15.364 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:15.365 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:15.366 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:15.367 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:15.367 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:15.368 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:15.408 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:15.410 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.4915ms
+2024-11-18 21:23:15.411 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:15.412 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.8664ms
+2024-11-18 21:23:15.435 +05:30 [INF] 
+2024-11-18 21:23:15.436 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:15.438 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 66.6625ms
+2024-11-18 21:23:15.439 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:15.440 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4&PageSize=25 - 200 null application/json; charset=utf-8 80.4752ms
+2024-11-18 21:23:31.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:31.809 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4&PageSize=25 - null null
+2024-11-18 21:23:31.812 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:31.814 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:31.815 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:31.815 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:31.816 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:31.817 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:31.858 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:31.860 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.0882ms
+2024-11-18 21:23:31.862 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:31.862 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 53.3439ms
+2024-11-18 21:23:31.882 +05:30 [INF] 
+2024-11-18 21:23:31.882 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:31.884 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 63.7888ms
+2024-11-18 21:23:31.885 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:31.886 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=4&PageSize=25 - 200 null application/json; charset=utf-8 76.7491ms
+2024-11-18 21:23:34.211 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:34.213 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - null null
+2024-11-18 21:23:34.213 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:34.216 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:34.216 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:34.217 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:34.217 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:34.218 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:34.261 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:34.263 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 42.6431ms
+2024-11-18 21:23:34.264 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:34.267 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 55.9031ms
+2024-11-18 21:23:34.284 +05:30 [INF] 
+2024-11-18 21:23:34.287 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:34.290 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 66.7236ms
+2024-11-18 21:23:34.291 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:34.292 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - 200 null application/json; charset=utf-8 79.4558ms
+2024-11-18 21:23:43.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:43.077 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - null null
+2024-11-18 21:23:43.081 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:43.083 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:43.083 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:43.084 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:43.085 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:43.085 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:43.132 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:43.135 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 47.8817ms
+2024-11-18 21:23:43.137 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:43.138 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 60.3962ms
+2024-11-18 21:23:43.153 +05:30 [INF] 
+2024-11-18 21:23:43.154 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:43.155 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 67.11ms
+2024-11-18 21:23:43.156 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:43.157 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - 200 null application/json; charset=utf-8 79.8943ms
+2024-11-18 21:23:46.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - null null
+2024-11-18 21:23:46.185 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:46.189 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:46.191 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:46.191 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:46.192 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:46.193 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:46.194 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:46.239 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:46.241 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 44.056ms
+2024-11-18 21:23:46.242 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:46.243 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 58.0582ms
+2024-11-18 21:23:46.259 +05:30 [INF] 
+2024-11-18 21:23:46.260 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:46.261 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 65.582ms
+2024-11-18 21:23:46.262 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:46.263 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - 200 null application/json; charset=utf-8 77.6956ms
+2024-11-18 21:23:55.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:55.836 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - null null
+2024-11-18 21:23:55.840 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:55.842 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:55.843 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:55.844 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:55.844 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:55.845 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:55.885 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:55.887 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.7159ms
+2024-11-18 21:23:55.889 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:55.890 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 54.1464ms
+2024-11-18 21:23:55.907 +05:30 [INF] 
+2024-11-18 21:23:55.908 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:55.909 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 60.7623ms
+2024-11-18 21:23:55.910 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:55.911 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - 200 null application/json; charset=utf-8 75.2683ms
+2024-11-18 21:23:57.829 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:23:57.829 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - null null
+2024-11-18 21:23:57.832 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:57.835 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:23:57.835 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:57.836 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:57.837 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:57.838 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:23:57.879 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:23:57.880 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 40.5173ms
+2024-11-18 21:23:57.882 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:23:57.883 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 54.6688ms
+2024-11-18 21:23:57.903 +05:30 [INF] 
+2024-11-18 21:23:57.904 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:23:57.905 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 61.4662ms
+2024-11-18 21:23:57.906 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:23:57.907 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - 200 null application/json; charset=utf-8 78.4335ms
+2024-11-18 21:27:49.533 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:27:49.533 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - null null
+2024-11-18 21:27:49.536 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:49.538 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:49.538 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:49.539 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:49.540 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:49.541 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:49.590 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:27:49.592 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 49.4037ms
+2024-11-18 21:27:49.593 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:49.594 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 60.7415ms
+2024-11-18 21:27:49.613 +05:30 [INF] 
+2024-11-18 21:27:49.614 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:27:49.617 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 73.3384ms
+2024-11-18 21:27:49.619 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:49.619 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=100 - 200 null application/json; charset=utf-8 86.5461ms
+2024-11-18 21:27:54.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:27:54.117 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - null null
+2024-11-18 21:27:54.120 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:54.122 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:54.122 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:54.123 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:54.124 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:54.125 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:54.198 +05:30 [INF] 
+2024-11-18 21:27:54.201 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:27:54.202 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 74.3417ms
+2024-11-18 21:27:54.203 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:54.204 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=1&PageSize=25 - 200 null application/json; charset=utf-8 87.0788ms
+2024-11-18 21:27:54.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:27:54.217 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 91.0924ms
+2024-11-18 21:27:54.218 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:54.219 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 102.7968ms
+2024-11-18 21:27:56.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/CountRecords - null null
+2024-11-18 21:27:56.076 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - null null
+2024-11-18 21:27:56.077 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:56.079 +05:30 [INF] CORS policy execution successful.
+2024-11-18 21:27:56.079 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:56.080 +05:30 [INF] Executing endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:56.081 +05:30 [INF] Route matched with {action = "CountRecords", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CountRecords() on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:56.081 +05:30 [INF] Route matched with {action = "GetSecuritiesPaged", controller = "Security"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSecuritiesPaged(Int32, Int32) on controller Security_viewAPI.Controllers.SecurityController (Security_viewAPI).
+2024-11-18 21:27:56.122 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-18 21:27:56.124 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI) in 41.2349ms
+2024-11-18 21:27:56.125 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.CountRecords (Security_viewAPI)'
+2024-11-18 21:27:56.126 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/CountRecords - 200 null application/json; charset=utf-8 52.9364ms
+2024-11-18 21:27:56.142 +05:30 [INF] 
+2024-11-18 21:27:56.143 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Security_viewAPI.Model.Security, Security_viewAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-18 21:27:56.144 +05:30 [INF] Executed action Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI) in 59.5221ms
+2024-11-18 21:27:56.146 +05:30 [INF] Executed endpoint 'Security_viewAPI.Controllers.SecurityController.GetSecuritiesPaged (Security_viewAPI)'
+2024-11-18 21:27:56.146 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7134/api/Security/getSecuritiesByPage?pageNum=2&PageSize=25 - 200 null application/json; charset=utf-8 70.0317ms
+2024-11-18 21:49:44.997 +05:30 [INF] Application is shutting down...

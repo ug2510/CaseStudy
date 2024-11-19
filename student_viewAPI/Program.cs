@@ -1,4 +1,4 @@
-
+using Serilog;
 namespace student_viewAPI
 {
     public class Program
@@ -7,8 +7,15 @@ namespace student_viewAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            var configuration = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+           .Build();
 
+            // Add services to the container.
+            Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(builder.Configuration)
+             .Enrich.FromLogContext().WriteTo.File("log/MyLog.txt").CreateLogger();
+            builder.Host.UseSerilog();
             builder.Services.AddControllers();
             builder.Services.AddCors(options =>
             {

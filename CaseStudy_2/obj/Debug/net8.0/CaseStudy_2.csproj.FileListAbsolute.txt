@@ -1,26 +1,27 @@
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.exe
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.deps.json
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.runtimeconfig.json
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.pdb
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\System.Data.SqlClient.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.csproj.AssemblyReference.cache
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.AssemblyInfoInputs.cache
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.AssemblyInfo.cs
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.csproj.CoreCompileInputs.cache
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStud.606671A3.Up2Date
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\refint\CaseStudy_2.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.pdb
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.genruntimeconfig.cache
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\ref\CaseStudy_2.dll
-C:\Users\uagaundalkar\source\repos\CaseStudy_2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.sourcelink.json
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.exe
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.deps.json
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.runtimeconfig.json
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.pdb
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\runtimes\unix\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.csproj.AssemblyReference.cache
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.AssemblyInfoInputs.cache
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.AssemblyInfo.cs
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.csproj.CoreCompileInputs.cache
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.sourcelink.json
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStud.606671A3.Up2Date
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\refint\CaseStudy_2.dll
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.pdb
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.genruntimeconfig.cache
+C:\Users\spbhuva\Desktop\part2\CaseStudy_2\obj\Debug\net8.0\ref\CaseStudy_2.dll
+=======
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.exe
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.deps.json
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\bin\Debug\net8.0\CaseStudy_2.runtimeconfig.json
@@ -44,3 +45,4 @@ C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\obj\Debug\net8.
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.pdb
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\obj\Debug\net8.0\CaseStudy_2.genruntimeconfig.cache
 C:\Users\tpjain\Documents\Case study\Part2\CaseStudy\CaseStudy_2\obj\Debug\net8.0\ref\CaseStudy_2.dll
+

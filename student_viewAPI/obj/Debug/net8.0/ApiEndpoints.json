@@ -1,6 +1,32 @@
 [
   {
     "ContainingType": "Security_viewAPI.Controllers.SecurityController",
+    "Method": "CountRecords",
+    "RelativePath": "api/Security/CountRecords",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
+    "Method": "getAllDetailsByTicker",
+    "RelativePath": "api/Security/getAllDetailsByTicker/{ticker}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Security_viewAPI.Controllers.SecurityController",
     "Method": "GetOverviewByDate",
     "RelativePath": "api/Security/getOverviewByDate",
     "HttpMethod": "GET",
@@ -51,6 +77,11 @@
     "Parameters": [
       {
         "Name": "pageNum",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
         "Type": "System.Int32",
         "IsRequired": false
       }

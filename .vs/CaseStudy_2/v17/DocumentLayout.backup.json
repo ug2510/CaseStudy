@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|solutionrelative:student_viewapi\\controllers\\securitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|c:\\users\\tpjain\\documents\\case study\\part2\\casestudy\\student_viewapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|solutionrelative:student_viewapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|c:\\users\\tpjain\\documents\\case study\\part2\\casestudy\\student_viewapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|solutionrelative:student_viewapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|c:\\users\\tpjain\\documents\\case study\\part2\\casestudy\\student_viewapi\\model\\candlestick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|solutionrelative:student_viewapi\\model\\candlestick.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|c:\\users\\tpjain\\documents\\case study\\part2\\casestudy\\student_viewapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|solutionrelative:student_viewapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E8E8EC6-41C4-409E-A30E-3BDEDBD042B6}|student_viewAPI\\Security_viewAPI.csproj|c:\\users\\tpjain\\documents\\case study\\part2\\casestudy\\student_viewapi\\model\\security.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,6 +87,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "CandleStick.cs",
+              "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Model\\CandleStick.cs",
+              "RelativeDocumentMoniker": "student_viewAPI\\Model\\CandleStick.cs",
+              "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Model\\CandleStick.cs",
+              "RelativeToolTip": "student_viewAPI\\Model\\CandleStick.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T15:31:45.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "WeatherForecastController.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Controllers\\WeatherForecastController.cs",
               "RelativeDocumentMoniker": "student_viewAPI\\Controllers\\WeatherForecastController.cs",
@@ -94,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\CaseStudy_2\\Program.cs",
               "RelativeDocumentMoniker": "CaseStudy_2\\Program.cs",
@@ -106,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Program.cs",
               "RelativeDocumentMoniker": "student_viewAPI\\Program.cs",
@@ -114,8 +130,7 @@
               "RelativeToolTip": "student_viewAPI\\Program.cs",
               "ViewState": "AgIAAAsAAACAZWZmZmYswCIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T10:55:48.502Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-14T10:55:48.502Z"
             },
             {
               "$type": "Document",
@@ -125,14 +140,14 @@
               "RelativeDocumentMoniker": "student_viewAPI\\Controllers\\SecurityController.cs",
               "ToolTip": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Controllers\\SecurityController.cs",
               "RelativeToolTip": "student_viewAPI\\Controllers\\SecurityController.cs",
-              "ViewState": "AgIAAGQAAAAAAQAAAAAtwJYAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABEBAAAAyczMzAwmwCEBAABZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T10:40:56.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Security.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Model\\Security.cs",
               "RelativeDocumentMoniker": "student_viewAPI\\Model\\Security.cs",
@@ -144,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Security_viewAPI.csproj",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\student_viewAPI\\Security_viewAPI.csproj",
               "RelativeDocumentMoniker": "student_viewAPI\\Security_viewAPI.csproj",
@@ -156,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ConstituentsController.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\CaseStudy_2\\Contoller\\ConstituentsController.cs",
               "RelativeDocumentMoniker": "CaseStudy_2\\Contoller\\ConstituentsController.cs",
@@ -168,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "PriceRepo.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\CaseStudy_2\\Repo\\PriceRepo.cs",
               "RelativeDocumentMoniker": "CaseStudy_2\\Repo\\PriceRepo.cs",
@@ -180,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PriceController.cs",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\CaseStudy_2\\Contoller\\PriceController.cs",
               "RelativeDocumentMoniker": "CaseStudy_2\\Contoller\\PriceController.cs",
@@ -192,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "CaseStudy_2.csproj",
               "DocumentMoniker": "C:\\Users\\tpjain\\Documents\\Case study\\Part2\\CaseStudy\\CaseStudy_2\\CaseStudy_2.csproj",
               "RelativeDocumentMoniker": "CaseStudy_2\\CaseStudy_2.csproj",

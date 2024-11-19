@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 using Security_viewAPI.Model;
 using System.Data;
 
@@ -8,9 +9,17 @@ namespace Security_viewAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class SecurityController : ControllerBase
     {
-        private readonly string _connectionString = @"Server=192.168.0.13\sqlexpress,49753; Database=STU_SecurityMaster; User Id=sa; Password=sa@12345678; TrustServerCertificate=True";
+        private readonly ILogger _logger;  // Declare a logger field
+        private readonly string _connectionString;
+        
+        public SecurityController(ILogger<SecurityController> logger, IConfiguration configuration)
+        {
+            _logger = logger;  // Initialize the logger
+            _connectionString = configuration.GetConnectionString("IVPConn");
+        }
         [HttpGet("getOverviewByDate")]
         public async Task<IActionResult> GetOverviewByDate(DateTime date)
 {
@@ -55,11 +64,13 @@ namespace Security_viewAPI.Controllers
                     }
                 }
             }
+                    _logger.LogInformation($"Get Data by Date : {date} Successful");
         }
 
         if (securities.Count == 0)
         {
             Console.WriteLine("No data found for the specified date.");
+                    _logger.LogError("No data found for the specified date.");
             return NotFound("No data found for the specified date.");
         }
 
@@ -68,125 +79,247 @@ namespace Security_viewAPI.Controllers
     catch (Exception ex)
     {
         Console.WriteLine($"Error in OverView_date: {ex.Message}");
-        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified date.");
+                _logger.LogError($"Error in OverView_date: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified date.");
     }
 }
-        [HttpGet("getSecurities")]
-        public async Task<IActionResult> GetSecurities()
+[HttpGet("CountRecords")]
+public async Task<IActionResult> CountRecords()
+{
+    try
+    {
+        int count = 0;
+        using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            var securities = new List<Security>();
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM vw_SP500_Overview", connection))
             {
-                using (SqlCommand command = new SqlCommand("SELECT TOP 1000 * FROM vw_SP500_Overview", connection))
-                {
-                    await connection.OpenAsync();
+                await connection.OpenAsync();
 
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                // Execute the query and retrieve the count
+                count = (int)await command.ExecuteScalarAsync(); // ExecuteScalar returns the first column of the first row
+            }
+        }
+
+        // Return the count as the response
+        return Ok(count);
+    }
+    catch (Exception ex)
+    {
+        _logger.LogError($"An error occurred while fetching the record count: {ex.Message}");
+        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching the record count.");
+    }
+
+}
+
+[HttpGet("getAllDetailsByTicker/{ticker}")]
+public async Task<IActionResult> getAllDetailsByTicker(string ticker)
+{
+    try
+    {
+        var securities = new List<CandleStick>();
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            using (SqlCommand command = new SqlCommand($"select * from [dbo].[SP500_Prices] where ticker ='{ticker}'order by [Date]", connection))
+            {
+                await connection.OpenAsync();
+
+                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                {
+                    while (reader.Read())
                     {
-                        while (reader.Read())
+                        securities.Add(new CandleStick
                         {
-                            securities.Add(new Security
-                            {
-                                AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
-                                Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
-                                SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
-                                GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
-                                GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
-                                HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
-                                Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
-                                OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
-                                ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
-                                DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
-                                MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
-                                QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
-                                YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
-                            });
-                        }
+                            Date = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0), // Assuming this is the Date column
+                            Open = reader.IsDBNull(1) ? (decimal?)null : reader.GetDecimal(1), // Open price
+                            High = reader.IsDBNull(2) ? (decimal?)null : reader.GetDecimal(2), // High price
+                            Low = reader.IsDBNull(3) ? (decimal?)null : reader.GetDecimal(3), // Low price
+                            Close = reader.IsDBNull(4) ? (decimal?)null : reader.GetDecimal(4), // Close price
+                            Adj_Close = reader.IsDBNull(5) ? (decimal?)null : reader.GetDecimal(5), // Adjusted Close price
+                            Volume = reader.IsDBNull(6) ? (decimal?)null : reader.GetDecimal(6), // Volume
+                            Ticker = reader.IsDBNull(7) ? null : reader.GetString(7), // Ticker
+                            DTDChangePercentage = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8), // Daily Change Percentage
+                            MTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9), // Monthly Change Percentage
+                            QTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10), // Quarterly Change Percentage
+                            YTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11) // Year-to-Date Change Percentage
+
+                        });
+
                     }
                 }
             }
-
-            return Ok(securities);
         }
+        if (securities.Count == 0)
+        {
+            Console.WriteLine("No data found for the specified Ticker.");
+            _logger.LogError("No data found for the specified Ticker.");
+            return NotFound("No data found for the specified Ticker.");
+        }
+        _logger.LogInformation($"Data of Ticker :{ticker} was fetched.");
+        return Ok(securities);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+        _logger.LogError($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+        return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified Ticker.");
+
+
+    }
+}
 
         [HttpGet("getSecuritiesbyName/{ticker}")]
         public async Task<IActionResult> GetSecuritiesbyName(string ticker)
         {
-            var securities = new List<Security>();
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                using (SqlCommand command = new SqlCommand($"SELECT * FROM vw_SP500_Overview where Ticker='{ticker}'order by asOfDate", connection))
+                var securities = new List<Security>();
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    await connection.OpenAsync();
-
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    using (SqlCommand command = new SqlCommand($"SELECT * FROM vw_SP500_Overview where Ticker='{ticker}'order by asOfDate", connection))
                     {
-                        while (reader.Read())
-                        {
-                            securities.Add(new Security
-                            {
-                                AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
-                                Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
-                                SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
-                                GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
-                                GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
-                                HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
-                                Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
-                                OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
-                                ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
-                                DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
-                                MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
-                                QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
-                                YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
-                            });
+                        await connection.OpenAsync();
 
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            while (reader.Read())
+                            {
+                                securities.Add(new Security
+                                {
+                                    AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
+                                    Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
+                                    SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
+                                    GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                    GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                    HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                    Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
+                                    OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
+                                    ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
+                                    DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
+                                    MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
+                                    QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
+                                    YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
+                                });
+
+                            }
                         }
                     }
                 }
+                if (securities.Count == 0)
+                {
+                    Console.WriteLine("No data found for the specified Ticker.");
+                    _logger.LogError("No data found for the specified Ticker.");
+                    return NotFound("No data found for the specified Ticker.");
+                }
+                _logger.LogInformation($"Data of Ticker :{ticker} was fetched.");
+                return Ok(securities);
             }
-            return Ok(securities);
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+                _logger.LogError($"An error occurred while fetching data for the specified Ticker: {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data for the specified Ticker.");
+
+
+            }
+        }
+        [HttpGet("getSecurities")]
+        public async Task<IActionResult> GetSecurities()
+        {
+            try
+            {
+                var securities = new List<Security>();
+
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("SELECT TOP 1000 * FROM vw_SP500_Overview", connection))
+                    {
+                        await connection.OpenAsync();
+
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            while (reader.Read())
+                            {
+                                securities.Add(new Security
+                                {
+                                    AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
+                                    Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
+                                    SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
+                                    GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                    GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                    HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                    Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
+                                    OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
+                                    ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
+                                    DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
+                                    MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
+                                    QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
+                                    YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
+                                });
+                            }
+                        }
+                    }
+                }
+                _logger.LogInformation("All data was feteched");
+                return Ok(securities);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while fetching data : {ex.Message}");
+                _logger.LogError($"An error occurred while fetching data : {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data");
+            }
         }
 
-        [HttpGet("getSecurities/{pageNum}")]
-        public async Task<IActionResult> GetSecuritiesPaged([FromRoute] int pageNum)
+        
+        [HttpGet("getSecuritiesByPage")]
+        public async Task<IActionResult> GetSecuritiesPaged([FromQuery] int pageNum, [FromQuery] int pageSize)
         {
-            var securities = new List<Security>();
-
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                using (SqlCommand command = new SqlCommand("GetSnPSecuritiesPaged", connection))
-                {
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@PageNumber", pageNum);
-                    await connection.OpenAsync();
+                var securities = new List<Security>();
 
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                using (SqlConnection connection = new SqlConnection(_connectionString))
+                {
+                    using (SqlCommand command = new SqlCommand("GetSnPSecuritiesPaged", connection))
                     {
-                        while (reader.Read())
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@PageNumber", pageNum);
+                        command.Parameters.AddWithValue("@PageSize", pageSize);
+                        await connection.OpenAsync();
+
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            securities.Add(new Security
+                            while (reader.Read())
                             {
-                                AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
-                                Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
-                                SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
-                                GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
-                                GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
-                                HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
-                                Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
-                                OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
-                                ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
-                                DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
-                                MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
-                                QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
-                                YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
-                            });
+                                securities.Add(new Security
+                                {
+                                    AsOfDate = reader.IsDBNull(0) ? (DateTime?)null : reader.GetDateTime(0),
+                                    Ticker = reader.IsDBNull(1) ? null : reader.GetString(1),
+                                    SecurityName = reader.IsDBNull(2) ? null : reader.GetString(2),
+                                    GICSSector = reader.IsDBNull(3) ? null : reader.GetString(3),
+                                    GICSSubIndustry = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                    HeadquartersLocation = reader.IsDBNull(5) ? null : reader.GetString(5),
+                                    Founded = reader.IsDBNull(6) ? null : reader.GetString(6),  // Updated to string
+                                    OpenPrice = reader.IsDBNull(7) ? (decimal?)null : reader.GetDecimal(7),
+                                    ClosePrice = reader.IsDBNull(8) ? (decimal?)null : reader.GetDecimal(8),
+                                    DTDChangePercentage = reader.IsDBNull(9) ? (decimal?)null : reader.GetDecimal(9),
+                                    MTDChangePercentage = reader.IsDBNull(10) ? (decimal?)null : reader.GetDecimal(10),
+                                    QTDChangePercentage = reader.IsDBNull(11) ? (decimal?)null : reader.GetDecimal(11),
+                                    YTDChangePercentage = reader.IsDBNull(12) ? (decimal?)null : reader.GetDecimal(12)
+                                });
+                            }
                         }
                     }
                 }
+                _logger.LogInformation("");
+                return Ok(securities);
             }
-
-            return Ok(securities);
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred while fetching data : {ex.Message}");
+                _logger.LogError($"An error occurred while fetching data : {ex.Message}");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while fetching data");
+            }
         }
     }
 }
