@@ -57,7 +57,7 @@ const EquitySectorPieChart = () => {
       "#2c3e50", 
     ],
     title: {
-      text: "Equity Sector Distribution",
+      text: "Equity Sector Technology Distribution",
       align: "center",
       style: {
         fontSize: "18px",
@@ -95,7 +95,7 @@ const EquitySectorPieChart = () => {
       {loading ? (
         <div>Loading...</div> // Display loading message
       ) : (
-        <ApexCharts options={options} series={series} type="pie" width="100%" /> // Render the pie chart
+        <ApexCharts options={options} series={series} type="pie" width="90%" /> // Render the pie chart
       )}
     </div>
   );

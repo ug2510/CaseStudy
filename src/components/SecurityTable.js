@@ -6,6 +6,7 @@ import EquityEdit from "./EquityEdit";
 import BondEdit from "./BondEdit";
 import PieChartIcon from "@mui/icons-material/PieChart";
 import BondSectorPieChart from "./BondSectorPieChart";
+import EquitySectorPieChart from "./EquitySectorPieChart";
 import {
   Table,
   TableBody,
@@ -38,6 +39,7 @@ function SecurityTable() {
   const [selectedBond, setSelectedBond] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [chartDialogOpen, setChartDialogOpen] = useState(false);
+  const [chartType, setChartType] = useState(""); 
 
   const currencyMap = {
     USD: "$",
@@ -93,6 +95,12 @@ function SecurityTable() {
     navigate(`/details/${security.sid}`);
   };
   const handleChartDialogOpen = () => {
+    setChartType("bond");
+    setChartDialogOpen(true);
+  };
+  
+  const handleChartDialogOpenEquity = () => {
+    setChartType("equity");
     setChartDialogOpen(true);
   };
 
@@ -200,6 +208,26 @@ function SecurityTable() {
           <Tooltip title="Bond Sector Technology Distribution" placement="top">
             <IconButton
               onClick={handleChartDialogOpen}
+              style={{ color: "black" }}
+              aria-label="open bond sector chart"
+            >
+              <PieChartIcon />
+            </IconButton>
+          </Tooltip>
+        </div>
+      )}
+
+{isEquityData && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            marginBottom: "10px",
+          }}
+        >
+          <Tooltip title="Equity Sector Technology Distribution" placement="top">
+            <IconButton
+              onClick={handleChartDialogOpenEquity}
               style={{ color: "black" }}
               aria-label="open bond sector chart"
             >
@@ -366,27 +394,26 @@ function SecurityTable() {
           </Table>
         </TableContainer>
       )}
-
       <Dialog
-        open={chartDialogOpen}
-        onClose={handleChartDialogClose}
-        maxWidth="md"
-        fullWidth
-      >
-        <DialogContent>
-          <BondSectorPieChart />
-        </DialogContent>
-        <DialogActions>
-          <Button
-            onClick={handleChartDialogClose}
-            color="primary"
-            variant="contained"
-          >
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
-
+  open={chartDialogOpen}
+  onClose={handleChartDialogClose}
+  maxWidth="md"
+  fullWidth
+>
+  <DialogContent>
+    {chartType === "equity" && <EquitySectorPieChart />}
+    {chartType === "bond" && <BondSectorPieChart />}
+  </DialogContent>
+  <DialogActions>
+    <Button
+      onClick={handleChartDialogClose}
+      color="primary"
+      variant="contained"
+    >
+      Close
+    </Button>
+  </DialogActions>
+</Dialog>
       <Dialog
         open={isEditModalOpen}
         onClose={handleCloseModal}

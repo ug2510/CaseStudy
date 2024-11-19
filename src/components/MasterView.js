@@ -6,6 +6,7 @@ import SecurityMasterService from '../services/SecurityMasterService';
 import { styled } from '@mui/material/styles';
 import PieChart from './PieChart';
 import BondSectorPieChart from './BondSectorPieChart';
+import EquitySectorPieChart from './EquitySectorPieChart';
 
 function MasterView() {
   const [securities, setSecurities] = useState([]);

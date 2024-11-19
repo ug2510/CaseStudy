@@ -7,6 +7,7 @@ import {
   InputLabel,
   Select,
   FormHelperText,
+  InputAdornment,
   Box,
 } from "@mui/material";
 import { useForm, Controller } from "react-hook-form";
@@ -267,7 +268,10 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 error={!!errors.askPrice}
                 helperText={errors?.askPrice?.message}
                 type="number"
-                InputProps={{ style: textFieldStyles }}
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  style: textFieldStyles,
+                }}
               />
             )}
           />
@@ -292,7 +296,10 @@ const BondEdit = ({ initialData, onClose, onUpdate }) => {
                 error={!!errors.bidPrice}
                 helperText={errors?.bidPrice?.message}
                 type="number"
-                InputProps={{ style: textFieldStyles }}
+                InputProps={{
+                  startAdornment: <InputAdornment position="start">$</InputAdornment>,
+                  style: textFieldStyles,
+                }}
               />
             )}
           />
