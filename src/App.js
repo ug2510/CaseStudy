@@ -11,6 +11,7 @@ import Details from "./components/Details";
 import Details_Bond from "./components/Details_Bond";
 import PieChart from "./components/PieChart"
 import BondSectorPieChart from "./components/BondSectorPieChart";
+import EquitySectorPieChart from "./components/EquitySectorPieChart";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
             <Route path="/placeholder" element={<Analyze />} />
             <Route path="/details/:id" element={<Details />} />
             <Route path="/detailsbond/:id" element={<Details_Bond />} />
-            <Route path="/bondsectorpiechart" element={<BondSectorPieChart />} />
+            <Route path="/equitysectorpiechart" element={<EquitySectorPieChart />} />
           </Routes>
         </LocalizationProvider>
       </header>
