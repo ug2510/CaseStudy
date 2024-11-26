@@ -62,7 +62,6 @@ function MasterView() {
       <br />
       <br />
       <Tile activeCount={activeCount} inactiveCount={inactiveCount} />
-      <br />
      
       <SecurityTable securities={securities} onSecurityClick={handleSecurityClick} />
     </div>

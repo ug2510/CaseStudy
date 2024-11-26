@@ -25,6 +25,8 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEquities } from "../features/equity/equitySlice";
 
 function SecurityTable() {
   const [securities, setSecurities] = useState([]);
@@ -39,7 +41,9 @@ function SecurityTable() {
   const [selectedBond, setSelectedBond] = useState(null);
   const [openDialog, setOpenDialog] = useState(false);
   const [chartDialogOpen, setChartDialogOpen] = useState(false);
-  const [chartType, setChartType] = useState(""); 
+  const [chartType, setChartType] = useState("");
+  const equity = useSelector(state=>state.equity)
+  const dispatch = useDispatch();
 
   const currencyMap = {
     USD: "$",
@@ -61,29 +65,31 @@ function SecurityTable() {
 
   const fetchData = (isEquity) => {
     setIsLoading(true);
-    const url = isEquity
-      ? "https://localhost:7109/api/equity/getEquityData"
-      : "https://localhost:7109/api/bond/getBondsData";
+    dispatch(fetchEquities());
+    // console.log(equity);
+    // const url = isEquity
+    //   ? "https://localhost:7109/api/equity/getEquityData"
+    //   : "https://localhost:7109/api/bond/getBondsData";
 
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        console.log(response);
-        return response.json();
-      })
-      .then((data) => {
-        setSecurities(data);
-        const count = data.filter(
-          (security) => security.status === "inactive"
-        ).length;
-        setInactiveCount(count);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setIsLoading(false);
-      });
-    console.log(isEquityData, securities);
+    // fetch(url)
+    //   .then((response) => {
+    //     if (!response.ok) throw new Error("Network response was not ok");
+    //     console.log(response);
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     setSecurities(data);
+    //     const count = data.filter(
+    //       (security) => security.status === "inactive"
+    //     ).length;
+    //     setInactiveCount(count);
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error fetching data:", error);
+    //     setIsLoading(false);
+    //   });
+    // console.log(isEquityData, securities);
   };
 
   useEffect(() => {
@@ -191,7 +197,7 @@ function SecurityTable() {
         variant="contained"
         color={isEquityData ? "primary" : "secondary"}
         onClick={toggleTable}
-        style={{ marginBottom: "20px" }}
+        style={{ marginBottom: "15px" }}
       >
         {isEquityData ? "Switch to Bond Table" : "Switch to Equity Table"}
       </Button>
@@ -313,7 +319,9 @@ function SecurityTable() {
                         color="warning"
                         size="small"
                         style={{ marginLeft: "5px" }}
-                        onClick={() => handleDeleteClick(security)}
+                        onClick={() => {handleDeleteClick(security)
+                          window.location.reload();
+                        }}
                       >
                         Delete
                       </Button>
@@ -383,7 +391,9 @@ function SecurityTable() {
                       color="warning"
                       size="small"
                       style={{ marginLeft: "5px" }}
-                      onClick={() => handleDeleteClickBonds(security)}
+                      onClick={() => {handleDeleteClickBonds(security);
+                        window.location.reload();
+                      }}
                     >
                       Delete
                     </Button>

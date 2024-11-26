@@ -409,6 +409,7 @@ const Analyze = () => {
           <Tooltip title="Reset Data">
             <IconButton
               onClick={() => {
+                setTickerFilter("");
                 setSelectedDate(null);
                 fetchData(null);
               }}
